@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buatevent.id</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/icon/favicon.svg">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="assets/js/tailwind-3.4.js"></script>
+    <script src="assets/js/form-3.4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .relative:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+        }
+        article img {
+          width: 100%; /* Mengikuti lebar article */
+          height: 100%; /* Mengikuti tinggi article */
+          object-fit: cover; /* Gambar tetap rapi dengan memotong bagian yang tidak perlu */
+          object-position: center; /* Memusatkan gambar */
+          position: absolute; /* Pastikan gambar tidak memengaruhi tata letak elemen lainnya */
+        }
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet" />
+
+    <script type="module">
+      import KeenSlider from 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm'
+    
+      const keenSlider = new KeenSlider(
+        '#keen-slider',
+        {
+          loop: true,
+          slides: {
+            origin: 'auto',
+            perView: 2.25,
+            spacing: 15,
+          },
+          breakpoints: {
+            '(max-width: 1524px)': {
+              slides: {
+                origin: 'auto',
+                perView: 2,
+                spacing: 10,
+              },
+            },
+            '(max-width: 768px)': {
+              slides: {
+                origin: 'auto',
+                perView: 1.25,
+                spacing: 5,
+              },
+            },
+          },
+        },
+        []
+      )
+    
+      const keenSliderPrevious = document.getElementById('keen-slider-previous')
+      const keenSliderNext = document.getElementById('keen-slider-next')
+    
+      const keenSliderPreviousDesktop = document.getElementById('keen-slider-previous-desktop')
+      const keenSliderNextDesktop = document.getElementById('keen-slider-next-desktop')
+    
+      keenSliderPrevious.addEventListener('click', () => keenSlider.prev())
+      keenSliderNext.addEventListener('click', () => keenSlider.next())
+    
+      keenSliderPreviousDesktop.addEventListener('click', () => keenSlider.prev())
+      keenSliderNextDesktop.addEventListener('click', () => keenSlider.next())
+    </script>
+</head>
+
+<body class="bg-white text-gray-900 " role="main">
+    <!-- Header -->
+        <section class="relative flex overflow-hidden flex-col w-full  max-md:pb-24 max-md:max-w-full" aria-label="Hero section">
+            <div
+                class="flex flex-wrap gap-10 justify-between items-center px-16 py-8 w-full min-h-[100px] max-md:px-5 max-md:max-w-full"
+                >
+                <div
+                    class="flex flex-wrap gap-20 items-center self-stretch my-auto text-base text-gray-500 whitespace-nowrap min-w-[240px] max-md:max-w-full"
+                >
+                    <img
+                    loading="lazy"
+                    srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                    class="object-contain shrink-0 self-stretch my-auto aspect-[2.67] w-[200px]"
+                    />
+                    <div class="absolute flex right-16 top-[45px] gap-2 items-center self-stretch my-auto w-[192px] lg:w-[132px] ">
+                        <img
+                            loading="lazy"
+                            srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                            class="object-contain shrink-0 self-stretch my-auto rounded-full aspect-square w-[41px]"
+                        />
+                        <div
+                            class="flex flex-col flex-1 shrink justify-center self-stretch my-auto basis-0"
+                        >
+                            <div class="flex flex-col w-full">
+                                <div class="text-xs text-gray-500">Hello</div>
+                                <div
+                                    class="flex gap-0.5 justify-center items-center w-full text-xs font-bold text-gray-700"
+                                >
+                                    <div class="flex-1 shrink self-stretch my-auto basis-0">
+                                    Yefi Chlara
+                                    </div>
+                                    <img
+                                    loading="lazy"
+                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/dd697b63ada6b6b3c4d152889839f05c07074934108279d77405e1a1190f8fed?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                                    class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <button data-collapse-toggle="mobile-menu-2" type="button"
+                            class="inline-flex items-center p-2 ml-1 text-sm text-blue-900 rounded-lg lg:hidden hover:bg-blue-100 hover:text-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:text-blue-900 dark:hover:bg-blue-800 dark:focus:ring-blue-900"
+                            aria-controls="mobile-menu-2" aria-expanded="true">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+    
+                    <div
+                    class="flex gap-10 items-center self-stretch my-auto min-w-[240px] hidden md:block md:w-auto  md:order-1"
+                    id="mobile-menu-2"
+                    >
+                        <ul class="flex flex-col mt-4 font-base lg:flex-row lg:space-x-8 lg:mt-0">
+                            <li>
+                                <a href="index.html" class="block self-stretch my-auto" aria-current="page">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block flex justify-center items-center self-stretch my-auto">
+                                <div class="self-stretch my-auto">Services</div>
+                                <img
+                                loading="lazy"
+                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/457da01b92431674db4cd6ecd7c395162936ce4d307a679ea7cb2ba54182b074?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                                class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
+                                />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block self-stretch my-auto">About</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block self-stretch my-auto">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block self-stretch my-auto">Promo</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block self-stretch my-auto">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+  
+    
+    <!-- </header> -->
+
+    <!-- Main Content -->
+    <main >  
+        <nav class="flex gap-6 justify-center items-center px-16 py-10 w-full max-md:px-5 max-md:max-w-full" role="navigation" aria-label="Order progress">
+            <div class="flex flex-wrap gap-4 items-center self-stretch my-auto min-w-[240px] w-[800px] max-sm:gap-24 max-sm:mx-auto">
+              <div class="flex flex-col items-center self-stretch my-auto text-sm text-center w-[37px]">
+                <div class="px-2.5 py-2 mt-6 text-white whitespace-nowrap bg-blue-900 h-[37px] rounded-[60px] w-[37px]" aria-current="step">1</div>
+                <div class="mt-1 text-gray-700">Order Details</div>
+              </div>
+              <div class="flex flex-col flex-1 shrink justify-center self-stretch py-5 my-auto basis-0 min-h-[37px] min-w-[240px] max-md:flex max-sm:hidden">
+                <div class="w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px]" role="separator"></div>
+              </div>
+              <div class="flex flex-col items-center self-stretch my-auto text-sm text-center whitespace-nowrap w-[37px]">
+                <div class="px-2.5 py-2 text-white bg-blue-900 h-[37px] rounded-[60px] w-[37px]" aria-current="step">2</div>
+                <div class="mt-1 text-gray-700">Payment</div>
+              </div>
+              <div class="flex flex-col flex-1 shrink justify-center self-stretch py-5 my-auto basis-0 min-h-[37px] min-w-[240px] max-md:flex max-sm:hidden">
+                <div class="w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px]" role="separator"></div>
+              </div>
+              <div class="flex flex-col items-center self-stretch my-auto text-sm text-center whitespace-nowrap w-[37px]">
+                <div class="px-2.5 py-2 text-white bg-blue-900 h-[37px] rounded-[60px] w-[37px]" aria-current="step">3</div>
+                <div class="mt-1 text-gray-700">Complete</div>
+              </div>
+            </div>
+          </nav>
+        
+          <section class="flex flex-col justify-center items-center px-16 py-32 w-full text-center max-md:px-5 max-md:py-24 max-md:max-w-full" aria-labelledby="completion-heading">
+            <div class="flex flex-col items-center max-w-full w-[700px]">
+              <h1 id="completion-heading" class="text-5xl font-bold text-black max-md:max-w-full max-md:text-4xl">
+                THANK YOU!
+                <br />
+                Your Order Is Complete 🎉
+              </h1>
+              <p class="mt-2 text-lg leading-7 text-gray-500 max-md:max-w-full">
+                Your event request has been successfully submitted! Our team is preparing everything to make your event a success. You'll receive a confirmation email shortly
+              </p>
+            </div>
+          </section>    
+
+          <section class="order-confirmation flex flex-wrap gap-6 items-start px-16 pb-10 w-full max-md:px-5 max-md:max-w-full" aria-labelledby="confirmation-title">
+            <div class="flex flex-col grow shrink justify-center min-w-[240px] w-[725px] max-md:max-w-full">
+              <div class="confirmation-message flex flex-col p-10 w-full text-base bg-blue-900 rounded-3xl max-md:px-5 max-md:max-w-full" role="alert">
+                <p class="leading-6 text-white max-md:max-w-full">
+                  A member of our team will reach out within 1–2 business days to confirm
+                  the details and finalize your event arrangements. In the meantime, feel
+                  free to download your RFQ and check your order history on your
+                  dashboard.
+                </p>
+                <button class="gap-1.5 self-start px-5 py-3 mt-6 font-bold text-gray-900 bg-white rounded-[60px]" aria-label="Download RFQ document">
+                  DOWNLOAD RFQ
+                </button>
+              </div>
+          
+              <section aria-labelledby="order-summary-title" class="flex overflow-hidden flex-col justify-center p-10 mt-6 w-full rounded-3xl border border-solid max-md:px-5 max-md:max-w-full">
+                <header class="flex flex-col justify-center self-start">
+                  <h2 id="order-summary-title" class="text-base font-bold text-gray-900">ORDER SUMMARY</h2>
+                  <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consecteur elit</p>
+                </header>
+              
+                <div role="separator" aria-hidden="true" class="mt-6 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"></div>
+              
+                <div class="flex flex-wrap gap-4 items-start mt-6 w-full max-md:max-w-full">
+                  <div class="flex flex-col grow shrink min-w-[240px] w-[290px]">
+                    <span class="text-xs font-medium text-gray-500">Order ID</span>
+                    <span class="mt-1.5 text-lg text-gray-900">ID1232435985434</span>
+                  </div>
+                  <div class="flex flex-col grow shrink min-w-[240px] w-[290px]">
+                    <span class="text-xs font-medium text-gray-500">Order Date</span>
+                    <span class="mt-1.5 text-lg text-gray-900">ID1232435985434</span>
+                  </div>
+                  <div class="flex flex-col grow shrink min-w-[240px] w-[290px]">
+                    <span class="text-xs font-medium text-gray-500">Order Date</span>
+                    <span class="mt-1.5 text-lg text-gray-900">30 Oct 2024, 09:58</span>
+                  </div>
+                  <div class="flex flex-col grow shrink min-w-[240px] w-[290px]">
+                    <span class="text-xs font-medium text-gray-500">Full Name</span>
+                    <span class="mt-1.5 text-lg text-gray-900">Ariana Gomez</span>
+                  </div>
+                  <div class="flex flex-col grow shrink whitespace-nowrap min-w-[240px] w-[290px]">
+                    <span class="text-xs font-medium text-gray-500">Email</span>
+                    <span class="mt-1.5 text-lg text-gray-900">ariana@email.com</span>
+                  </div>
+                  <div class="flex flex-col grow shrink min-w-[240px] w-[290px]">
+                    <span class="text-xs font-medium text-gray-500">Phone Number</span>
+                    <span class="mt-1.5 text-lg text-gray-900">081234567890</span>
+                  </div>
+                </div>
+              </section>
+
+              <section class="payment-details flex overflow-hidden flex-col justify-center p-10 mt-6 w-full rounded-3xl border border-solid max-md:px-5 max-md:max-w-full" aria-labelledby="payment-details-title">
+                <div class="flex flex-wrap gap-10 justify-between items-start w-full max-md:max-w-full">
+                  <div class="flex flex-col justify-center min-w-[240px]">
+                    <h2 id="payment-details-title" class="text-base font-bold text-gray-900">PAYMENT DETAILS</h2>
+                    <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consecteur elit</p>
+                  </div>
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/50576698d565f3c8a33a7ed8e350bfa9e9691cdbaea044b5494572598512ef83?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 w-5 aspect-square" />
+                </div>
+                <hr class="mt-6 w-full bg-gray-100 border-gray-100 border-solid min-h-[1px] max-md:max-w-full" />
+                
+                <div class="flex flex-wrap gap-4 items-start mt-6 w-full max-md:max-w-full">
+                  <div class="flex flex-col grow shrink min-w-[240px] w-[290px]">
+                    <span class="text-xs font-medium text-gray-500">Payment Option</span>
+                    <span class="mt-1.5 text-lg text-gray-900">Down Payment</span>
+                  </div>
+                  <div class="flex flex-col grow shrink min-w-[240px] w-[290px]">
+                    <span class="text-xs font-medium text-gray-500">Payment Method</span>
+                    <span class="mt-1.5 text-lg text-gray-900">Credit Card (*097)</span>
+                  </div>
+                  <div class="flex flex-col grow shrink min-w-[240px] w-[290px]">
+                    <span class="text-xs font-medium text-gray-500">Total Amount</span>
+                    <span class="mt-1.5 text-lg text-gray-900">Rp5.000.000</span>
+                  </div>
+                  <div class="flex flex-col grow shrink min-w-[240px] w-[290px]">
+                    <span class="text-xs font-medium text-gray-500">Remaining Balance</span>
+                    <span class="mt-1.5 text-lg text-gray-900">Rp45.000.000</span>
+                  </div>
+                </div>
+              </section>
+          
+              <section
+              class="flex overflow-hidden flex-col justify-center p-10 mt-10 w-full rounded-3xl border border border-solid max-md:px-5 max-md:max-w-full"
+              >
+              <div class="flex flex-col justify-center self-start">
+                  <div class="text-base font-bold text-gray-900">SERVICE DETAILS</div>
+                  <div class="text-sm text-gray-500">
+                  Lorem ipsum dolor sit amet consecteur elit
+                  </div>
+              </div>
+              <div
+                  class="mt-6 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+              ></div>
+              <div class="flex flex-col mt-6 w-full max-md:max-w-full">
+                  <div
+                  class="flex overflow-hidden flex-col p-4 w-full bg-gray-50 rounded-2xl max-md:max-w-full"
+                  >
+                  <div
+                      class="flex flex-wrap gap-2.5 items-start w-full max-md:max-w-full"
+                  >
+                      <div
+                      class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                      >
+                      <div class="flex gap-1 justify-center items-center self-start">
+                          <div
+                          class="self-stretch my-auto text-sm font-bold text-gray-900"
+                          >
+                          31 Aug 2024 - 2 Jun 2024
+                          </div>
+                          <div
+                          class="gap-0.5 self-stretch px-2 py-0.5 my-auto text-xs text-gray-700 bg-gray-100 rounded-[60px]"
+                          >
+                          3 Days
+                          </div>
+                      </div>
+                      <div class="text-xs text-gray-500">Hotel & Venue</div>
+                      </div>
+                      <div
+                      class="flex gap-1 justify-center items-center text-sm font-bold text-blue-900 rounded-[60px]"
+                      >
+                      <div class="self-stretch my-auto">View Details</div>
+                      <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/51ea7ceed5e6b33240c4acc4a777617003eee89880ba9e2feacc03b3effa19ac?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                      />
+                      </div>
+                  </div>
+                  <div
+                      class="mt-2.5 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                  ></div>
+                  <div
+                      class="flex flex-wrap gap-2 items-start mt-2.5 w-full max-md:max-w-full"
+                  >
+                      <img
+                      loading="lazy"
+                      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                      class="object-contain shrink-0 rounded-lg aspect-square w-[46px]"
+                      />
+                      <div
+                      class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                      >
+                      <div
+                          class="flex flex-col justify-center w-full max-md:max-w-full"
+                      >
+                          <div class="text-base text-gray-900">
+                          Ijen Suites Resort & Convention
+                          </div>
+                          <div class="mt-1 text-xs text-gray-500">
+                          100 Guest, 25 Rooms, 1 Venue, 1 Day
+                          </div>
+                      </div>
+                      <div class="flex flex-col mt-4 w-full max-md:max-w-full">
+                          <div
+                          class="flex flex-wrap gap-4 items-start w-full max-md:max-w-full"
+                          >
+                          <div
+                              class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px]"
+                          >
+                              <div class="text-xs leading-5 text-gray-900">
+                              Room Breakfast
+                              </div>
+                              <div class="text-xs text-gray-500">
+                              100 Guest, 25 Rooms, 1 Day
+                              </div>
+                          </div>
+                          <div
+                              class="flex-1 shrink text-xs font-medium text-right text-gray-900 basis-0"
+                          >
+                              Rp12.000.000
+                          </div>
+                          </div>
+                          <div
+                          class="flex flex-wrap gap-4 items-start mt-2 w-full max-md:max-w-full"
+                          >
+                          <div
+                              class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px]"
+                          >
+                              <div class="text-xs leading-5 text-gray-900">
+                              Halfday Meeting Package
+                              </div>
+                              <div class="text-xs text-gray-500">100 Guest, 1 Day</div>
+                          </div>
+                          <div
+                              class="flex-1 shrink text-xs font-medium text-right text-gray-900 basis-0"
+                          >
+                              Rp8.000.000
+                          </div>
+                          </div>
+                          <div
+                          class="mt-2 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                          ></div>
+                          <div
+                          class="flex flex-wrap gap-10 justify-between items-center mt-2 w-full text-xs whitespace-nowrap max-md:max-w-full"
+                          >
+                          <div class="self-stretch my-auto text-gray-500">Subtotal</div>
+                          <div class="self-stretch my-auto font-bold text-gray-900">
+                              Rp24.000.000
+                          </div>
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                  <div
+                  class="flex overflow-hidden flex-col p-4 mt-3 w-full bg-gray-50 rounded-2xl max-md:max-w-full"
+                  >
+                  <div
+                      class="flex flex-wrap gap-2.5 items-start w-full max-md:max-w-full"
+                  >
+                      <div
+                      class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                      >
+                      <div class="flex gap-1 justify-center items-center self-start">
+                          <div
+                          class="self-stretch my-auto text-sm font-bold text-gray-900"
+                          >
+                          31 Aug 2024 - 2 Jun 2024
+                          </div>
+                          <div
+                          class="gap-0.5 self-stretch px-2 py-0.5 my-auto text-xs text-gray-700 bg-gray-100 rounded-[60px]"
+                          >
+                          3 Days
+                          </div>
+                      </div>
+                      <div class="text-xs text-gray-500">Bus</div>
+                      </div>
+                      <div
+                      class="flex gap-1 justify-center items-center text-sm font-bold text-blue-900 rounded-[60px]"
+                      >
+                      <div class="self-stretch my-auto">View Details</div>
+                      <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/b43f2360452431c5be5bf88a1be5faea1bf1d638326aca7c48fdd6bd0de7339c?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                      />
+                      </div>
+                  </div>
+                  <div
+                      class="mt-2.5 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                  ></div>
+                  <div
+                      class="flex flex-wrap gap-2 items-start mt-2.5 w-full text-xs max-md:max-w-full"
+                  >
+                      <img
+                      loading="lazy"
+                      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                      class="object-contain shrink-0 rounded-lg aspect-square w-[46px]"
+                      />
+                      <div
+                      class="flex flex-col justify-center text-gray-500 min-w-[240px] w-[317px]"
+                      >
+                      <div class="text-base text-gray-900">Arion Bus - Medium</div>
+                      <div
+                          class="flex gap-1 justify-center items-center self-start mt-1 whitespace-nowrap"
+                      >
+                          <div class="self-stretch my-auto">Jakarta</div>
+                          <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b7b02257549ea6ef8613f36d4151051f876dfe52e1020b3ce6885206f52cf74?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                          />
+                          <div class="self-stretch my-auto">Malang</div>
+                      </div>
+                      <div class="mt-1">100 Adult, 8 Bus</div>
+                      </div>
+                      <div
+                      class="flex-1 shrink font-bold text-right text-gray-900 basis-0"
+                      >
+                      Rp12.000.000
+                      </div>
+                  </div>
+                  </div>
+                  <div
+                  class="flex overflow-hidden flex-col p-4 mt-3 w-full bg-gray-50 rounded-2xl max-md:max-w-full"
+                  >
+                  <div
+                      class="flex flex-wrap gap-2.5 items-start w-full max-md:max-w-full"
+                  >
+                      <div
+                      class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                      >
+                      <div class="flex gap-1 justify-center items-center self-start">
+                          <div
+                          class="self-stretch my-auto text-sm font-bold text-gray-900"
+                          >
+                          31 Aug 2024 - 2 Jun 2024
+                          </div>
+                          <div
+                          class="gap-0.5 self-stretch px-2 py-0.5 my-auto text-xs text-gray-700 bg-gray-100 rounded-[60px]"
+                          >
+                          3 Days
+                          </div>
+                      </div>
+                      <div class="text-xs text-gray-500">Private Car</div>
+                      </div>
+                      <div
+                      class="flex gap-1 justify-center items-center text-sm font-bold text-blue-900 rounded-[60px]"
+                      >
+                      <div class="self-stretch my-auto">View Details</div>
+                      <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/9af7057b7d95df2359ce4150bd365c047d070bd18a2b23011c01acc8a6eecb59?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                      />
+                      </div>
+                  </div>
+                  <div
+                      class="mt-2.5 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                  ></div>
+                  <div
+                      class="flex flex-wrap gap-2 items-start mt-2.5 w-full text-xs max-md:max-w-full"
+                  >
+                      <img
+                      loading="lazy"
+                      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                      class="object-contain shrink-0 rounded-lg aspect-square w-[46px]"
+                      />
+                      <div
+                      class="flex flex-col justify-center text-gray-500 min-w-[240px] w-[317px]"
+                      >
+                      <div class="text-base text-gray-900">Toyota Avanza - 2021</div>
+                      <div
+                          class="flex gap-1 justify-center items-center self-start mt-1 whitespace-nowrap"
+                      >
+                          <div class="self-stretch my-auto">Jakarta</div>
+                          <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a8d103ba8a19f14e1298919cc2ece16595ab6f242c34ce1a8bcf2775ca94bd5e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                          />
+                          <div class="self-stretch my-auto">Malang</div>
+                      </div>
+                      <div class="mt-1">100 Adult, 8 Car</div>
+                      </div>
+                      <div
+                      class="flex-1 shrink font-bold text-right text-gray-900 basis-0"
+                      >
+                      Rp22.000.000
+                      </div>
+                  </div>
+                  </div>
+                  <div
+                  class="flex overflow-hidden flex-col p-4 mt-3 w-full bg-gray-50 rounded-2xl max-md:max-w-full"
+                  >
+                  <div
+                      class="flex flex-wrap gap-2.5 items-start w-full max-md:max-w-full"
+                  >
+                      <div
+                      class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                      >
+                      <div class="text-sm font-bold text-gray-900">31 Aug 2024</div>
+                      <div class="text-xs text-gray-500">Flight</div>
+                      </div>
+                      <div
+                      class="flex gap-1 justify-center items-center text-sm font-bold text-blue-900 rounded-[60px]"
+                      >
+                      <div class="self-stretch my-auto">View Details</div>
+                      <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/1e26c924514ad443227861b397ee42f5b09479fce8490adff99431c75d7c7e74?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                      />
+                      </div>
+                  </div>
+                  <div
+                      class="mt-2.5 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                  ></div>
+                  <div
+                      class="flex flex-wrap gap-2 items-start mt-2.5 w-full max-md:max-w-full"
+                  >
+                      <div
+                      class="flex overflow-hidden gap-2.5 justify-center items-center px-1 bg-white rounded-lg h-[46px] min-h-[46px] w-[46px]"
+                      >
+                      <img
+                          loading="lazy"
+                          srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain flex-1 shrink aspect-square basis-0 w-[38px]"
+                      />
+                      </div>
+                      <div
+                      class="flex flex-col justify-center text-xs text-gray-500 min-w-[240px] w-[317px]"
+                      >
+                      <div class="text-base text-gray-900">Lion Air + Citilink</div>
+                      <div
+                          class="flex gap-1 justify-center items-center self-start mt-1"
+                      >
+                          <div class="self-stretch my-auto">Jakarta (CGK)</div>
+                          <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/e6a955734d5b3cc4fda883f9f5c437a8cfa203c22d1f2f8ce7f0c518d0097c3e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                          />
+                          <div class="self-stretch my-auto">Denpasar (DPS)</div>
+                      </div>
+                      <div class="mt-1">100 Adult, Economy</div>
+                      </div>
+                      <div
+                      class="flex-1 shrink text-xs font-bold text-right text-gray-900 basis-0"
+                      >
+                      Rp12.000.000
+                      </div>
+                  </div>
+                  </div>
+                  <div
+                  class="flex overflow-hidden flex-col p-4 mt-3 w-full bg-gray-50 rounded-2xl max-md:max-w-full"
+                  >
+                  <div
+                      class="flex flex-wrap gap-2.5 items-start w-full max-md:max-w-full"
+                  >
+                      <div
+                      class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                      >
+                      <div class="text-sm font-bold text-gray-900">31 Aug 2024</div>
+                      <div class="text-xs text-gray-500">Train</div>
+                      </div>
+                      <div
+                      class="flex gap-1 justify-center items-center text-sm font-bold text-blue-900 rounded-[60px]"
+                      >
+                      <div class="self-stretch my-auto">View Details</div>
+                      <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/e5e4f1e423f8618f935e49e7a9422f4ad953fd043609b6a25ec890fa0707ccfa?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                      />
+                      </div>
+                  </div>
+                  <div
+                      class="mt-2.5 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                  ></div>
+                  <div
+                      class="flex flex-wrap gap-2 items-start mt-2.5 w-full max-md:max-w-full"
+                  >
+                      <div
+                      class="flex overflow-hidden gap-2.5 justify-center items-center px-1 bg-white rounded-lg h-[46px] min-h-[46px] w-[46px]"
+                      >
+                      <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee5d8e82bcea8b630ec60c7b458fc1ec9913ca73135ddf27ad33ad54c777cfc9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain self-stretch my-auto w-9 aspect-square"
+                      />
+                      </div>
+                      <div
+                      class="flex flex-col flex-1 shrink justify-center text-xs text-gray-500 basis-0 min-w-[240px] max-md:max-w-full"
+                      >
+                      <div class="text-base text-gray-900">Matarmaja</div>
+                      <div
+                          class="flex gap-1 justify-center items-center self-start mt-1"
+                      >
+                          <div class="self-stretch my-auto">
+                          Jakarta, Pasar Senen (PSE)
+                          </div>
+                          <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/b91d869914b05fe5101504d1adc79cfc34c1f591ca39e754e79f223a22d3fc3d?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                          />
+                          <div class="self-stretch my-auto">Surabaya, Gubeng (SGU)</div>
+                      </div>
+                      <div class="mt-1">100 Adult, Economy</div>
+                      </div>
+                      <div class="text-xs font-bold text-right text-gray-900 w-[189px]">
+                      Rp10.000.000
+                      </div>
+                  </div>
+                  </div>
+                  <div
+                  class="flex overflow-hidden flex-col p-4 mt-3 w-full bg-gray-50 rounded-2xl max-md:max-w-full"
+                  >
+                  <div
+                      class="flex flex-wrap gap-2.5 items-start w-full max-md:max-w-full"
+                  >
+                      <div
+                      class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                      >
+                      <div class="text-sm font-bold text-gray-900">31 Aug 2024</div>
+                      <div class="text-xs text-gray-500">Flight</div>
+                      </div>
+                      <div
+                      class="flex gap-1 justify-center items-center text-sm font-bold text-blue-900 rounded-[60px]"
+                      >
+                      <div class="self-stretch my-auto">View Details</div>
+                      <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a53430e9216a51d782349fe74edfa74bbc59249ab7d8bc3a9f09ca6497515915?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                      />
+                      </div>
+                  </div>
+                  <div
+                      class="mt-2.5 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                  ></div>
+                  <div
+                      class="flex flex-wrap gap-2 items-start mt-2.5 w-full max-md:max-w-full"
+                  >
+                      <div
+                      class="flex overflow-hidden gap-2.5 justify-center items-center px-1 bg-white rounded-lg h-[46px] min-h-[46px] w-[46px]"
+                      >
+                      <img
+                          loading="lazy"
+                          srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain flex-1 shrink aspect-square basis-0 w-[38px]"
+                      />
+                      </div>
+                      <div
+                      class="flex flex-col justify-center text-xs text-gray-500 min-w-[240px] w-[317px]"
+                      >
+                      <div class="text-base text-gray-900">Lion Air + Citilink</div>
+                      <div
+                          class="flex gap-1 justify-center items-center self-start mt-1"
+                      >
+                          <div class="self-stretch my-auto">Jakarta (CGK)</div>
+                          <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/70b2f50df98c21b4dbecf38f05924a0f22d27d2e09382a2573c78c8c146f9622?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                          class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                          />
+                          <div class="self-stretch my-auto">Denpasar (DPS)</div>
+                      </div>
+                      <div class="mt-1">100 Adult, Economy</div>
+                      </div>
+                      <div
+                      class="flex-1 shrink text-xs font-bold text-right text-gray-900 basis-0"
+                      >
+                      Rp12.000.000
+                      </div>
+                  </div>
+                  </div>
+              </div>
+              </section>
+  
+              <section class="cancellation-policy flex overflow-hidden flex-col justify-center p-10 mt-6 w-full rounded-3xl border border-solid max-md:px-5 max-md:max-w-full" aria-labelledby="cancellation-policy-title">
+                <div class="flex flex-col justify-center w-full max-md:max-w-full">
+                  <h2 id="cancellation-policy-title" class="text-base font-bold text-gray-900">Cancellation Policy</h2>
+                  <p class="text-sm leading-5 text-gray-500 max-md:max-w-full">
+                    We understand that plans may change, and we aim to be as flexible as possible to accommodate your needs. Cancellations made 30 days or more before the scheduled event date will receive a full refund, excluding a small processing fee to cover administrative costs. For cancellations made between 15 and 29 days before the event, a 50% refund of the total amount paid will be issued. Unfortunately, cancellations made within 14 days of the event are non-refundable, as preparations and commitments have already been made to secure services on your behalf. In the event of a cancellation, please contact our support team to initiate the process and address any additional questions. Note that refunds may take up to 10 business days to process.
+                  </p>
+                </div>
+                <button class="gap-1 self-start mt-6 text-sm font-bold text-blue-900 rounded-[60px]">See more details</button>
+              </section>
+
+            </div>
+          
+            <aside class="flex flex-col grow shrink text-base min-w-[240px] w-[381px] max-md:max-w-full">
+              <div class="next-steps flex flex-col p-10 w-full bg-gray-50 rounded-3xl max-md:px-5 max-md:max-w-full">
+                <div class="flex flex-col justify-center w-full">
+                  <h2 class="font-bold text-gray-900">NEXT STEPS</h2>
+                  <p class="leading-6 text-gray-500">
+                    A member of our team will reach out within 1–2 business days to confirm the details and finalize your event arrangements. In the meantime, feel free to download your RFQ and check your order history on your dashboard.
+                  </p>
+                </div>
+                <button class="gap-1.5 self-stretch px-5 py-3 mt-6 w-full font-bold text-blue-900 border border-blue-900 border-solid rounded-[60px]">
+                  Go to Dashboard
+                </button>
+              </div>
+          
+              <div class="support-info flex flex-col justify-center p-10 mt-6 w-full bg-gray-50 rounded-3xl max-md:px-5 max-md:max-w-full">
+                <div class="flex flex-col justify-center w-full">
+                  <h2 class="font-bold text-gray-900">SUPPORT & INFORMATION</h2>
+                  <p class="leading-6 text-blue-900">
+                    If you have any questions, please contact us at
+                    <a href="mailto:support@buatevent.id" class="text-blue-900 hover:underline">support@buatevent.id</a>
+                    or call us at
+                    <a href="tel:+62-xxx-xxxx" class="text-blue-900 hover:underline">+62-xxx-xxxx</a>
+                    for immediate assistance
+                  </p>
+                </div>
+              </div>
+            </aside>
+          </section>
+
+
+    </main>
+
+</body>
+
+    <!-- Footer -->
+    <footer">
+        <div class="flex flex-col px-16 py-6 max-md:px-5">
+            <div
+              class="flex flex-wrap gap-10 justify-between items-center w-full max-md:max-w-full"
+            >
+              <div
+                class="flex flex-wrap gap-10 items-center self-stretch my-auto text-base text-gray-300 min-w-[240px] max-md:max-w-full"
+              >
+                <div class="self-stretch my-auto text-blue-900"><a href="#">BECOME A PARTNER</a></div>
+                <div class="self-stretch my-auto"><a href="#">POLICY</a> </div>
+                <div class="self-stretch my-auto"><a href="#">TERMS & CONDITION</a></div>
+              </div>
+              <div class="flex gap-1 items-start self-stretch my-auto">
+                <div
+                  class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+                >
+                <a href="#">
+                  <img
+                    loading="lazy"
+                    src="assets/images/icon/ig.svg"
+                    class="object-contain w-3.5 aspect-square"
+                  />
+                  </a>
+                </div>
+                <div
+                  class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+                >
+                <a href="#">
+                  <img
+                    loading="lazy"
+                    src="assets/images/icon/tiktok.svg"
+                    class="object-contain w-3.5 aspect-square"
+                  />
+                  </a>
+                </div>
+                <div
+                  class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+                >
+                <a href="#">
+                  <img
+                    loading="lazy"
+                    src="assets/images/icon/x.svg"
+                    class="object-contain w-3.5 aspect-square"
+                  />
+                  </a>
+                </div>
+                <div
+                  class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+                >
+                <a href="#">
+                  <img
+                    loading="lazy"
+                    src="assets/images/icon/in.svg"
+                    class="object-contain w-3.5 aspect-[1.08]"
+                  />
+                  </a>
+                </div>
+                <div
+                  class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+                >
+                <a href="#">
+                  <img
+                    loading="lazy"
+                    src="assets/images/icon/facebook.svg"
+                    class="object-contain w-3.5 aspect-square"
+                  />
+                  </a>
+                </div>
+                <div
+                  class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+                >
+                <a href="#">
+                  <img
+                    loading="lazy"
+                    src="assets/images/icon/youtube.svg"
+                    class="object-contain w-3.5 aspect-square"
+                  />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-4 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+            ></div>
+            <div class=" mt-4 text-xs text-gray-300">©️ 2024 by Buatevent.id</div>
+          </div>
+    </footer>
+    <script>
+      function redirectToSearch() {
+        window.location.href = "search.html";
+      }
+    </script>
+    
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function(event) {
+          event.stopPropagation();
+          const menu = document.getElementById('mobile-menu');
+          const button = this;
+          const isExpanded = button.getAttribute('aria-expanded') === 'true';
+          
+          button.setAttribute('aria-expanded', !isExpanded);
+          menu.classList.toggle('hidden');
+          
+          if (!isExpanded) {
+            menu.classList.add('max-md:block');
+            const firstMenuItem = menu.querySelector('a, button');
+            if (firstMenuItem) firstMenuItem.focus();
+          } else {
+            menu.classList.remove('max-md:block');
+          }
+        });
+        
+        document.addEventListener('click', function(event) {
+          const menu = document.getElementById('mobile-menu');
+          const button = document.getElementById('mobile-menu-button');
+          
+          if (!menu.contains(event.target) && !button.contains(event.target)) {
+            menu.classList.add('hidden');
+            menu.classList.remove('max-md:block');
+            button.setAttribute('aria-expanded', 'false');
+          }
+        });
+        
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape') {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('mobile-menu-button');
+            
+            menu.classList.add('hidden');
+            menu.classList.remove('max-md:block');
+            button.setAttribute('aria-expanded', 'false');
+            button.focus();
+          }
+        });
+        
+        document.addEventListener('keydown', function(event) {
+          const menu = document.getElementById('mobile-menu');
+          if (!menu.classList.contains('hidden') && event.key === 'Tab') {
+            const focusableElements = menu.querySelectorAll('a[href], button, [tabindex]:not([tabindex="-1"])');
+            const firstFocusable = focusableElements[0];
+            const lastFocusable = focusableElements[focusableElements.length - 1];
+        
+            if (event.shiftKey && document.activeElement === firstFocusable) {
+              event.preventDefault();
+              lastFocusable.focus();
+            } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+              event.preventDefault();
+              firstFocusable.focus();
+            }
+          }
+        });
+        </script>   
+
+        
+<script>
+    document.querySelectorAll('button[aria-haspopup="true"]').forEach(button => {
+      button.addEventListener('click', () => {
+        const menu = button.nextElementSibling;
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        
+        button.setAttribute('aria-expanded', !isExpanded);
+        menu.classList.toggle('hidden');
+        
+        if (!isExpanded) {
+          const svg = button.querySelector('svg');
+          svg.style.transform = 'rotate(180deg)';
+        } else {
+          const svg = button.querySelector('svg');
+          svg.style.transform = 'rotate(0)';
+        }
+      });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (event) => {
+      const dropdowns = document.querySelectorAll('[role="menu"]');
+      dropdowns.forEach(dropdown => {
+        if (!dropdown.contains(event.target) && !event.target.closest('button[aria-haspopup="true"]')) {
+          dropdown.classList.add('hidden');
+          const button = dropdown.previousElementSibling;
+          button.setAttribute('aria-expanded', 'false');
+          const svg = button.querySelector('svg');
+          svg.style.transform = 'rotate(0)';
+        }
+      });
+    });
+    
+    // Handle keyboard navigation
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        const openMenus = document.querySelectorAll('[role="menu"]:not(.hidden)');
+        openMenus.forEach(menu => {
+          menu.classList.add('hidden');
+          const button = menu.previousElementSibling;
+          button.setAttribute('aria-expanded', 'false');
+          const svg = button.querySelector('svg');
+          svg.style.transform = 'rotate(0)';
+        });
+      }
+    });
+    </script>
+</body>
+</html>

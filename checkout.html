@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buatevent.id</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/icon/favicon.svg">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- Tambahkan di <head> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Tambahkan sebelum penutup <body> -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="assets/js/tailwind-3.4.js"></script>
+    <script src="assets/js/form-3.4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <style>
+        /* Custom range slider styles */
+        
+        .budget-range-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+        }
+
+        .slider-track {
+        position: relative;
+        width: 100%;
+        height: 5px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        overflow: hidden;
+        }
+
+        .slider-range {
+        position: absolute;
+        height: 100%;
+        background: linear-gradient(90deg, #08101B 0%, #2A5089 100%);
+        border-radius: 5px;
+        }
+
+        .slider-handle {
+        position: absolute;
+        top: 0px;
+        width: 18px;
+        height: 18px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        z-index: 10;
+        transition: box-shadow 0.2s;
+        }
+
+        .slider-handle:hover {
+        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .output-label {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #2A5089;
+        font-weight: bold;
+        }
+
+        .budget-label {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #08101B;
+        }
+        .slider-handle {
+            position: absolute;
+            top: 0px;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 10;
+            transition: box-shadow 0.2s;
+        }
+        
+        .slider-handle:hover {
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="checkbox"]:checked + label {
+          background-color: #4A90E2; /* Warna latar belakang saat dipilih */
+          color: white; /* Mengubah teks menjadi putih saat dipilih */
+        }
+
+    </style>
+<!-- body -->
+
+<main>
+    <section class="relative flex overflow-hidden flex-col w-full  max-md:pb-24 max-md:max-w-full" aria-label="Hero section">
+        <div
+            class="flex flex-wrap gap-10 justify-between items-center px-16 py-8 w-full min-h-[100px] max-md:px-5 max-md:max-w-full"
+            >
+            <div
+                class="flex flex-wrap gap-10 items-center self-stretch my-auto text-base text-gray-500 whitespace-nowrap min-w-[240px] max-md:max-w-full"
+            >
+                <img
+                loading="lazy"
+                srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                class="object-contain shrink-0 self-stretch my-auto aspect-[2.67] w-[140px]"
+                />
+                <div
+                class="flex gap-6 items-center self-stretch my-auto min-w-[240px] max-md:hidden max-md:max-w-full max-sm:hidden"
+                >
+                <div class="self-stretch my-auto">Home</div>
+                <div class="flex justify-center items-center self-stretch my-auto">
+                    <div class="self-stretch my-auto">Services</div>
+                    <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/457da01b92431674db4cd6ecd7c395162936ce4d307a679ea7cb2ba54182b074?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                    class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
+                    />
+                </div>
+                <div class="self-stretch my-auto">About</div>
+                <div class="self-stretch my-auto">Blog</div>
+                <div class="self-stretch my-auto">Promo</div>
+                <div class="self-stretch my-auto">Contact</div>
+                </div>
+            </div>
+            <div class="flex gap-2.5 items-center self-stretch my-auto w-[132px]">
+                <div class="flex gap-2 items-center self-stretch my-auto w-[132px]">
+                <img
+                    loading="lazy"
+                    srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                    class="object-contain shrink-0 self-stretch my-auto rounded-full aspect-square w-[41px]"
+                />
+                <div
+                    class="flex flex-col flex-1 shrink justify-center self-stretch my-auto basis-0"
+                >
+                    <div class="flex flex-col w-full">
+                    <div class="text-xs text-gray-500">Hello</div>
+                    <div
+                        class="flex gap-0.5 justify-center items-center w-full text-xs font-bold text-gray-700"
+                    >
+                        <div class="flex-1 shrink self-stretch my-auto basis-0">
+                        Yefi Chlara
+                        </div>
+                        <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/dd697b63ada6b6b3c4d152889839f05c07074934108279d77405e1a1190f8fed?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                        />
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div
+        class="flex overflow-auto flex-row gap-6 justify-center items-center px-16 py-10 mx-auto w-full max-md:px-5 max-md:max-w-full"
+        >
+        <div
+            class="flex flex-wrap gap-4 items-center self-stretch my-auto min-w-[240px] w-[888px]"
+        >
+            <div
+            class="flex flex-col items-center self-stretch my-auto text-sm text-center w-[37px]"
+            >
+            <div
+                class="px-2.5 py-2.5 text-white whitespace-nowrap bg-blue-900 h-[37px] rounded-[60px] w-[37px]"
+            >
+                1
+            </div>
+            <div class="mt-1 text-gray-700">Order Details</div>
+            </div>
+            <div
+            class="flex flex-col flex-1 shrink justify-center self-stretch py-5 my-auto basis-0 min-h-[37px] min-w-[240px]"
+            >
+            <div
+                class="w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px]"
+            ></div>
+            </div>
+            <div
+            class="flex flex-col items-center self-stretch my-auto text-sm text-center whitespace-nowrap w-[37px]"
+            >
+            <div
+                class="px-2.5 py-2.5 text-gray-700 bg-gray-100 h-[37px] rounded-[60px] w-[37px]"
+            >
+                2
+            </div>
+            <div class="mt-1 text-gray-300">Payment</div>
+            </div>
+            <div
+            class="flex flex-col flex-1 shrink justify-center self-stretch py-5 my-auto basis-0 min-h-[37px] min-w-[240px]"
+            >
+            <div
+                class="w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px]"
+            ></div>
+            </div>
+            <div
+            class="flex flex-col items-center self-stretch my-auto text-sm text-center whitespace-nowrap w-[37px]"
+            >
+            <div
+                class="px-2.5 py-2.5 text-gray-700 bg-gray-100 h-[37px] rounded-[60px] w-[37px]"
+            >
+                3
+            </div>
+            <div class="mt-1 text-gray-300">Complete</div>
+            </div>
+        </div>
+    </div>
+ 
+
+    <div
+        class="flex flex-wrap gap-6 items-start px-16 w-full max-md:px-5 max-md:max-w-full"
+        >
+        <div
+            class="flex flex-col grow shrink justify-center min-w-[240px] w-[725px] max-md:max-w-full"
+        >
+            <div
+            class="flex overflow-hidden flex-col justify-center p-10 w-full rounded-3xl border border border-solid max-md:px-5 max-md:max-w-full"
+            >
+            <div class="flex flex-col justify-center self-start">
+                <div class="text-base font-bold text-gray-900">PERSONAL DETAILS</div>
+                <div class="text-sm text-gray-500">
+                Lorem ipsum dolor sit amet consecteur elit
+                </div>
+            </div>
+            <div
+                class="mt-6 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+            ></div>
+            <div class="flex flex-col mt-6 w-full max-md:max-w-full">
+                <div class="flex flex-col w-full max-md:max-w-full">
+                <div class="text-xs font-medium text-gray-500">Full Name</div>
+                <div
+                    class="flex-1 shrink gap-1 self-stretch p-3 mt-1.5 w-full text-lg text-gray-900 bg-gray-50 rounded-xl max-md:max-w-full"
+                >
+                    Ariana Gomez
+                </div>
+                </div>
+                <div
+                class="flex flex-wrap gap-4 items-start mt-4 w-full max-md:max-w-full"
+                >
+                <div class="flex flex-col flex-1 shrink basis-0 min-w-[240px]">
+                    <div class="text-xs font-medium text-gray-500">Email Address</div>
+                    <div
+                    class="flex gap-1 items-center p-3 mt-1.5 w-full text-lg text-gray-900 whitespace-nowrap bg-gray-50 rounded-xl"
+                    >
+                    <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/bea4e1fc207ac8e0c2ae22d0993a85614442a74707f49d6b024e2dd943d213d3?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                    />
+                    <div class="flex-1 shrink self-stretch my-auto basis-0">
+                        ariana@gmail.com
+                    </div>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-1 shrink basis-0 min-w-[240px]">
+                    <div class="text-xs font-medium text-gray-500">Phone Number</div>
+                    <div
+                    class="flex gap-1 items-center p-3 mt-1.5 w-full text-lg text-gray-900 whitespace-nowrap bg-gray-50 rounded-xl"
+                    >
+                    <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/0a557b148b28a5107c509fc24ff1233145b3dbc7557a94a408ffabe12f6abdf0?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                    />
+                    <div class="flex-1 shrink self-stretch my-auto basis-0">
+                        081234567890
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="flex flex-col mt-4 w-full min-h-[140px] max-md:max-w-full">
+                <div class="text-xs font-medium text-gray-500">Notes</div>
+                <div
+                    class="flex-1 shrink gap-1 p-3 mt-1.5 text-lg text-gray-900 bg-gray-50 rounded-xl size-full max-md:max-w-full"
+                >
+                    Lorem ipsum dolor sit amet consecteur elit
+                </div>
+                </div>
+            </div>
+            </div>
+            <div
+            class="flex overflow-hidden flex-col justify-center p-10 mt-10 w-full rounded-3xl border border border-solid max-md:px-5 max-md:max-w-full"
+            >
+            <div class="flex flex-col justify-center self-start">
+                <div class="text-base font-bold text-gray-900">ORDER LIST</div>
+                <div class="text-sm text-gray-500">
+                Lorem ipsum dolor sit amet consecteur elit
+                </div>
+            </div>
+            <div
+                class="mt-6 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+            ></div>
+            <div class="flex flex-col mt-6 w-full max-md:max-w-full">
+                <div
+                class="flex overflow-hidden flex-col p-4 w-full bg-gray-50 rounded-2xl max-md:max-w-full"
+                >
+                <div
+                    class="flex flex-wrap gap-2.5 items-start w-full max-md:max-w-full"
+                >
+                    <div
+                    class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                    >
+                    <div class="flex gap-1 justify-center items-center self-start">
+                        <div
+                        class="self-stretch my-auto text-sm font-bold text-gray-900"
+                        >
+                        31 Aug 2024 - 2 Jun 2024
+                        </div>
+                        <div
+                        class="gap-0.5 self-stretch px-2 py-0.5 my-auto text-xs text-gray-700 bg-gray-100 rounded-[60px]"
+                        >
+                        3 Days
+                        </div>
+                    </div>
+                    <div class="text-xs text-gray-500">Hotel & Venue</div>
+                    </div>
+                    <div
+                    class="flex gap-1 justify-center items-center text-sm font-bold text-blue-900 rounded-[60px]"
+                    >
+                    <div class="self-stretch my-auto">View Details</div>
+                    <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/51ea7ceed5e6b33240c4acc4a777617003eee89880ba9e2feacc03b3effa19ac?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                    />
+                    </div>
+                </div>
+                <div
+                    class="mt-2.5 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                ></div>
+                <div
+                    class="flex flex-wrap gap-2 items-start mt-2.5 w-full max-md:max-w-full"
+                >
+                    <img
+                    loading="lazy"
+                    srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/897fd8eddee39d2000fd5f831246fbfc74c3471f87c938e3c221c46e923dda2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                    class="object-contain shrink-0 rounded-lg aspect-square w-[46px]"
+                    />
+                    <div
+                    class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                    >
+                    <div
+                        class="flex flex-col justify-center w-full max-md:max-w-full"
+                    >
+                        <div class="text-base text-gray-900">
+                        Ijen Suites Resort & Convention
+                        </div>
+                        <div class="mt-1 text-xs text-gray-500">
+                        100 Guest, 25 Rooms, 1 Venue, 1 Day
+                        </div>
+                    </div>
+                    <div class="flex flex-col mt-4 w-full max-md:max-w-full">
+                        <div
+                        class="flex flex-wrap gap-4 items-start w-full max-md:max-w-full"
+                        >
+                        <div
+                            class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px]"
+                        >
+                            <div class="text-xs leading-5 text-gray-900">
+                            Room Breakfast
+                            </div>
+                            <div class="text-xs text-gray-500">
+                            100 Guest, 25 Rooms, 1 Day
+                            </div>
+                        </div>
+                        <div
+                            class="flex-1 shrink text-xs font-medium text-right text-gray-900 basis-0"
+                        >
+                            Rp12.000.000
+                        </div>
+                        </div>
+                        <div
+                        class="flex flex-wrap gap-4 items-start mt-2 w-full max-md:max-w-full"
+                        >
+                        <div
+                            class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px]"
+                        >
+                            <div class="text-xs leading-5 text-gray-900">
+                            Halfday Meeting Package
+                            </div>
+                            <div class="text-xs text-gray-500">100 Guest, 1 Day</div>
+                        </div>
+                        <div
+                            class="flex-1 shrink text-xs font-medium text-right text-gray-900 basis-0"
+                        >
+                            Rp8.000.000
+                        </div>
+                        </div>
+                        <div
+                        class="mt-2 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                        ></div>
+                        <div
+                        class="flex flex-wrap gap-10 justify-between items-center mt-2 w-full text-xs whitespace-nowrap max-md:max-w-full"
+                        >
+                        <div class="self-stretch my-auto text-gray-500">Subtotal</div>
+                        <div class="self-stretch my-auto font-bold text-gray-900">
+                            Rp24.000.000
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div
+                class="flex overflow-hidden flex-col p-4 mt-3 w-full bg-gray-50 rounded-2xl max-md:max-w-full"
+                >
+                <div
+                    class="flex flex-wrap gap-2.5 items-start w-full max-md:max-w-full"
+                >
+                    <div
+                    class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                    >
+                    <div class="flex gap-1 justify-center items-center self-start">
+                        <div
+                        class="self-stretch my-auto text-sm font-bold text-gray-900"
+                        >
+                        31 Aug 2024 - 2 Jun 2024
+                        </div>
+                        <div
+                        class="gap-0.5 self-stretch px-2 py-0.5 my-auto text-xs text-gray-700 bg-gray-100 rounded-[60px]"
+                        >
+                        3 Days
+                        </div>
+                    </div>
+                    <div class="text-xs text-gray-500">Bus</div>
+                    </div>
+                    <div
+                    class="flex gap-1 justify-center items-center text-sm font-bold text-blue-900 rounded-[60px]"
+                    >
+                    <div class="self-stretch my-auto">View Details</div>
+                    <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/b43f2360452431c5be5bf88a1be5faea1bf1d638326aca7c48fdd6bd0de7339c?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                    />
+                    </div>
+                </div>
+                <div
+                    class="mt-2.5 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                ></div>
+                <div
+                    class="flex flex-wrap gap-2 items-start mt-2.5 w-full text-xs max-md:max-w-full"
+                >
+                    <img
+                    loading="lazy"
+                    srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/32505f6d9caffa5c0c6546a8e4af3d417d737aab2131ac574eddf5316b7575cb?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                    class="object-contain shrink-0 rounded-lg aspect-square w-[46px]"
+                    />
+                    <div
+                    class="flex flex-col justify-center text-gray-500 min-w-[240px] w-[317px]"
+                    >
+                    <div class="text-base text-gray-900">Arion Bus - Medium</div>
+                    <div
+                        class="flex gap-1 justify-center items-center self-start mt-1 whitespace-nowrap"
+                    >
+                        <div class="self-stretch my-auto">Jakarta</div>
+                        <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b7b02257549ea6ef8613f36d4151051f876dfe52e1020b3ce6885206f52cf74?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                        />
+                        <div class="self-stretch my-auto">Malang</div>
+                    </div>
+                    <div class="mt-1">100 Adult, 8 Bus</div>
+                    </div>
+                    <div
+                    class="flex-1 shrink font-bold text-right text-gray-900 basis-0"
+                    >
+                    Rp12.000.000
+                    </div>
+                </div>
+                </div>
+                <div
+                class="flex overflow-hidden flex-col p-4 mt-3 w-full bg-gray-50 rounded-2xl max-md:max-w-full"
+                >
+                <div
+                    class="flex flex-wrap gap-2.5 items-start w-full max-md:max-w-full"
+                >
+                    <div
+                    class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                    >
+                    <div class="flex gap-1 justify-center items-center self-start">
+                        <div
+                        class="self-stretch my-auto text-sm font-bold text-gray-900"
+                        >
+                        31 Aug 2024 - 2 Jun 2024
+                        </div>
+                        <div
+                        class="gap-0.5 self-stretch px-2 py-0.5 my-auto text-xs text-gray-700 bg-gray-100 rounded-[60px]"
+                        >
+                        3 Days
+                        </div>
+                    </div>
+                    <div class="text-xs text-gray-500">Private Car</div>
+                    </div>
+                    <div
+                    class="flex gap-1 justify-center items-center text-sm font-bold text-blue-900 rounded-[60px]"
+                    >
+                    <div class="self-stretch my-auto">View Details</div>
+                    <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/9af7057b7d95df2359ce4150bd365c047d070bd18a2b23011c01acc8a6eecb59?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                    />
+                    </div>
+                </div>
+                <div
+                    class="mt-2.5 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                ></div>
+                <div
+                    class="flex flex-wrap gap-2 items-start mt-2.5 w-full text-xs max-md:max-w-full"
+                >
+                    <img
+                    loading="lazy"
+                    srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c48f484dc113e0aaaae1324965bf55a54e1f6898a475db6fec406da5ced6f64?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                    class="object-contain shrink-0 rounded-lg aspect-square w-[46px]"
+                    />
+                    <div
+                    class="flex flex-col justify-center text-gray-500 min-w-[240px] w-[317px]"
+                    >
+                    <div class="text-base text-gray-900">Toyota Avanza - 2021</div>
+                    <div
+                        class="flex gap-1 justify-center items-center self-start mt-1 whitespace-nowrap"
+                    >
+                        <div class="self-stretch my-auto">Jakarta</div>
+                        <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/a8d103ba8a19f14e1298919cc2ece16595ab6f242c34ce1a8bcf2775ca94bd5e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                        />
+                        <div class="self-stretch my-auto">Malang</div>
+                    </div>
+                    <div class="mt-1">100 Adult, 8 Car</div>
+                    </div>
+                    <div
+                    class="flex-1 shrink font-bold text-right text-gray-900 basis-0"
+                    >
+                    Rp22.000.000
+                    </div>
+                </div>
+                </div>
+                <div
+                class="flex overflow-hidden flex-col p-4 mt-3 w-full bg-gray-50 rounded-2xl max-md:max-w-full"
+                >
+                <div
+                    class="flex flex-wrap gap-2.5 items-start w-full max-md:max-w-full"
+                >
+                    <div
+                    class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                    >
+                    <div class="text-sm font-bold text-gray-900">31 Aug 2024</div>
+                    <div class="text-xs text-gray-500">Flight</div>
+                    </div>
+                    <div
+                    class="flex gap-1 justify-center items-center text-sm font-bold text-blue-900 rounded-[60px]"
+                    >
+                    <div class="self-stretch my-auto">View Details</div>
+                    <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/1e26c924514ad443227861b397ee42f5b09479fce8490adff99431c75d7c7e74?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                    />
+                    </div>
+                </div>
+                <div
+                    class="mt-2.5 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                ></div>
+                <div
+                    class="flex flex-wrap gap-2 items-start mt-2.5 w-full max-md:max-w-full"
+                >
+                    <div
+                    class="flex overflow-hidden gap-2.5 justify-center items-center px-1 bg-white rounded-lg h-[46px] min-h-[46px] w-[46px]"
+                    >
+                    <img
+                        loading="lazy"
+                        srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain flex-1 shrink aspect-square basis-0 w-[38px]"
+                    />
+                    </div>
+                    <div
+                    class="flex flex-col justify-center text-xs text-gray-500 min-w-[240px] w-[317px]"
+                    >
+                    <div class="text-base text-gray-900">Lion Air + Citilink</div>
+                    <div
+                        class="flex gap-1 justify-center items-center self-start mt-1"
+                    >
+                        <div class="self-stretch my-auto">Jakarta (CGK)</div>
+                        <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/e6a955734d5b3cc4fda883f9f5c437a8cfa203c22d1f2f8ce7f0c518d0097c3e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                        />
+                        <div class="self-stretch my-auto">Denpasar (DPS)</div>
+                    </div>
+                    <div class="mt-1">100 Adult, Economy</div>
+                    </div>
+                    <div
+                    class="flex-1 shrink text-xs font-bold text-right text-gray-900 basis-0"
+                    >
+                    Rp12.000.000
+                    </div>
+                </div>
+                </div>
+                <div
+                class="flex overflow-hidden flex-col p-4 mt-3 w-full bg-gray-50 rounded-2xl max-md:max-w-full"
+                >
+                <div
+                    class="flex flex-wrap gap-2.5 items-start w-full max-md:max-w-full"
+                >
+                    <div
+                    class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                    >
+                    <div class="text-sm font-bold text-gray-900">31 Aug 2024</div>
+                    <div class="text-xs text-gray-500">Train</div>
+                    </div>
+                    <div
+                    class="flex gap-1 justify-center items-center text-sm font-bold text-blue-900 rounded-[60px]"
+                    >
+                    <div class="self-stretch my-auto">View Details</div>
+                    <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/e5e4f1e423f8618f935e49e7a9422f4ad953fd043609b6a25ec890fa0707ccfa?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                    />
+                    </div>
+                </div>
+                <div
+                    class="mt-2.5 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                ></div>
+                <div
+                    class="flex flex-wrap gap-2 items-start mt-2.5 w-full max-md:max-w-full"
+                >
+                    <div
+                    class="flex overflow-hidden gap-2.5 justify-center items-center px-1 bg-white rounded-lg h-[46px] min-h-[46px] w-[46px]"
+                    >
+                    <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee5d8e82bcea8b630ec60c7b458fc1ec9913ca73135ddf27ad33ad54c777cfc9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain self-stretch my-auto w-9 aspect-square"
+                    />
+                    </div>
+                    <div
+                    class="flex flex-col flex-1 shrink justify-center text-xs text-gray-500 basis-0 min-w-[240px] max-md:max-w-full"
+                    >
+                    <div class="text-base text-gray-900">Matarmaja</div>
+                    <div
+                        class="flex gap-1 justify-center items-center self-start mt-1"
+                    >
+                        <div class="self-stretch my-auto">
+                        Jakarta, Pasar Senen (PSE)
+                        </div>
+                        <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/b91d869914b05fe5101504d1adc79cfc34c1f591ca39e754e79f223a22d3fc3d?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                        />
+                        <div class="self-stretch my-auto">Surabaya, Gubeng (SGU)</div>
+                    </div>
+                    <div class="mt-1">100 Adult, Economy</div>
+                    </div>
+                    <div class="text-xs font-bold text-right text-gray-900 w-[189px]">
+                    Rp10.000.000
+                    </div>
+                </div>
+                </div>
+                <div
+                class="flex overflow-hidden flex-col p-4 mt-3 w-full bg-gray-50 rounded-2xl max-md:max-w-full"
+                >
+                <div
+                    class="flex flex-wrap gap-2.5 items-start w-full max-md:max-w-full"
+                >
+                    <div
+                    class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px] max-md:max-w-full"
+                    >
+                    <div class="text-sm font-bold text-gray-900">31 Aug 2024</div>
+                    <div class="text-xs text-gray-500">Flight</div>
+                    </div>
+                    <div
+                    class="flex gap-1 justify-center items-center text-sm font-bold text-blue-900 rounded-[60px]"
+                    >
+                    <div class="self-stretch my-auto">View Details</div>
+                    <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/a53430e9216a51d782349fe74edfa74bbc59249ab7d8bc3a9f09ca6497515915?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                    />
+                    </div>
+                </div>
+                <div
+                    class="mt-2.5 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+                ></div>
+                <div
+                    class="flex flex-wrap gap-2 items-start mt-2.5 w-full max-md:max-w-full"
+                >
+                    <div
+                    class="flex overflow-hidden gap-2.5 justify-center items-center px-1 bg-white rounded-lg h-[46px] min-h-[46px] w-[46px]"
+                    >
+                    <img
+                        loading="lazy"
+                        srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5299f28cc22eb1a92b3460e867c1d500136ddfc42f49dc6a530407e8554214b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain flex-1 shrink aspect-square basis-0 w-[38px]"
+                    />
+                    </div>
+                    <div
+                    class="flex flex-col justify-center text-xs text-gray-500 min-w-[240px] w-[317px]"
+                    >
+                    <div class="text-base text-gray-900">Lion Air + Citilink</div>
+                    <div
+                        class="flex gap-1 justify-center items-center self-start mt-1"
+                    >
+                        <div class="self-stretch my-auto">Jakarta (CGK)</div>
+                        <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/70b2f50df98c21b4dbecf38f05924a0f22d27d2e09382a2573c78c8c146f9622?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                        />
+                        <div class="self-stretch my-auto">Denpasar (DPS)</div>
+                    </div>
+                    <div class="mt-1">100 Adult, Economy</div>
+                    </div>
+                    <div
+                    class="flex-1 shrink text-xs font-bold text-right text-gray-900 basis-0"
+                    >
+                    Rp12.000.000
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div
+            class="flex flex-col grow shrink p-10 bg-gray-50 rounded-3xl min-w-[240px] w-[381px] max-md:px-5 max-md:max-w-full"
+        >
+            <div class="flex flex-col justify-center self-start">
+            <div class="text-base font-bold text-gray-900">SUMMARY</div>
+            <div class="text-sm text-gray-500">6 items in total</div>
+            </div>
+            <div
+            class="mt-6 w-full bg-gray-200 border border border-solid min-h-[1px]"
+            ></div>
+            <div class="flex flex-col mt-6 w-full">
+            <div class="text-xs font-medium text-gray-500">Discount Code</div>
+            <div
+                class="flex gap-1 items-center p-3 mt-1.5 w-full text-lg whitespace-nowrap bg-white rounded-xl"
+            >
+                <input 
+                type="text" 
+                value="NEWYEAR2025" 
+                class="flex-1 shrink self-stretch my-auto text-gray-900 basis-0 border-none focus:ring-0" 
+                
+            />
+            <div class="self-stretch my-auto text-blue-900">Apply</div>
+            </div>
+            </div>
+            <div class="flex flex-col mt-6 w-full text-base min-h-[240px]">
+            <div class="flex gap-10 justify-between items-center w-full">
+                <div class="self-stretch my-auto text-gray-500">Trip Price</div>
+                <div class="self-stretch my-auto text-right text-gray-900">
+                Rp50.000.000
+                </div>
+            </div>
+            <div
+                class="flex gap-10 justify-between items-center mt-3 w-full whitespace-nowrap"
+            >
+                <div class="self-stretch my-auto text-gray-500">Tax</div>
+                <div class="self-stretch my-auto text-right text-gray-900">
+                Rp5.000.000
+                </div>
+            </div>
+            <div
+                class="flex gap-10 justify-between items-center mt-3 w-full whitespace-nowrap"
+            >
+                <div class="self-stretch my-auto text-gray-500">Discount</div>
+                <div class="self-stretch my-auto text-right text-gray-900">
+                -Rp5.000.000
+                </div>
+            </div>
+            <div
+                class="mt-3 w-full bg-gray-200 border border border-solid min-h-[1px]"
+            ></div>
+            <div
+                class="flex gap-10 justify-between items-center mt-3 w-full text-gray-900 whitespace-nowrap"
+            >
+                <div class="self-stretch my-auto font-medium">Subtotal</div>
+                <div class="self-stretch my-auto font-bold text-right">
+                Rp50.000.000
+                </div>
+            </div>
+            </div>
+            <div class="flex gap-10 justify-between items-center mt-6 w-full text-lg">
+            <div class="self-stretch my-auto text-gray-500">Total Payment</div>
+            <div class="self-stretch my-auto font-bold text-right text-gray-900">
+                Rp50.000.000
+            </div>
+            </div>
+            <button
+            class="gap-1.5 self-stretch px-5 py-3 mt-6 w-full text-base font-bold text-gray-50 whitespace-nowrap bg-slate-950 rounded-[60px]"
+            type="button"
+            onclick="window.location.href='payment.html';">
+            Checkout
+            </button>
+            
+        </div>
+    </div>
+</main>
+
+<footer class="pt-20">
+    <div class="flex flex-col px-16 py-6 max-md:px-5">
+        <div
+            class="flex flex-wrap gap-10 justify-between items-center w-full max-md:max-w-full"
+        >
+            <div
+            class="flex flex-wrap gap-10 items-center self-stretch my-auto text-base text-gray-300 min-w-[240px] max-md:max-w-full"
+            >
+            <div class="self-stretch my-auto text-blue-900"><a href="#">BECOME A PARTNER</a></div>
+            <div class="self-stretch my-auto"><a href="#">POLICY</a> </div>
+            <div class="self-stretch my-auto"><a href="#">TERMS & CONDITION</a></div>
+            </div>
+            <div class="flex gap-1 items-start self-stretch my-auto">
+            <div
+                class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+            >
+            <a href="#">
+                <img
+                loading="lazy"
+                src="assets/images/icon/ig.svg"
+                class="object-contain w-3.5 aspect-square"
+                />
+                </a>
+            </div>
+            <div
+                class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+            >
+            <a href="#">
+                <img
+                loading="lazy"
+                src="assets/images/icon/tiktok.svg"
+                class="object-contain w-3.5 aspect-square"
+                />
+                </a>
+            </div>
+            <div
+                class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+            >
+            <a href="#">
+                <img
+                loading="lazy"
+                src="assets/images/icon/x.svg"
+                class="object-contain w-3.5 aspect-square"
+                />
+                </a>
+            </div>
+            <div
+                class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+            >
+            <a href="#">
+                <img
+                loading="lazy"
+                src="assets/images/icon/in.svg"
+                class="object-contain w-3.5 aspect-[1.08]"
+                />
+                </a>
+            </div>
+            <div
+                class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+            >
+            <a href="#">
+                <img
+                loading="lazy"
+                src="assets/images/icon/facebook.svg"
+                class="object-contain w-3.5 aspect-square"
+                />
+                </a>
+            </div>
+            <div
+                class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+            >
+            <a href="#">
+                <img
+                loading="lazy"
+                src="assets/images/icon/youtube.svg"
+                class="object-contain w-3.5 aspect-square"
+                />
+                </a>
+            </div>
+            </div>
+        </div>
+        <div
+            class="mt-4 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+        ></div>
+        <div class=" mt-4 text-xs text-gray-300">©️ 2024 by Buatevent.id</div>
+        </div>
+</footer>
+      

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buatevent.id</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/icon/favicon.svg">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- Tambahkan di <head> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Tambahkan sebelum penutup <body> -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="assets/js/tailwind-3.4.js"></script>
+    <script src="assets/js/form-3.4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <style>
+        /* Custom range slider styles */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        .budget-range-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+        }
+
+        .slider-track {
+        position: relative;
+        width: 100%;
+        height: 5px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        overflow: hidden;
+        }
+
+        .slider-range {
+        position: absolute;
+        height: 100%;
+        background: linear-gradient(90deg, #08101B 0%, #2A5089 100%);
+        border-radius: 5px;
+        }
+
+        .slider-handle {
+        position: absolute;
+        top: 0px;
+        width: 18px;
+        height: 18px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        z-index: 10;
+        transition: box-shadow 0.2s;
+        }
+
+        .slider-handle:hover {
+        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .output-label {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #2A5089;
+        font-weight: bold;
+        }
+
+        .budget-label {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #08101B;
+        }
+        .slider-handle {
+            position: absolute;
+            top: 0px;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 10;
+            transition: box-shadow 0.2s;
+        }
+        
+        .slider-handle:hover {
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="checkbox"]:checked + label {
+          background-color: #4A90E2; /* Warna latar belakang saat dipilih */
+          color: white; /* Mengubah teks menjadi putih saat dipilih */
+        }
+
+        [type='text'], input:where(:not([type])), [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select {
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #fff;
+            border-color: #e6e6e6 !important;
+        }
+    </style>
+<!-- body -->
+
+<main>
+    <section class="relative flex overflow-hidden flex-col w-full  max-md:pb-24 max-md:max-w-full" aria-label="Hero section">
+        <div
+            class="flex flex-wrap gap-10 justify-between items-center px-16 py-8 w-full min-h-[100px] max-md:px-5 max-md:max-w-full"
+            >
+            <div
+                class="flex flex-wrap gap-10 items-center self-stretch my-auto text-base text-gray-500 whitespace-nowrap min-w-[240px] max-md:max-w-full"
+            >
+                <img
+                loading="lazy"
+                srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c04870a61072da644280db05a111b624180ad4bca3b540b911b6f91cdfd77a9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                class="object-contain shrink-0 self-stretch my-auto aspect-[2.67] w-[200px]"
+                />
+                <div
+                class="flex gap-6 items-center self-stretch my-auto min-w-[240px] max-md:hidden max-md:max-w-full max-sm:hidden"
+                >
+                <a href="index.html" class="self-stretch my-auto">Home</a>
+                <div class="flex justify-center items-center self-stretch my-auto">
+                    <div class="self-stretch my-auto">Services</div>
+                    <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/457da01b92431674db4cd6ecd7c395162936ce4d307a679ea7cb2ba54182b074?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                    class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
+                    />
+                </div>
+                <div class="self-stretch my-auto">About</div>
+                <div class="self-stretch my-auto">Blog</div>
+                <div class="self-stretch my-auto">Promo</div>
+                <div class="self-stretch my-auto">Contact</div>
+                </div>
+            </div>
+            <div class="flex gap-2.5 items-center self-stretch my-auto w-[132px]">
+                <div class="flex gap-2 items-center self-stretch my-auto w-[132px]">
+                <img
+                    loading="lazy"
+                    srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/be56bff72be67c7c7156fdac9d02c90921f4ec9fd65183e378152f4fe0922029?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                    class="object-contain shrink-0 self-stretch my-auto rounded-full aspect-square w-[41px]"
+                />
+                <div
+                    class="flex flex-col flex-1 shrink justify-center self-stretch my-auto basis-0"
+                >
+                    <div class="flex flex-col w-full">
+                    <div class="text-xs text-gray-500">Hello</div>
+                    <div
+                        class="flex gap-0.5 justify-center items-center w-full text-xs font-bold text-gray-700"
+                    >
+                        <div class="flex-1 shrink self-stretch my-auto basis-0">
+                        Yefi Chlara
+                        </div>
+                        <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/dd697b63ada6b6b3c4d152889839f05c07074934108279d77405e1a1190f8fed?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                        class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                        />
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <nav aria-label="Order Progress" class="flex overflow-auto flex-row gap-6 justify-center items-center px-16 py-10 mx-auto w-full max-md:px-5 max-md:max-w-full">
+            <div role="list" class="flex flex-wrap gap-4 items-center self-stretch my-auto min-w-[240px] w-[888px] max-sm:gap-24 max-sm:justify-center max-sm:items-center max-sm:ml-0">
+              <div role="listitem" class="flex flex-col items-center self-stretch my-auto text-sm text-center w-[37px]">
+                <div role="button" tabindex="0" aria-current="step" class="flex items-center justify-center px-2.5 text-white whitespace-nowrap bg-blue-900 h-[37px] rounded-[60px] w-[37px]" aria-label="Step 1: Order Details - Current Step">
+                  1
+                </div>
+                <div class="mt-1 text-gray-700">Order Details</div>
+              </div>
+              <div class="flex flex-col flex-1 shrink justify-center self-stretch py-5 my-auto basis-0 min-h-[37px] min-w-[240px] max-sm:hidden" role="separator" aria-hidden="true">
+                <div class="w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px]"></div>
+              </div>
+              <div role="listitem" class="flex flex-col items-center self-stretch my-auto text-sm text-center whitespace-nowrap w-[37px]  max-sm:justify-center">
+                <div role="button" tabindex="0" class="flex items-center justify-center px-2.5 text-white bg-blue-900 h-[37px] rounded-[60px] w-[37px]" aria-label="Step 2: Payment">
+                  2
+                </div>
+                <div class="mt-1 text-gray-700">Payment</div>
+              </div>
+              <div class="flex flex-col flex-1 shrink justify-center self-stretch py-5 my-auto basis-0 min-h-[37px] min-w-[240px] max-sm:hidden" role="separator" aria-hidden="true">
+                <div class="w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px]"></div>
+              </div>
+              <div role="listitem" class="flex flex-col items-center self-stretch my-auto text-sm text-center whitespace-nowrap w-[37px]">
+                <div role="button" tabindex="0" class="flex items-center justify-center px-2.5 text-gray-700 bg-gray-100 h-[37px] rounded-[60px] w-[37px]" aria-label="Step 3: Complete">
+                  3
+                </div>
+                <div class="mt-1 text-gray-300">Complete</div>
+              </div>
+            </div>
+          </nav>
+    </section>
+
+        <div
+        class="flex flex-wrap gap-6 items-start px-16 pb-10 w-full max-md:px-5 max-md:max-w-full"
+        >
+        <div
+        class="flex flex-col grow shrink justify-center min-w-[240px] w-[725px] max-md:max-w-full"
+        >
+        <div
+            class="flex overflow-hidden flex-col justify-center p-10 w-full rounded-3xl border border border-solid max-md:px-5 max-md:max-w-full"
+        >
+            <div class="flex flex-col justify-center self-start">
+            <div class="text-base font-bold text-gray-900">BOOK INFORMATION</div>
+            <div class="text-sm text-gray-500">
+                Please fill out the form below and enter your payment details
+            </div>
+            </div>
+            <div
+            class="mt-6 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+            ></div>
+            <div
+            class="flex flex-wrap gap-4 items-start mt-6 w-full max-md:max-w-full"
+            >
+            <div class="flex flex-col flex-1 shrink basis-0">
+                <div class="text-xs font-medium text-gray-500">Full Name</div>
+                <div class="mt-1.5 text-lg text-gray-900">Ariana Gomez</div>
+            </div>
+            <div class="flex flex-col flex-1 shrink whitespace-nowrap basis-0">
+                <div class="text-xs font-medium text-gray-500">Email</div>
+                <div class="mt-1.5 text-lg text-gray-900">ariana@email.com</div>
+            </div>
+            <div class="flex flex-col flex-1 shrink basis-0">
+                <div class="text-xs font-medium text-gray-500">Phone Number</div>
+                <div class="mt-1.5 text-lg text-gray-900">081234567890</div>
+            </div>
+            </div>
+        </div>
+        
+        <section aria-labelledby="payment-details-heading" class="flex overflow-hidden flex-col justify-center p-10 mt-10 w-full rounded-3xl border border-solid max-md:px-5 max-md:max-w-full">
+            <div class="flex flex-col justify-center self-start">
+              <h2 id="payment-details-heading" class="text-base font-bold text-gray-900">PAYMENT DETAILS</h2>
+              <p class="text-sm text-gray-500">Please fill out the form below and enter your payment details</p>
+            </div>
+          
+            <hr class="mt-6 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full" aria-hidden="true" />
+          
+            <form class="flex flex-col mt-6 w-full max-md:max-w-full">
+              <fieldset>
+                <legend class="text-xs font-medium text-gray-500">Payment Option</legend>
+                <div class="flex flex-wrap gap-2 items-start mt-1.5 w-full max-md:max-w-full">
+                  <label class="flex flex-1 shrink basis-0 min-w-[240px] cursor-pointer group">
+                    <input type="radio" name="payment-option" class="sr-only peer" checked />
+                    <div class="flex gap-1 items-start p-4 w-full text-gray-700 bg-gray-50 rounded-xl peer-checked:bg-blue-900 peer-checked:text-gray-100 hover:bg-blue-800 hover:text-gray-100 transition-colors">
+                      <div class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px]">
+                        <span class="text-sm">Down Payment</span>
+                        <span class="mt-1 text-lg font-medium">Rp5.000.000</span>
+                      </div>
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d0afdc7138a5f0265c4edd099f6c17bc5c843d2bc4466761789fd2cf1c3a1377?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 w-5 aspect-square rounded-full border " aria-hidden="true" />
+                    </div>
+                  </label>
+                  <label class="flex flex-1 shrink basis-0 min-w-[240px] cursor-pointer group">
+                    <input type="radio" name="payment-option" class="sr-only peer" />
+                    <div class="flex gap-1 items-start p-4 w-full text-gray-700 bg-gray-50 rounded-xl peer-checked:bg-blue-900 peer-checked:text-gray-100 hover:bg-blue-800 hover:text-gray-100 transition-colors">
+                      <div class="flex flex-col flex-1 shrink justify-center basis-0 min-w-[240px]">
+                        <span class="text-sm">Full Payment</span>
+                        <span class="mt-1 text-lg font-medium">Rp50.000.000</span>
+                      </div>
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d0afdc7138a5f0265c4edd099f6c17bc5c843d2bc4466761789fd2cf1c3a1377?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 w-5 aspect-square rounded-full border " aria-hidden="true" />
+                    </div>
+                  </label>
+                </div>
+              </fieldset>
+          
+              <fieldset class="mt-6">
+                <legend class="text-xs font-medium text-gray-500">Payment Method</legend>
+                <div class="grid grid-cols-2 gap-2 mt-1.5 w-full text-gray-700 max-md:grid-cols-1">
+                  <label class="cursor-pointer group">
+                    <input type="radio" name="payment-method" class="sr-only peer" checked />
+                    <div class="flex gap-1 items-start p-4 w-full text-gray-700 bg-gray-50 rounded-xl peer-checked:bg-blue-900 peer-checked:text-gray-100 hover:bg-blue-800 hover:text-gray-100 transition-colors">
+                      <div class="flex flex-col flex-1 shrink justify-center basis-0">
+                        <span class="text-lg font-medium">Credit/Debit Card</span>
+                        <span class="mt-1 text-sm">VISA, Mastercard</span>
+                      </div>
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d0afdc7138a5f0265c4edd099f6c17bc5c843d2bc4466761789fd2cf1c3a1377?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 w-5 aspect-square rounded-full border " aria-hidden="true" />
+                    </div>
+                  </label>
+                  <label class="cursor-pointer group">
+                    <input type="radio" name="payment-method" class="sr-only peer" />
+                    <div class="flex gap-1 items-start p-4 w-full text-gray-700 bg-gray-50 rounded-xl peer-checked:bg-blue-900 peer-checked:text-gray-100 hover:bg-blue-800 hover:text-gray-100 transition-colors">
+                      <div class="flex flex-col flex-1 shrink justify-center basis-0">
+                        <span class="text-lg font-medium">Bank Transfer</span>
+                        <span class="mt-1 text-sm">Virtual Account</span>
+                      </div>
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d0afdc7138a5f0265c4edd099f6c17bc5c843d2bc4466761789fd2cf1c3a1377?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 w-5 aspect-square rounded-full border " aria-hidden="true" />
+                    </div>
+                  </label>
+                  <label class="cursor-pointer group">
+                    <input type="radio" name="payment-method" class="sr-only peer" />
+                    <div class="flex gap-1 items-start p-4 w-full text-gray-700 bg-gray-50 rounded-xl peer-checked:bg-blue-900 peer-checked:text-gray-100 hover:bg-blue-800 hover:text-gray-100 transition-colors">
+                      <div class="flex flex-col flex-1 shrink justify-center basis-0">
+                        <span class="text-lg font-medium">Paylater</span>
+                        <span class="mt-1 text-sm">Kredivo, Indodana, Akulaku</span>
+                      </div>
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d0afdc7138a5f0265c4edd099f6c17bc5c843d2bc4466761789fd2cf1c3a1377?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 w-5 aspect-square rounded-full border " aria-hidden="true" />
+                    </div>
+                  </label>
+                  <label class="cursor-pointer group">
+                    <input type="radio" name="payment-method" class="sr-only peer" />
+                    <div class="flex gap-1 items-start p-4 w-full text-gray-700 bg-gray-50 rounded-xl peer-checked:bg-blue-900 peer-checked:text-gray-100 hover:bg-blue-800 hover:text-gray-100 transition-colors">
+                      <div class="flex flex-col flex-1 shrink justify-center basis-0">
+                        <span class="text-lg font-medium">Counter</span>
+                        <span class="mt-1 text-sm">Alfamart, Indomart,DanDan</span>
+                      </div>
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d0afdc7138a5f0265c4edd099f6c17bc5c843d2bc4466761789fd2cf1c3a1377?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 w-5 aspect-square rounded-full border " aria-hidden="true" />
+                    </div>
+                  </label>
+                </div>
+              </fieldset>
+          
+              <div class="flex flex-col p-6 mt-6 w-full bg-gray-50 rounded-3xl max-md:px-5 max-md:max-w-full">
+                <div class="flex flex-col w-full max-md:max-w-full">
+                  <label for="cardHolder" class="text-xs font-medium text-gray-500">Card Holder Name</label>
+                  <input type="text" id="cardHolder" value="Ariana Gomez" class="flex-1 shrink gap-1 self-stretch p-3 mt-1.5 w-full text-lg text-gray-900 bg-white rounded-xl max-md:max-w-full focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+                </div>
+                <div class="flex flex-wrap gap-4 items-start mt-4 w-full max-md:max-w-full">
+                  <div class="flex flex-col flex-1 shrink basis-0 min-w-[240px]">
+                    <label for="cardNumber" class="text-xs font-medium text-gray-500">Card Number</label>
+                    <input type="text" id="cardNumber" value="1234 5678 9098 7654" pattern="[0-9\s]{16,19}" maxlength="19" class="flex-1 shrink gap-1 self-stretch p-3 mt-1.5 w-full text-lg text-gray-900 bg-white rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+                  </div>
+                  <div class="flex flex-col w-[120px]">
+                    <label for="expDate" class="text-xs font-medium text-gray-500">Expired Date</label>
+                    <input type="text" id="expDate" value="09/30" pattern="(0[1-9]|1[0-2])\/([0-9]{2})" maxlength="5" class="flex-1 shrink gap-1 self-stretch p-3 mt-1.5 w-full text-lg text-gray-900 whitespace-nowrap bg-white rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+                  </div>
+                  <div class="flex flex-col whitespace-nowrap w-[120px]">
+                    <label for="cvv" class="text-xs font-medium text-gray-500">CVV</label>
+                    <input type="password" id="cvv" value="010" maxlength="4" pattern="[0-9]{3,4}" class="flex-1 shrink gap-1 self-stretch p-3 mt-1.5 w-full text-lg text-gray-900 bg-white rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </section>
+        <div
+            class="flex overflow-hidden flex-col justify-center p-10 mt-10 w-full rounded-3xl border border border-solid max-md:px-5 max-md:max-w-full"
+        >
+            <div class="flex flex-col justify-center w-full max-md:max-w-full">
+            <div class="text-base font-bold text-gray-900">Cancellation Policy</div>
+            <div class="text-sm leading-5 text-gray-500 max-md:max-w-full">
+                We understand that plans may change, and we aim to be as flexible as
+                possible to accommodate your needs. Cancellations made 30 days or more
+                before the scheduled event date will receive a full refund, excluding
+                a small processing fee to cover administrative costs. For
+                cancellations made between 15 and 29 days before the event, a 50%
+                refund of the total amount paid will be issued. Unfortunately,
+                cancellations made within 14 days of the event are non-refundable, as
+                preparations and commitments have already been made to secure services
+                on your behalf. In the event of a cancellation, please contact our
+                support team to initiate the process and address any additional
+                questions. Note that refunds may take up to 10 business days to
+                process.
+            </div>
+            </div>
+            <div
+            class="gap-1 self-start mt-6 text-sm font-bold text-blue-900 rounded-[60px]"
+            >
+            See more details
+            </div>
+        </div>
+        </div>
+        <div
+        class="flex flex-col grow shrink p-10 bg-gray-50 rounded-3xl min-w-[240px] w-[381px] max-md:px-5 max-md:max-w-full"
+        >
+        <div class="flex flex-col justify-center self-start">
+            <div class="text-base font-bold text-gray-900">SUMMARY</div>
+            <div class="text-sm text-gray-500">6 items in total</div>
+        </div>
+        <div
+            class="mt-6 w-full bg-gray-200 border border border-solid min-h-[1px]"
+        ></div>
+        <div class="flex flex-col mt-6 w-full">
+            <div class="text-xs font-medium text-gray-500">Discount Code</div>
+            <div
+              class="flex gap-1 items-center border border-solid p-3 mt-1.5 w-full text-lg whitespace-nowrap bg-white rounded-xl"
+            >
+              <input 
+                type="text" 
+                value="NEWYEAR2025" 
+                class="flex-1 shrink self-stretch my-auto text-gray-900 basis-0 border-none focus:ring-0" 
+                
+              />
+              <div class="self-stretch my-auto text-blue-900 cursor-pointer">Apply</div>
+            </div>
+          </div>
+          
+        <div class="flex flex-col mt-6 w-full text-base min-h-[240px]">
+            <div class="flex gap-10 justify-between items-center w-full">
+                <div class="self-stretch my-auto text-gray-500">Trip Price</div>
+                <div class="self-stretch my-auto text-right text-gray-900">
+                    Rp50.000.000
+                </div>
+                </div>
+                <div
+                class="flex gap-10 justify-between items-center mt-3 w-full whitespace-nowrap"
+                >
+                <div class="self-stretch my-auto text-gray-500">Tax</div>
+                <div class="self-stretch my-auto text-right text-gray-900">
+                    Rp5.000.000
+                </div>
+                </div>
+                <div
+                class="flex gap-10 justify-between items-center mt-3 w-full whitespace-nowrap"
+                >
+                <div class="self-stretch my-auto text-gray-500">Discount</div>
+                <div class="self-stretch my-auto text-right text-gray-900">
+                    -Rp5.000.000
+                </div>
+                </div>
+                <div
+                class="mt-3 w-full bg-gray-200 border border border-solid min-h-[1px]"
+                ></div>
+                <div
+                class="flex gap-10 justify-between items-center mt-3 w-full text-gray-900 whitespace-nowrap"
+                >
+                <div class="self-stretch my-auto font-medium">Subtotal</div>
+                <div class="self-stretch my-auto font-bold text-right">
+                    Rp50.000.000
+                </div>
+                </div>
+            </div>
+            <div class="flex gap-10 justify-between items-center mt-6 w-full text-lg">
+                <div class="self-stretch my-auto text-gray-500">Down Payment</div>
+                <div class="self-stretch my-auto font-bold text-right text-gray-900">
+                Rp5.000.000
+                </div>
+            </div>
+            <button
+                class="gap-1.5 self-stretch px-5 py-3 mt-6 w-full text-base font-bold text-gray-50 bg-slate-950 rounded-[60px]"
+                type="button"
+                onclick="window.location.href='complete.html';">
+                Pay for My Booking
+            </button>
+        </div>
+    </div>
+    
+</main>
+
+
+<footer class="pt-20">
+    <div class="flex flex-col px-16 py-6 max-md:px-5">
+        <div
+            class="flex flex-wrap gap-10 justify-between items-center w-full max-md:max-w-full"
+        >
+            <div
+            class="flex flex-wrap gap-10 items-center self-stretch my-auto text-base text-gray-300 min-w-[240px] max-md:max-w-full"
+            >
+            <div class="self-stretch my-auto text-blue-900"><a href="#">BECOME A PARTNER</a></div>
+            <div class="self-stretch my-auto"><a href="#">POLICY</a> </div>
+            <div class="self-stretch my-auto"><a href="#">TERMS & CONDITION</a></div>
+            </div>
+            <div class="flex gap-1 items-start self-stretch my-auto">
+            <div
+                class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+            >
+            <a href="#">
+                <img
+                loading="lazy"
+                src="assets/images/icon/ig.svg"
+                class="object-contain w-3.5 aspect-square"
+                />
+                </a>
+            </div>
+            <div
+                class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+            >
+            <a href="#">
+                <img
+                loading="lazy"
+                src="assets/images/icon/tiktok.svg"
+                class="object-contain w-3.5 aspect-square"
+                />
+                </a>
+            </div>
+            <div
+                class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+            >
+            <a href="#">
+                <img
+                loading="lazy"
+                src="assets/images/icon/x.svg"
+                class="object-contain w-3.5 aspect-square"
+                />
+                </a>
+            </div>
+            <div
+                class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+            >
+            <a href="#">
+                <img
+                loading="lazy"
+                src="assets/images/icon/in.svg"
+                class="object-contain w-3.5 aspect-[1.08]"
+                />
+                </a>
+            </div>
+            <div
+                class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+            >
+            <a href="#">
+                <img
+                loading="lazy"
+                src="assets/images/icon/facebook.svg"
+                class="object-contain w-3.5 aspect-square"
+                />
+                </a>
+            </div>
+            <div
+                class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+            >
+            <a href="#">
+                <img
+                loading="lazy"
+                src="assets/images/icon/youtube.svg"
+                class="object-contain w-3.5 aspect-square"
+                />
+                </a>
+            </div>
+            </div>
+        </div>
+        <div
+            class="mt-4 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+        ></div>
+        <div class=" mt-4 text-xs text-gray-300">©️ 2024 by Buatevent.id</div>
+        </div>
+</footer>
+      

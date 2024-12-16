@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buatevent.id</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/icon/favicon.svg">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- Tambahkan di <head> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Tambahkan sebelum penutup <body> -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="assets/js/tailwind-3.4.js"></script>
+    <script src="assets/js/form-3.4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <style>
+        /* Custom range slider styles */
+        
+        .budget-range-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+        }
+
+        .slider-track {
+        position: relative;
+        width: 100%;
+        height: 5px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        overflow: hidden;
+        }
+
+        .slider-range {
+        position: absolute;
+        height: 100%;
+        background: linear-gradient(90deg, #08101B 0%, #2A5089 100%);
+        border-radius: 5px;
+        }
+
+        .slider-handle {
+        position: absolute;
+        top: 0px;
+        width: 18px;
+        height: 18px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        z-index: 10;
+        transition: box-shadow 0.2s;
+        }
+
+        .slider-handle:hover {
+        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .output-label {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #2A5089;
+        font-weight: bold;
+        }
+
+        .budget-label {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #08101B;
+        }
+        .slider-handle {
+            position: absolute;
+            top: 0px;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 10;
+            transition: box-shadow 0.2s;
+        }
+        
+        .slider-handle:hover {
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="checkbox"]:checked + label {
+          background-color: #4A90E2; /* Warna latar belakang saat dipilih */
+          color: white; /* Mengubah teks menjadi putih saat dipilih */
+        }
+
+    </style>
+<!-- body -->
+
+<main>
+    <section class="relative flex overflow-hidden flex-col w-full  max-md:pb-24 max-md:max-w-full" aria-label="Hero section">
+        <div class="absolute inset-0 z-0">
+          <img 
+            src="./assets/images/bg-servces.png" 
+            alt="Background hero image" 
+            class="object-cover w-full h-full"
+            aria-hidden="true"
+          />
+          <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        </div>
+
+        <header class="relative flex flex-wrap gap-10 justify-between items-center bg-transparent px-16 py-8 w-full min-h-[100px] max-md:px-5 max-md:max-w-full bg-gray-900" role="banner">
+            <div class="flex flex-wrap gap-10 items-center self-stretch my-auto text-base text-gray-300 whitespace-nowrap min-w-[240px] w-[608px] max-md:max-w-full">
+              <a href="/" class="focus:outline-none focus:ring-2 focus:ring-white">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/261b31999af0dfc59bd3c7b93989a7dc240caf729a9031870c6f2be76c80f87a?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                  alt="Company Logo"
+                  class="object-contain shrink-0 self-stretch my-auto aspect-[2.67] w-[200px]"
+                />
+              </a>
+              
+              <button 
+                aria-label="Toggle navigation menu" 
+                class="absolute hidden max-md:flex items-center p-2 text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white right-10"
+                aria-expanded="false"
+                onclick="toggleMobileMenu()"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+              </button>
+          
+              <nav 
+                class="flex gap-10  items-center self-stretch my-auto max-md:hidden " 
+                role="navigation" 
+                aria-label="Main navigation"
+              >
+                <a href="/" class="self-stretch my-auto hover:text-white focus:outline-none focus:ring-2 focus:ring-white" tabindex="0">Home</a>
+                <a href="/about" class="self-stretch my-auto hover:text-white focus:outline-none focus:ring-2 focus:ring-white" tabindex="0">About</a>
+                <a href="/contact" class="self-stretch my-auto hover:text-white focus:outline-none focus:ring-2 focus:ring-white" tabindex="0">Contact</a>
+              </nav>
+          
+              <div 
+                    id="mobileMenu" 
+                    class="hidden absolute top-full left-0 right-0 bg-gray-900 p-4 z-50"
+                    role="navigation"
+                    aria-label="Mobile navigation"
+                    >
+                    <nav class="flex flex-col gap-4 items-center">
+                        <a href="index.html" class="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white p-2 text-center">Home</a>
+                        <a href="/about" class="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white p-2 text-center">About</a>
+                        <a href="/contact" class="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white p-2 text-center">Contact</a>
+                    </nav>
+                </div>
+
+            </div>
+          
+            <div class="flex gap-2.5 items-center self-stretch my-auto text-sm min-w-[240px] max-md:hidden">
+              <button
+                class="flex gap-1 items-center self-stretch px-3.5 py-2.5 my-auto font-bold text-gray-900 bg-white rounded-[60px] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-900 transition-colors"
+                aria-label="Register account"
+              >
+                <span>Register</span>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/42dcdc41f94405509e8ff0f18fb0732d646fa87668549249eba10754eb325a2e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed"
+                  alt=""
+                  class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"
+                  aria-hidden="true"
+                />
+              </button>
+              <button
+                class="gap-1 self-stretch px-6 py-2.5 my-auto text-white border border-solid bg-white bg-opacity-30 border-white border-opacity-50 rounded-[60px] hover:bg-opacity-40 focus:outline-none focus:ring-2 focus:ring-white transition-colors max-md:px-5"
+                aria-label="Sign in to account"
+              >
+                Sign In
+              </button>
+            </div>
+        </header>
+                
+        <div class="relative z-10 flex flex-col self-center mt-20 mb-0 max-w-full w-[720px] max-md:mt-10 max-md:mb-2.5 px-4">
+            <section class="flex flex-col items-start w-full text-center max-md:max-w-full" aria-labelledby="main-heading">
+            <h1 id="main-heading" class="text-6xl font-bold text-white max-md:max-w-full max-md:text-4xl max-sm:text-3xl">
+                A World of Options at Your Fingertips!
+            </h1>
+            <p class="mt-3.5 text-lg leading-7 text-gray-200 max-md:max-w-full max-sm:text-base">
+                Get personalized recommendations for venues, transportation, and more within your budget. Tell us what you need for your event through the form below
+            </p>
+            </section>
+        
+            <form class="flex flex-wrap gap-2 items-center mt-10 w-full max-md:max-w-full" role="search" aria-label="Event search">
+            <div class="flex flex-wrap flex-1 shrink gap-2.5 justify-center items-center self-stretch py-1 pr-1 pl-4 my-auto bg-gray-50 basis-3 min-w-[240px] rounded-[60px] max-md:max-w-full max-sm:flex-col max-sm:p-4">
+                <label for="event-search" class="sr-only">Search for event</label>
+                <input
+                type="text"
+                id="event-search"
+                class="flex-1 shrink self-stretch my-auto text-sm text-gray-900 basis-9 bg-transparent border-none focus:outline-none focus:ring-2 focus:ring-slate-950 max-sm:w-full max-sm:mb-2"
+                value="Please create an event proposal for 2 days, 1 night office outing to Bandung in December, with 50 participants traveling by bus, including a special gala dinner"
+                aria-label="Search input"
+                />
+                <button type="submit" class="flex gap-1.5 items-center justify-center self-stretch px-5 py-3 my-auto text-base font-bold text-gray-50 whitespace-nowrap bg-slate-950 rounded-[60px] hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-white transition-colors duration-200 max-sm:w-full" aria-label="Submit search">
+                Search
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/906c8128b7dd0c9da2aa74312879a40e57f2b520845e530b26282d0d861396b6?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" alt="" aria-hidden="true" />
+                </button>
+            </div>
+            <button type="button" class="flex gap-2.5 items-center justify-center self-stretch p-4 my-auto w-14 h-14 bg-gray-100 rounded-[60px] hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-slate-950 transition-colors duration-200" aria-label="Voice search">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/151412b88e217cdf09bf44ed3a293edee9d3711964189ada3dca773ebf428b9f?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" class="object-contain self-stretch my-auto w-6 aspect-square" alt="Microphone icon" aria-hidden="true" />
+            </button>
+            </form>
+        </div>
+        <div class="relative -bottom-10 bg-gradient-to-t  via-white/100 from-white to-transparent flex flex-col px-4 sm:px-8 md:px-16 pb-10 sm:pb-20 w-full" role="region" aria-label="Event Details">
+            <div class="flex flex-col px-6 py-6 m-auto w-full bg-white border border-gray-100 border-solid rounded-[32px] shadow-sm transition-shadow duration-300 hover:shadow-md max-md:px-5">
+                
+                <div id="date-range-picker" class="flex flex-wrap gap-6 items-center w-full">
+                      <article 
+                      id="startDatePicker"
+                      class="flex flex-col flex-1 shrink self-stretch my-auto basis-0 min-w-[240px] sm:min-w-[200px] lg:min-w-[240px]">
+                          <h2 class="text-xs font-medium text-gray-500">Start Date</h2>
+                          <div class="flex gap-1 items-center p-3 mt-1.5 w-full text-lg text-gray-900 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200" role="text">
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/31d675cdd4991c6218485a41adf8fd7e0eb6e365eec9017acb2a3225bca7dc4d?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="Calendar icon" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" />
+                          <time id="datepicker-range-start" datetime="2024-08-19" class="flex-1 shrink self-stretch my-auto basis-0">19 Aug 2024</time>
+                          </div>
+                      </article>
+                      
+                      <article class="flex flex-col flex-1 shrink self-stretch my-auto basis-0 min-w-[240px] sm:min-w-[200px] lg:min-w-[240px]">
+                        <h2 class="text-xs font-medium text-gray-500">End Date</h2>
+                        <div class="flex gap-1 items-center p-3 mt-1.5 w-full text-lg text-gray-900 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200" role="text">
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c1f70988d588661f9267ea581ea06753e9297956bfe55b06c1466d57ea4bfb93?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="Calendar icon" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" />
+                          <time id="datepicker-range-end" datetime="2024-08-19" class="flex-1 shrink self-stretch my-auto basis-0">19 Aug 2024</time>
+                        </div>
+                      </article>
+                      
+                    <article class="flex flex-col flex-1 shrink self-stretch my-auto whitespace-nowrap basis-0 min-w-[240px] sm:min-w-[200px] lg:min-w-[240px]">
+                        <h2 class="text-xs font-medium text-gray-500">City</h2>
+                        <div class="flex gap-1 items-center p-3 mt-1.5 w-full text-lg text-gray-900 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200" role="text">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e93e7af50f619fa216d6fcdff5d9540e7177d0fb4c198cbadf78dff280001fc?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="Location pin icon" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" />
+                        <p class="flex-1 shrink self-stretch my-auto basis-0">Jakarta</p>
+                        </div>
+                    </article>
+                </div>
+            
+                <div class="flex flex-wrap gap-6 items-start mt-4 w-full">
+                    <article class="flex gap-1.5  flex-1 shrink self-stretch  min-w-[240px] sm:min-w-[200px] lg:min-w-[240px]">
+                        <div class="flex flex-col flex-1 shrink basis-0 min-w-[240px] sm:min-w-[200px] lg:min-w-[240px]">
+                        <h2 class="text-xs font-medium text-gray-500">Number of Attendees</h2>
+                        <p 
+                        id="attendeesNumber"
+                        class="flex-1 shrink gap-1 self-stretch p-3 w-full text-lg text-gray-900 whitespace-nowrap bg-gray-50 rounded-xl">50</p>
+                        </div>
+                        <div class="flex gap-1.5 items-center min-h-[51px]">
+                        <button 
+                        id="decreaseBtn"  
+                        class="flex justify-center items-center self-stretch px-2 mt-4 bg-gray-50 rounded-lg h-[51px] min-h-[51px] w-[51px] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200" aria-label="Decrease attendees">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/76dc64c558e71050f169b11a553cc1f56134a70e4ef54ecbbb66fcc40b0cc27a?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain self-stretch my-auto w-6 aspect-square" />
+                        </button>
+                        <button 
+                        id="increaseBtn"
+                        class="flex justify-center items-center self-stretch px-2 mt-4 bg-gray-50 rounded-lg h-[51px] min-h-[51px] w-[51px] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200" aria-label="Increase attendees">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/451101147af4a232ab5eb1962ae55b277f4d14524bfc9e13ae73d50902e49611?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain self-stretch my-auto w-6 aspect-square" />
+                        </button>
+                        </div>
+                    </article>
+                
+                    <article class="flex flex-col flex-1 shrink self-stretch my-auto basis-0 min-w-[240px] sm:min-w-[200px] lg:min-w-[240px]">
+                      <h2 class="text-xs font-medium text-gray-500">Services</h2>
+                      <div class="flex flex-wrap text-xs gap-1 items-start mt-1.5 w-full text-blue-500" role="list">
+                        <span role="listitem" class="overflow-hidden gap-1 self-stretch px-3 py-1 whitespace-nowrap border border-solid bg-slate-300 border-slate-400 rounded-[60px] hover:bg-slate-400 transition-colors duration-200">
+                          <input type="checkbox" value="Hotels" class="hidden" id="hotels" />
+                          <label for="hotels">Hotels</label>
+                        </span>
+                        <span role="listitem" class="overflow-hidden gap-1 self-stretch px-3 py-1 whitespace-nowrap border border-solid bg-slate-300 border-slate-400 rounded-[60px] hover:bg-slate-400 transition-colors duration-200">
+                          <input type="checkbox" value="Venue" class="hidden" id="venue" />
+                          <label for="venue">Venue</label>
+                        </span>
+                        <span role="listitem" class="overflow-hidden gap-1 self-stretch px-3 py-1 whitespace-nowrap border border-solid bg-slate-300 border-slate-400 rounded-[60px] hover:bg-slate-400 transition-colors duration-200">
+                          <input type="checkbox" value="Flight" class="hidden" id="flight" />
+                          <label for="flight">Flight</label>
+                        </span>
+                        <span role="listitem" class="overflow-hidden gap-1 self-stretch px-3 py-1 whitespace-nowrap border border-solid bg-slate-300 border-slate-400 rounded-[60px] hover:bg-slate-400 transition-colors duration-200">
+                          <input type="checkbox" value="Train" class="hidden" id="train" />
+                          <label for="train">Train</label>
+                        </span>
+                        <span role="listitem" class="gap-1 self-stretch px-3 py-1 text-gray-500 whitespace-nowrap border border-gray-100 border-solid rounded-[60px] hover:bg-gray-100 transition-colors duration-200">
+                          <input type="checkbox" value="Bus" class="hidden" id="bus" />
+                          <label for="bus">Bus</label>
+                        </span>
+                        <span role="listitem" class="overflow-hidden gap-1 self-stretch px-3 py-1 border border-solid bg-slate-300 border-slate-400 rounded-[60px] hover:bg-slate-400 transition-colors duration-200">
+                          <input type="checkbox" value="Private Car" class="hidden" id="private-car" />
+                          <label for="private-car">Private Car</label>
+                        </span>
+                        <span role="listitem" class="overflow-hidden gap-1 self-stretch px-3 py-1 whitespace-nowrap border border-solid bg-slate-300 border-slate-400 rounded-[60px] hover:bg-slate-400 transition-colors duration-200">
+                          <input type="checkbox" value="Destination" class="hidden" id="destination" />
+                          <label for="destination">Destination</label>
+                        </span>
+                        <span role="listitem" class="overflow-hidden gap-1 self-stretch px-3 py-1 whitespace-nowrap border border-solid bg-slate-300 border-slate-400 rounded-[60px] hover:bg-slate-400 transition-colors duration-200">
+                          <input type="checkbox" value="Production" class="hidden" id="production" />
+                          <label for="production">Production</label>
+                        </span>
+                        <span role="listitem" class="gap-1 self-stretch px-3 py-1 text-gray-500 whitespace-nowrap border border-gray-100 border-solid rounded-[60px] hover:bg-gray-100 transition-colors duration-200">
+                          <input type="checkbox" value="Merchandise" class="hidden" id="merchandise" />
+                          <label for="merchandise">Merchandise</label>
+                        </span>
+                      </div>
+                    </article>
+                    
+                
+                   
+
+                    <article class="flex flex-col flex-1 shrink self-stretch my-auto whitespace-nowrap basis-0 min-w-[240px] sm:min-w-[200px] lg:min-w-[240px]">
+                        <div class="flex flex-col w-full">
+                            <div class="flex flex-col items-center py-2 mt-5 mr-0 -ml-0.5 w-full min-h-[13px]">
+                            <h2 class="text-xs text-gray-500">Budget Range</h2>
+                            <div class="sliders_control flex z-10 items-center mt-1 max-w-full text-base font-medium text-center text-gray-700 whitespace-nowrap w-[300px]" role="group" aria-label="Budget range slider">
+                                <!-- Slider Minimum Handle -->
+                                <div class="flex relative flex-col self-stretch my-auto min-h-[18px] w-[18px]">
+                                    <div class="slider-handle" id="slider-min" role="slider" aria-label="Minimum budget" tabindex="0"></div>
+                                    <div class="absolute left-0 z-0 h-6 -translate-x-2/4 top-[-46px] translate-y-[0%]" id="min-label">Rp20.000.000</div>
+                                </div>
+                        
+                                <!-- Slider Track -->
+                                <div class="flex flex-1 shrink self-stretch my-auto h-1 basis-0 bg-gray-200 relative w-[240px] rounded-full">
+                                    <div class="absolute h-1 bg-gradient-to-r from-[#08101B] to-[#2A5089] rounded-full" id="slider-range"></div>
+                                </div>
+                                <!-- Slider Maximum Handle -->
+                                <div class="flex relative flex-col self-stretch my-auto min-h-[18px] ">
+                                    <div class="slider-handle" id="slider-max" role="slider" aria-label="Maximum budget" tabindex="0" >
+                                    <div class="absolute -left-1 z-0 h-6 -translate-x-2/4 top-[-46px] translate-y-[0%]" id="max-label">Rp50.000.000</div>
+                                </div>
+                            </div>
+
+                            </div>
+                        </div>
+                          
+                    </article>
+                          
+                          
+                    
+
+                </div>
+
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="accommodation-options px-16" aria-labelledby="accommodation-title">
+        <div class="flex flex-wrap gap-8 p-6 mt-6 w-full bg-gray-50 rounded-[40px] max-md:px-5 max-md:max-w-full">
+          <header class="flex flex-col min-w-[240px] w-[260px]">
+            <h2 id="accommodation-title" class="text-3xl text-gray-900">
+              <strong>Accommodation</strong>
+              Options That Fit Your Budget
+            </h2>
+            <nav class="flex flex-col self-start mt-6 text-sm font-bold text-blue-900" aria-label="Accommodation filters">
+              <button class="flex gap-1 items-center self-start px-3 py-2 whitespace-nowrap border border-blue-900 border-solid rounded-[60px]">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c311af4f3856806c1c0753e02bbc7e23a15f75b8b079bcb500ae80d9b22e659?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" aria-hidden="true" />
+                <span>Reload</span>
+              </button>
+              <button class="flex gap-1 items-center px-3 py-2 mt-2 border border-blue-900 border-solid rounded-[60px]">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/44e8cf10da67ecc2c0f34ae7f2a2c195ffc0beac85a7b742c1a75ff639dcc7d6?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" aria-hidden="true" />
+                <span>Search Manually</span>
+              </button>
+            </nav>
+          </header>
+      
+          <article class="flex flex-wrap flex-1 shrink gap-6 p-5 my-auto bg-white basis-0 min-w-[240px] rounded-[32px] max-md:max-w-full">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b5d05ee368854b38edd3f63c877147f2ef4e71f92ce44ffb1a6973c4e0643945?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="Ibis Styles Jakarta hotel exterior" class="object-contain my-auto w-60 rounded-3xl aspect-square" />
+            
+            <div class="flex flex-col flex-1 shrink justify-between basis-0 min-w-[240px]">
+              <div class="flex flex-col w-full">
+                <h3 class="text-2xl text-gray-900">Ibis Styles Jakarta</h3>
+                <div class="flex gap-4 items-start self-start mt-2 text-sm text-gray-500">
+                  <p class="flex gap-1 items-center">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/69c318191c4b427c1102c6726a97c210a58f3dc0b8b0afd40b5257bca45e7665?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" aria-hidden="true" />
+                    <span>Tanah Abang, Jakarta</span>
+                  </p>
+                  <p class="flex gap-1 items-center">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d34b7d39080a07e007aacc401f8178598ba99a370a10c7a3544e2fe1d12b22c7?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" aria-hidden="true" />
+                    <span>5 <span>(190 Reviews)</span></span>
+                  </p>
+                </div>
+              </div>
+      
+              <div class="flex flex-col mt-6 w-full text-gray-700">
+                <p class="text-base leading-6">
+                  Affordable, comfortable rooms for short stays, located near shopping and dining areas
+                </p>
+                <ul class="flex gap-1 items-start mt-3.5 w-full text-xs" aria-label="Hotel amenities">
+                  <li class="flex gap-0.5 justify-center items-center px-2 py-0.5 bg-gray-100 rounded-[60px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/08f39ab7331072df18e23c5ef445bd2e26c26a42760e05990009e09758399bb5?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-3 aspect-square" aria-hidden="true" />
+                    <span>Breakfast buffet</span>
+                  </li>
+                  <li class="flex gap-0.5 justify-center items-center px-2 py-0.5 bg-gray-100 rounded-[60px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/83f44dc4702fb07dd2461c2d5fa002146002cea4b71fd5711b6e8bbffb63541f?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-3 aspect-square" aria-hidden="true" />
+                    <span>High-speed Wi-Fi</span>
+                  </li>
+                  <li class="flex gap-0.5 justify-center items-center px-2 py-0.5 bg-gray-100 rounded-[60px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7298fb5bb23a04c94a8efea0abb5c34e418466869943e6fc17df8615a900d74c?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-3 aspect-square" aria-hidden="true" />
+                    <span>Rooftop lounge</span>
+                  </li>
+                </ul>
+              </div>
+      
+              <p class="flex gap-1 items-center self-start mt-14 max-md:mt-10">
+                <span class="self-stretch my-auto text-base text-gray-500">Rp400.000</span>
+                <span class="self-stretch my-auto text-xs text-gray-300">per Room per Night</span>
+              </p>
+            </div>
+      
+            <hr class="shrink-0 w-0 h-60 bg-gray-100 border border-gray-100 border-solid" aria-hidden="true" />
+      
+            <aside class="flex flex-col justify-between items-start w-60">
+              <p class="flex gap-1 items-center text-xs text-gray-500">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f50c42b645da1ee87b51f5bb8f4692b306fc3066e97bd0158d66cf5e07d931f?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" aria-hidden="true" />
+                <span>Added to Order</span>
+              </p>
+      
+              <div class="flex flex-col self-stretch mt-14 w-full max-md:mt-10">
+                <h4 class="text-base text-gray-500">Total Cost for 1 Nights</h4>
+                <div class="flex flex-col justify-center mt-1.5 w-full">
+                  <p class="text-2xl font-bold text-gray-900">Rp10.000.000</p>
+                  <p class="mt-1 text-xs text-gray-300">for 25 rooms 50 people</p>
+                </div>
+              </div>
+      
+              <button class="flex gap-1 items-center px-3 py-2 mt-14 text-sm font-medium text-gray-700 bg-gray-100 rounded-[60px] max-md:mt-10">
+                <span>View Details</span>
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/50488bf976679898fc2d25fedd05d6cd22b4b16e6a6d3b23c69111abe74c0857?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" aria-hidden="true" />
+              </button>
+            </aside>
+          </article>
+        </div>
+
+        <div class="transport-options" aria-labelledby="transport-title">
+            <div class="flex flex-wrap gap-8 items-start p-6 mt-6 w-full bg-gray-50 rounded-[40px] max-md:px-5 max-md:max-w-full">
+              <header class="flex flex-col min-h-[288px] min-w-[240px] w-[260px]">
+                <h1 id="transport-title" class="text-3xl text-gray-900">
+                  Efficient
+                  <span class="font-bold">Transport</span>
+                  for Your Group
+                </h1>
+                <nav class="flex flex-col self-start mt-6 text-sm font-bold text-blue-900" aria-label="Transport filters">
+                  <button class="flex gap-1 items-center self-start px-3 py-2 whitespace-nowrap border border-blue-900 border-solid rounded-[60px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3ae86bf4f3d2b0d58389c85b9fd8fc949335a468c7240bd2427d31224673d0fe?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" />
+                    <span class="self-stretch my-auto">Reload</span>
+                  </button>
+                  <button class="flex gap-1 items-center px-3 py-2 mt-2 border border-blue-900 border-solid rounded-[60px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3397bd67ef1eb1f52c038b3d9a465dfc63f03481297c1e7a9fe846a264cec284?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" />
+                    <span class="self-stretch my-auto">Search Manually</span>
+                  </button>
+                </nav>
+              </header>
+          
+              <main class="flex flex-col flex-1 shrink basis-0 min-w-[240px] max-md:max-w-full">
+                <article class="flex flex-wrap gap-6 p-5 w-full bg-white rounded-[32px] max-md:max-w-full">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b8b3ed410d3b1bc6275eb4b59b4341ab738bebe19338819bfc3e74cf8e03bdb8?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="Garuda Indonesia airplane" class="object-contain my-auto w-60 rounded-3xl aspect-square" />
+                  <div class="flex flex-col flex-1 shrink justify-between basis-0 min-w-[240px]">
+                    <div class="flex flex-col w-full">
+                      <div class="flex gap-2.5 justify-center items-center w-full text-gray-900 whitespace-nowrap">
+                        <div class="flex flex-1 shrink gap-1 items-end self-stretch my-auto basis-0">
+                          <h2 class="text-2xl">Surabaya</h2>
+                          <span class="text-base">(SUB)</span>
+                        </div>
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e22f8ada6ce861836a0319b8139af2e2655d6267eb8ad85a36ca218267670076?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="Flight direction indicator" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" />
+                        <div class="flex flex-1 shrink gap-1 items-end self-stretch my-auto text-right basis-0">
+                          <h2 class="text-2xl">Jakarta</h2>
+                          <span class="text-base">(CGK)</span>
+                        </div>
+                      </div>
+                      <div class="flex gap-4 items-start self-start mt-2 text-sm">
+                        <div class="flex gap-1 items-center text-blue-900">
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6100d8fdd966f507ab378839df87b9082fb8bf1f8798fc67d019f9271d6d4ae4?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" />
+                          <span class="self-stretch my-auto">
+                            <span class="text-gray-500">by</span>
+                            Garuda Indonesia
+                          </span>
+                        </div>
+                        <div class="gap-1 self-stretch text-gray-500">
+                          5
+                          <span>(190 Reviews)</span>
+                        </div>
+                      </div>
+                    </div>
+          
+                    <section class="flight-details flex flex-col mt-6 w-full">
+                      <div class="flex gap-2 items-center w-full text-gray-900">
+                        <div class="flex flex-col justify-center self-stretch my-auto w-[140px]">
+                          <time datetime="17:00" class="text-base font-bold">17:00</time>
+                          <address class="text-xs leading-5">
+                            Juanda
+                            <br />
+                            International Airport
+                          </address>
+                        </div>
+                        <div class="flex flex-col flex-1 shrink justify-center items-center self-stretch my-auto text-xs text-gray-500 whitespace-nowrap basis-0">
+                          <span>2h</span>
+                          <div class="self-stretch mt-1 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px]" role="separator"></div>
+                          <span class="mt-1">Direct</span>
+                        </div>
+                        <div class="flex flex-col justify-center self-stretch my-auto text-right w-[140px]">
+                          <time datetime="19:00" class="text-base font-bold">19:00</time>
+                          <address class="text-xs leading-5">
+                            Soekarno Hatta International Airport
+                          </address>
+                        </div>
+                      </div>
+          
+                      <ul class="flex gap-1 items-start mt-3.5 w-full text-xs text-gray-700" aria-label="Flight amenities">
+                        <li class="flex gap-0.5 justify-center items-center px-2 py-0.5 bg-gray-100 rounded-[60px]">
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/33b0e6ba1a32b2d69d01221fef00617289638abd15c168d26d97d130b47ebc7a?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-3 aspect-square" />
+                          <span class="self-stretch my-auto">In-flight meal</span>
+                        </li>
+                        <li class="flex gap-0.5 justify-center items-center px-2 py-0.5 whitespace-nowrap bg-gray-100 rounded-[60px]">
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/14847ba3cc8b388dba21d7adc311d48c0a65e3f4b9ec546d39fdfc5098af46f8?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-3 aspect-square" />
+                          <span class="self-stretch my-auto">20kg</span>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+          
+                  <div class="shrink-0 w-0 h-60 bg-gray-100 border border-gray-100 border-solid" role="separator"></div>
+          
+                  <aside class="flex flex-col justify-between items-start w-60">
+                    <button class="flex gap-1 items-center text-xs text-gray-500 w-[97px]">
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/51f1078cc62f228b489fb82c34d261dc3698c1b19cda821471273b2335edbbbe?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" />
+                      <span class="self-stretch my-auto">Add to Order</span>
+                    </button>
+          
+                    <div class="flex flex-col self-stretch mt-14 w-full max-md:mt-10">
+                      <h3 class="text-base text-gray-500">Total Cost</h3>
+                      <div class="flex flex-col justify-center mt-1.5 w-full">
+                        <p class="text-2xl font-bold text-gray-900">Rp35.000.000</p>
+                        <p class="mt-1 text-xs text-gray-300">for 50 passenger</p>
+                      </div>
+                    </div>
+          
+                    <button class="flex gap-1 items-center px-3 py-2 mt-14 text-sm font-medium text-gray-700 bg-gray-100 rounded-[60px] max-md:mt-10">
+                      <span class="self-stretch my-auto">View Details</span>
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ca90de8f6760c7c7861b5f939273f3cb661545cb5fef58b82502efe4eb50925a?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" />
+                    </button>
+                  </aside>
+                </article>
+          
+                <!-- Similar semantic structure repeated for train, bus and car sections -->
+                <!-- Additional transport options follow same pattern -->
+                
+              </main>
+            </div>
+        </div>
+        
+        <div class="flex flex-wrap gap-8 items-start p-6 mt-6 w-full bg-gray-50 rounded-[40px] max-md:px-5 max-md:max-w-full" aria-labelledby="add-ons-title">
+            <header class="flex flex-col min-h-[288px] min-w-[240px] w-[260px] max-sm:w-full">
+            <h2 id="add-ons-title" class="text-3xl text-gray-900 max-sm:text-2xl">
+                Make Your Event Stand Out with These
+                <span class="font-bold">Add-ons</span>
+            </h2>
+            <nav class="flex flex-col self-start mt-6 text-sm font-bold text-blue-900 max-sm:w-full" aria-label="Add-ons filters">
+                <button class="flex gap-1 items-center self-start px-3 py-2 whitespace-nowrap border border-blue-900 border-solid rounded-[60px] hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-900 transition-colors max-sm:w-full max-sm:justify-center" aria-label="Reload add-ons list">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1debe6964e5f072805664ab84bc3c3b2a783407dc5905548e896c5a7e5ef3e0a?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" aria-hidden="true" />
+                <span>Reload</span>
+                </button>
+                <button class="flex gap-1 items-center px-3 py-2 mt-2 border border-blue-900 border-solid rounded-[60px] hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-900 transition-colors max-sm:w-full max-sm:justify-center" aria-label="Search add-ons manually">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b6b184b0b190ed9abce982eb03c8f20fdfc29a7eccc28668f364f5d597cf7149?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" aria-hidden="true" />
+                <span>Search Manually</span>
+                </button>
+            </nav>
+            </header>
+        
+            <div class="flex flex-col flex-1 shrink basis-0 min-w-[240px] max-md:max-w-full" role="region" aria-label="Add-ons listings">
+            <article class="flex flex-wrap gap-6 p-5 w-full bg-white rounded-[32px] max-md:max-w-full" aria-labelledby="photo-booth-title">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/06b1d4b549395a41aa9640f7dc44fc0533565a9ec0c16470c7496c00343a7b5d?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="Photo Booth Setup Display" class="object-contain my-auto w-60 rounded-3xl aspect-square max-sm:w-full" />
+                <div class="flex flex-col flex-1 shrink basis-0 min-w-[240px]">
+                <header>
+                    <h3 id="photo-booth-title" class="text-2xl text-gray-900">Photo Booth Setup</h3>
+                    <div class="flex gap-4 items-start self-start mt-2 text-sm flex-wrap">
+                    <p class="flex gap-1 items-center text-blue-900">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/99e1db2f27144d23d8d2b999a70feb45bf014eefce71a7336ca92c4e7ce30727?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" aria-hidden="true" />
+                        <span>By <span class="font-semibold">SnapBox</span></span>
+                    </p>
+                    <p class="flex gap-1 items-center text-gray-500" aria-label="5 out of 5 stars, 190 Reviews">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3d21a233957a8b40631ec28650a538370696ea7b18cff56295344be9262c7951?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" aria-hidden="true" />
+                        <span>5 <span>(190 Reviews)</span></span>
+                    </p>
+                    </div>
+                </header>
+                <div class="flex flex-col mt-6 w-full text-gray-700">
+                    <p class="text-base leading-6">
+                    Unlimited digital and printed photos for 4 hours with customizable backdrop and props with company branding
+                    </p>
+                    <ul class="flex gap-1 items-start mt-3.5 w-full text-xs flex-wrap" aria-label="Features">
+                    <li class="gap-0.5 self-stretch px-2 py-0.5 bg-gray-100 rounded-[60px]">Instant printouts</li>
+                    <li class="gap-0.5 self-stretch px-2 py-0.5 bg-gray-100 rounded-[60px]">Digital copies</li>
+                    </ul>
+                </div>
+                <p class="flex gap-1 items-center self-start mt-6">
+                    <span class="self-stretch my-auto text-base text-gray-500">Rp1.500.000</span>
+                    <span class="self-stretch my-auto text-xs text-gray-300">per Day</span>
+                </p>
+                </div>
+                <hr class="shrink-0 w-0 h-60 bg-gray-100 border border-gray-100 border-solid max-sm:hidden" aria-hidden="true" />
+                <div class="flex flex-col justify-between items-start w-60 max-sm:w-full">
+                <button class="flex gap-1 items-center text-xs text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-md transition-colors p-1" aria-label="Add Photo Booth to Order">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/51f1078cc62f228b489fb82c34d261dc3698c1b19cda821471273b2335edbbbe?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" aria-hidden="true" />
+                    <span>Add to Order</span>
+                </button>
+                <div class="flex flex-col mt-16 max-w-full w-[200px] max-md:mt-10 max-sm:w-full">
+                    <p class="text-base text-gray-500">Total Cost</p>
+                    <p class="mt-1.5 text-2xl font-bold text-gray-900">Rp1.500.000</p>
+                </div>
+                <button class="flex gap-1 items-center px-3 py-2 mt-16 text-sm font-medium text-gray-700 bg-gray-100 rounded-[60px] hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-colors max-md:mt-10 max-sm:w-full max-sm:justify-center" aria-label="View Photo Booth Details">
+                    <span>View Details</span>
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/76cd8ed0320ca2a0795d831973961277c6d06a089fe1b2607a82927fdf96f61e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" aria-hidden="true" />
+                </button>
+                </div>
+            </article>
+        
+            <article class="flex flex-wrap gap-6 p-5 mt-4 w-full bg-white rounded-[32px] max-md:max-w-full" aria-labelledby="sound-system-title">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/91822720c9886da2d0f8f6d20204880747a22c4192b55757bdf0fa3d25c68cfd?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="Sound System and Lighting Package Display" class="object-contain my-auto w-60 rounded-3xl aspect-square max-sm:w-full" />
+                <div class="flex flex-col flex-1 shrink basis-0 min-w-[240px]">
+                <header>
+                    <h3 id="sound-system-title" class="text-2xl text-gray-900">Sound System & Lighting Package</h3>
+                    <div class="flex gap-4 items-start self-start mt-2 text-sm flex-wrap">
+                    <p class="flex gap-1 items-center text-blue-900">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/829296d94dc393b20d3b5ebca222b0bd457d5e87b83b48e6bdd8727e0c434d94?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" aria-hidden="true" />
+                        <span>By <span class="font-semibold">AudioVisual Jakarta</span></span>
+                    </p>
+                    <p class="flex gap-1 items-center text-gray-500" aria-label="5 out of 5 stars, 190 Reviews">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/90f820b6aa752a4418f5c33243ea1d0586e488faa42c68f66a6cee725d004b9e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" aria-hidden="true" />
+                        <span>5 <span>(190 Reviews)</span></span>
+                    </p>
+                    </div>
+                </header>
+                <div class="flex flex-col mt-6 w-full text-gray-700">
+                    <p class="text-base leading-6">
+                    High-quality sound system setup, including microphones and mixers
+                    </p>
+                    <ul class="flex gap-1 items-start mt-3.5 w-full text-xs flex-wrap" aria-label="Features">
+                    <li class="gap-0.5 self-stretch px-2 py-0.5 bg-gray-100 rounded-[60px]">Stage lighting</li>
+                    <li class="gap-0.5 self-stretch px-2 py-0.5 bg-gray-100 rounded-[60px]">Color customization</li>
+                    <li class="gap-0.5 self-stretch px-2 py-0.5 bg-gray-100 rounded-[60px]">Professional Team</li>
+                    </ul>
+                </div>
+                <p class="flex gap-1 items-center self-start mt-6">
+                    <span class="self-stretch my-auto text-base text-gray-500">Rp2.000.000</span>
+                    <span class="self-stretch my-auto text-xs text-gray-300">per Day</span>
+                </p>
+                </div>
+                <hr class="shrink-0 w-0 h-60 bg-gray-100 border border-gray-100 border-solid max-sm:hidden" aria-hidden="true" />
+                <div class="flex flex-col justify-between items-start w-60 max-sm:w-full">
+                <button class="flex gap-1 items-center text-xs text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-md transition-colors p-1" aria-label="Add Sound System to Order">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/51f1078cc62f228b489fb82c34d261dc3698c1b19cda821471273b2335edbbbe?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" aria-hidden="true" />
+                    <span>Add to Order</span>
+                </button>
+                <div class="flex flex-col mt-16 max-w-full w-[200px] max-md:mt-10 max-sm:w-full">
+                    <p class="text-base text-gray-500">Total Cost</p>
+                    <p class="mt-1.5 text-2xl font-bold text-gray-900">Rp2.000.000</p>
+                </div>
+                <button class="flex gap-1 items-center px-3 py-2 mt-16 text-sm font-medium text-gray-700 bg-gray-100 rounded-[60px] hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-colors max-md:mt-10 max-sm:w-full max-sm:justify-center" aria-label="View Sound System Details">
+                    <span>View Details</span>
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/473a6ec73f5267ee1df9d8edc0d92b8985f9153e9f9ed8a77dedcd516f1aafb6?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" aria-hidden="true" />
+                </button>
+                </div>
+            </article>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap gap-8 items-start p-6 mt-6 w-full bg-gray-50 rounded-[40px] max-md:px-5 max-md:max-w-full" aria-labelledby="destinations-title">
+            <header class="flex flex-col min-h-[288px] min-w-[240px] w-full md:w-[260px]">
+              <h1 id="destinations-title" class="text-3xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Best Event
+                <span class="font-bold">Destinations</span>
+              </h1>
+              <nav class="flex flex-col self-start mt-6 text-sm font-bold text-blue-900" aria-label="Destination filters">
+                <button class="flex gap-1 items-center self-start px-3 py-2 whitespace-nowrap border border-blue-900 border-solid rounded-[60px] hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" aria-label="Reload destinations">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7ab49446c8dafb074a1035bdf60d5ba556b6fae6cbdf9eca829c738af3adf7b3?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" aria-hidden="true"/>
+                  <span class="self-stretch my-auto">Reload</span>
+                </button>
+                <button class="flex gap-1 items-center px-3 py-2 mt-2 border border-blue-900 border-solid rounded-[60px] hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" aria-label="Search destinations manually">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/8f4c0faac17b1dd18a315cb455a521b346006ae76d9573386ef97dc8496b1eec?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" aria-hidden="true"/>
+                  <span class="self-stretch my-auto">Search Manually</span>
+                </button>
+              </nav>
+            </header>
+          
+            <main class="flex flex-col flex-1 shrink basis-0 min-w-[240px] w-full md:w-auto" role="main">
+              <article class="flex flex-wrap gap-6 p-5 w-full bg-white rounded-[32px] transition-shadow hover:shadow-lg" tabindex="0">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/59c1d6def7be94abd9257e63af70132d44d6b8a40046e7a24e5e3edbfd341a59?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="Panoramic view of Taman Mini Indonesia Indah cultural park" class="object-cover w-full md:w-60 h-60 rounded-3xl"/>
+                <div class="flex flex-col flex-1 shrink justify-between basis-0 min-w-[240px]">
+                  <div class="flex flex-col w-full">
+                    <h2 class="text-2xl text-gray-900 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Taman Mini Indonesia Indah (TMII)</h2>
+                    <div class="flex flex-wrap gap-4 items-start self-start mt-2 text-sm">
+                      <div class="flex gap-1 items-center text-blue-900">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a327c91f787cb883f4ab662748111dada9d8e0e3224861acc1f878234e4396e?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" aria-hidden="true"/>
+                        <p class="self-stretch my-auto">by <span class="text-blue-900 hover:underline">JakartaTour</span></p>
+                      </div>
+                      <div class="flex gap-1 items-center text-gray-500" aria-label="Rating: 5 out of 5 stars, 190 reviews">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e22c6586531148f0a0ec4bdec6d4e2d932309680ab13a41dc36a16134c19690c?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" aria-hidden="true"/>
+                        <p class="self-stretch my-auto">5 <span>(190 Reviews)</span></p>
+                      </div>
+                    </div>
+                    <div class="flex flex-col mt-6 w-full text-gray-700">
+                      <p class="text-base leading-6">Cultural park showcasing Indonesian heritage, ideal for team-building, includes entry to mini-museums and cultural performances</p>
+                      <ul class="flex flex-wrap gap-1 items-start mt-3.5 w-full text-xs" aria-label="Available features">
+                        <li class="px-2 py-0.5 bg-gray-100 rounded-[60px]">Guide tour</li>
+                        <li class="px-2 py-0.5 bg-gray-100 rounded-[60px]">VIP access</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="flex gap-1 items-center self-start mt-14 max-md:mt-10">
+                    <span class="text-base text-gray-500">Rp50.000</span>
+                    <span class="text-xs text-gray-300">per Person</span>
+                  </div>
+                </div>
+                <hr class="hidden md:block w-px h-60 bg-gray-100 border-0" aria-hidden="true"/>
+                <div class="flex flex-col justify-between items-start w-full md:w-60">
+                  <button class="flex gap-1 items-center text-xs text-gray-500 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" aria-label="Add destination to order">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/51f1078cc62f228b489fb82c34d261dc3698c1b19cda821471273b2335edbbbe?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="w-[18px] aspect-square" aria-hidden="true"/>
+                    <span class="pr-4">Add to Order</span>
+                  </button>
+                  <div class="flex flex-col self-stretch mt-14 w-full max-md:mt-10">
+                    <h3 class="text-base text-gray-500">Total Cost</h3>
+                    <div class="flex flex-col justify-center mt-1.5">
+                      <p class="text-2xl font-bold text-gray-900">Rp2.500.000</p>
+                      <p class="mt-1 text-xs text-gray-300">for 50 people</p>
+                    </div>
+                  </div>
+                  <button class="flex gap-1 items-center px-3 py-2 mt-14 text-sm font-medium text-gray-700 bg-gray-100 rounded-[60px] hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors max-md:mt-10 w-full justify-center md:w-auto" aria-label="View destination details">
+                    <span>View Details</span>
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f9ee94cde110affbd69d8d44dfe08981706430f35962a8e0fa9582ea1d661cd9?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="w-5 aspect-square" aria-hidden="true"/>
+                  </button>
+                </div>
+              </article>
+          
+              <article class="flex flex-wrap gap-6 p-5 mt-4 w-full bg-white rounded-[32px] transition-shadow hover:shadow-lg" tabindex="0">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/14b2a4ff700f3768444bcc904460e9cb78ae2b5cc2d951d7ff9488af22d1f57a?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="Historical buildings at Jakarta Old Town" class="object-cover w-full md:w-60 h-60 rounded-3xl"/>
+                <div class="flex flex-col flex-1 shrink justify-between basis-0 min-w-[240px]">
+                  <div class="flex flex-col w-full">
+                    <h2 class="text-2xl text-gray-900 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Jakarta Old Town (Kota Tua) Walking Tour</h2>
+                    <div class="flex flex-wrap gap-4 items-start self-start mt-2 text-sm">
+                      <div class="flex gap-1 items-center text-blue-900">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/2fc87085a9c7827501c06ccc943bf4cd4aa876e77d083dee3c23e2b95f08e56b?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" aria-hidden="true"/>
+                        <p class="self-stretch my-auto">by <span class="text-blue-900 hover:underline">JakartaTour</span></p>
+                      </div>
+                      <div class="flex gap-1 items-center text-gray-500" aria-label="Rating: 5 out of 5 stars, 190 reviews">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e9374d281c72c848be2eb727cff4b02a906e453a27148cc957b4d09d877a8516?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" aria-hidden="true"/>
+                        <p class="self-stretch my-auto">5 <span>(190 Reviews)</span></p>
+                      </div>
+                    </div>
+                    <div class="flex flex-col mt-6 w-full text-gray-700">
+                      <p class="text-base leading-6">A historical tour through Jakarta's old town with visits to Fatahillah Square and museums</p>
+                      <ul class="flex flex-wrap gap-1 items-start mt-3.5 w-full text-xs" aria-label="Available features">
+                        <li class="px-2 py-0.5 bg-gray-100 rounded-[60px]">Local guide</li>
+                        <li class="px-2 py-0.5 bg-gray-100 rounded-[60px]">Entry fees</li>
+                        <li class="px-2 py-0.5 bg-gray-100 rounded-[60px]">Iconic spots</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="flex gap-1 items-center self-start mt-14 max-md:mt-10">
+                    <span class="text-base text-gray-500">Rp50.000</span>
+                    <span class="text-xs text-gray-300">per Person</span>
+                  </div>
+                </div>
+                <hr class="hidden md:block w-px h-60 bg-gray-100 border-0" aria-hidden="true"/>
+                <div class="flex flex-col justify-between items-start w-full md:w-60">
+                  <button class="flex gap-1 items-center text-xs text-gray-500 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" aria-label="Add destination to order">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/51f1078cc62f228b489fb82c34d261dc3698c1b19cda821471273b2335edbbbe?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="w-[18px] aspect-square" aria-hidden="true"/>
+                    <span class="pr-4">Add to Order</span>
+                  </button>
+                  <div class="flex flex-col self-stretch mt-14 w-full max-md:mt-10">
+                    <h3 class="text-base text-gray-500">Total Cost</h3>
+                    <div class="flex flex-col justify-center mt-1.5">
+                      <p class="text-2xl font-bold text-gray-900">Rp2.500.000</p>
+                      <p class="mt-1 text-xs text-gray-300">for 50 people</p>
+                    </div>
+                  </div>
+                  <button class="flex gap-1 items-center px-3 py-2 mt-14 text-sm font-medium text-gray-700 bg-gray-100 rounded-[60px] hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors max-md:mt-10 w-full justify-center md:w-auto" aria-label="View destination details">
+                    <span>View Details</span>
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ca714228535bdf25ceb36fce7e4db13405969a05fa0dfbc0919ae10b90efaae3?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" alt="" class="w-5 aspect-square" aria-hidden="true"/>
+                  </button>
+                </div>
+              </article>
+            </main>
+        </div>
+
+        <div class="flex flex-wrap gap-8 items-start p-6 mt-6 w-full bg-gray-50 rounded-[40px] max-md:px-5 max-md:max-w-full" aria-label="Merchandise Section" role="region">
+            <div class="flex flex-col min-h-[288px] min-w-[240px] w-full md:w-[260px]">
+              <h1 class="text-3xl text-gray-900 font-bold">Merchandise</h1>
+              <nav class="flex flex-col self-start mt-6 text-sm font-bold text-blue-900" aria-label="Merchandise Actions">
+                <button class="flex gap-1 items-center self-start px-3 py-2 whitespace-nowrap border border-blue-900 border-solid rounded-[60px] hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 transition-colors" aria-label="Reload merchandise list">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/94850251d9d6059c0dcf0ab123ae2e73da6780ae966167dad3ad58b710cbf595?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" alt="" aria-hidden="true" />
+                  <span>Reload</span>
+                </button>
+                <button class="flex gap-1 items-center px-3 py-2 mt-2 border border-blue-900 border-solid rounded-[60px] hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 transition-colors" aria-label="Search merchandise manually">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/49acd5d80928c8dabf4231b37e01f47b6c370d9c09c6ce393f8cb378ec2edef7?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" alt="" aria-hidden="true" />
+                  <span>Search Manually</span>
+                </button>
+              </nav>
+            </div>
+            <article class="flex flex-col flex-1 shrink basis-0 min-w-[240px] w-full md:w-auto" role="article" aria-labelledby="product-title">
+              <section class="flex flex-wrap gap-6 p-5 w-full bg-white rounded-[32px]" aria-label="Product Details">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/82ce8a6982612933394c8029904f60f04a8be2374cc47e9fed871462fe2d35e1?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" class="object-contain my-auto w-full md:w-60 rounded-3xl aspect-square" alt="Custom T-Shirt product preview" />
+                <div class="flex flex-col flex-1 shrink justify-between basis-0 min-w-[240px] w-full md:w-auto">
+                  <div class="flex flex-col w-full">
+                    <header>
+                      <h2 id="product-title" class="text-2xl text-gray-900 font-semibold">Custom T-Shirts</h2>
+                      <div class="flex flex-col md:flex-row gap-4 items-start self-start mt-2 text-sm">
+                        <p class="flex gap-1 items-center text-blue-900">
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e36dc2de72db1b8d2523d2e56868f632052ede8fb1ae0837ca36fd27f69f9eec?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" alt="" aria-hidden="true" />
+                          <span>by <span class="font-medium">Jakarta Print Studio</span></span>
+                        </p>
+                        <div class="flex gap-1 items-center text-gray-500" role="complementary" aria-label="Product rating">
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/2764b54efea1b1ba0c83fde0ccacbfc643e9cc3432d95573bd1a7dd130266fec?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" class="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" alt="" aria-hidden="true" />
+                          <span aria-label="5 out of 5 stars, 190 reviews">5 <span>(190 Reviews)</span></span>
+                        </div>
+                      </div>
+                    </header>
+                    <div class="flex flex-col mt-6 w-full text-gray-700">
+                      <p class="text-base leading-6">High-quality cotton shirts with custom logo and event branding, perfect for your company</p>
+                      <ul class="flex flex-wrap gap-1 items-start mt-3.5 w-full text-xs" aria-label="Product Features">
+                        <li class="gap-0.5 self-stretch px-2 py-0.5 bg-gray-100 rounded-[60px]">Free Design</li>
+                        <li class="gap-0.5 self-stretch px-2 py-0.5 bg-gray-100 rounded-[60px]">Option to customize colors</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p class="flex gap-1 items-center self-start mt-8 md:mt-14" aria-label="Price per piece">
+                    <span class="self-stretch my-auto text-base text-gray-500">Rp100.000</span>
+                    <span class="self-stretch my-auto text-xs text-gray-300">per pcs</span>
+                  </p>
+                </div>
+                <hr class="hidden md:flex shrink-0 w-0 h-60 bg-gray-100 border border-gray-100 border-solid" aria-hidden="true" />
+                <aside class="flex flex-col justify-between items-start w-full md:w-60">
+                  <button class="flex gap-1 items-center text-xs text-gray-500 w-[104px] hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 transition-colors" aria-label="Add merchandise to order">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/51f1078cc62f228b489fb82c34d261dc3698c1b19cda821471273b2335edbbbe?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" alt="" aria-hidden="true" />
+                    <span>Add to Order</span>
+                  </button>
+                  <div class="flex flex-col self-stretch mt-8 md:mt-14 w-full" role="complementary" aria-label="Order total">
+                    <h3 class="text-base text-gray-500">Total Cost</h3>
+                    <div class="flex flex-col justify-center mt-1.5 w-full">
+                      <p class="text-2xl font-bold text-gray-900">Rp5.000.000</p>
+                      <p class="mt-1 text-xs text-gray-300">for 50 pcs</p>
+                    </div>
+                  </div>
+                  <button class="flex gap-1 items-center px-3 py-2 mt-8 md:mt-14 text-sm font-medium text-gray-700 bg-gray-100 rounded-[60px] hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 transition-colors" aria-label="View product details">
+                    <span>View Details</span>
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c81457dd738db04421d9d8605ee18f6bf52b26d704a9e7b5a28bbf72c35ffaf?placeholderIfAbsent=true&apiKey=9f0edbf58fca4726901f04a929bf10ed" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square" alt="" aria-hidden="true" />
+                  </button>
+                </aside>
+              </section>
+            </article>
+        </div>
+
+        <div class="flex flex-col py-6 pr-11 pl-6 mt-6 w-full bg-gray-50 rounded-[40px] max-md:px-5 max-md:max-w-full max-sm:px-4 max-sm:py-4" 
+            aria-labelledby="order-summary-title"
+            role="region"
+            >
+            <h2 id="order-summary-title" class="sr-only">Order Summary</h2>
+            
+            <article 
+                class="flex flex-wrap gap-10 justify-between items-center w-full text-gray-900 whitespace-nowrap max-md:max-w-full max-sm:gap-4"
+            >
+                <p class="self-stretch my-auto text-lg max-sm:text-base">Subtotal</p>
+                <p 
+                class="self-stretch my-auto w-60 text-2xl font-bold max-sm:w-auto max-sm:text-xl" 
+                aria-label="Total amount: 10 million rupiah"
+                >
+                Rp10.000.000
+                </p>
+            </article>
+
+            <article 
+                class="flex flex-wrap gap-10 justify-between items-center mt-8 w-full text-base max-md:max-w-full max-sm:mt-4 max-sm:gap-4"
+            >
+                <p class="self-stretch my-auto text-gray-500 max-sm:text-sm">
+                Items Selected: 
+                <span aria-label="5 items in cart">5 Items</span>
+                </p>
+                <button 
+                    class="gap-1.5 self-stretch px-5 py-3 my-auto w-60 font-bold text-gray-50 bg-slate-950 rounded-[60px] hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 active:bg-slate-900 transition-colors duration-200 max-sm:w-full max-sm:py-2 max-sm:text-sm"
+                    aria-label="Proceed to book selected items"
+                    type="button"
+                    onclick="window.location.href='checkout.html';"
+                >
+                    Book Now
+                </button>
+
+            </article>
+        </div>
+    </section>
+
+    
+    
+
+</main>
+
+<!-- Footer -->
+<footer class="pt-20">
+  <div class="flex flex-col px-16 py-6 max-md:px-5">
+      <div
+        class="flex flex-wrap gap-10 justify-between items-center w-full max-md:max-w-full"
+      >
+        <div
+          class="flex flex-wrap gap-10 items-center self-stretch my-auto text-base text-gray-300 min-w-[240px] max-md:max-w-full"
+        >
+          <div class="self-stretch my-auto text-blue-900"><a href="#">BECOME A PARTNER</a></div>
+          <div class="self-stretch my-auto"><a href="#">POLICY</a> </div>
+          <div class="self-stretch my-auto"><a href="#">TERMS & CONDITION</a></div>
+        </div>
+        <div class="flex gap-1 items-start self-stretch my-auto">
+          <div
+            class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+          >
+          <a href="#">
+            <img
+              loading="lazy"
+              src="assets/images/icon/ig.svg"
+              class="object-contain w-3.5 aspect-square"
+            />
+            </a>
+          </div>
+          <div
+            class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+          >
+          <a href="#">
+            <img
+              loading="lazy"
+              src="assets/images/icon/tiktok.svg"
+              class="object-contain w-3.5 aspect-square"
+            />
+            </a>
+          </div>
+          <div
+            class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+          >
+          <a href="#">
+            <img
+              loading="lazy"
+              src="assets/images/icon/x.svg"
+              class="object-contain w-3.5 aspect-square"
+            />
+            </a>
+          </div>
+          <div
+            class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+          >
+          <a href="#">
+            <img
+              loading="lazy"
+              src="assets/images/icon/in.svg"
+              class="object-contain w-3.5 aspect-[1.08]"
+            />
+            </a>
+          </div>
+          <div
+            class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+          >
+          <a href="#">
+            <img
+              loading="lazy"
+              src="assets/images/icon/facebook.svg"
+              class="object-contain w-3.5 aspect-square"
+            />
+            </a>
+          </div>
+          <div
+            class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+          >
+          <a href="#">
+            <img
+              loading="lazy"
+              src="assets/images/icon/youtube.svg"
+              class="object-contain w-3.5 aspect-square"
+            />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-4 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+      ></div>
+      <div class=" mt-4 text-xs text-gray-300">©️ 2024 by Buatevent.id</div>
+    </div>
+</footer>
+<script>
+
+    function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const isExpanded = mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    const menuButton = document.querySelector('button[aria-label="Toggle navigation menu"]');
+    menuButton.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    }
+
+    // Elemen slider
+    const sliderMin = document.getElementById("slider-min");
+    const sliderMax = document.getElementById("slider-max");
+    const sliderRange = document.getElementById("slider-range");
+    const minLabel = document.getElementById("min-label");
+    const maxLabel = document.getElementById("max-label");
+    
+    // Batas nilai slider
+    const minBudget = 20000000; // Minimum
+    const maxBudget = 50000000; // Maksimum
+    const step = 1000000;
+    
+    // Nilai awal
+    let minValue = minBudget;
+    let maxValue = maxBudget;
+    
+    // Fungsi untuk format Rupiah
+    function formatRupiah(number) {
+        return "Rp" + number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+    
+    // Update tampilan slider
+    function updateSlider() {
+        const totalRange = maxBudget - minBudget;
+        const minPercent = ((minValue - minBudget) / totalRange) * 100;
+        const maxPercent = ((maxValue - minBudget) / totalRange) * 100;
+    
+        sliderRange.style.left = minPercent + "%";
+        sliderRange.style.right = 100 - maxPercent + "%";
+        sliderMin.style.left = minPercent + "%";
+        sliderMax.style.left = maxPercent + "%";
+    
+        minLabel.textContent = formatRupiah(minValue);
+        maxLabel.textContent = formatRupiah(maxValue);
+    }
+    
+    // Fungsi untuk menangani perubahan slider minimum
+    function moveMin(e) {
+        const track = sliderRange.parentElement.getBoundingClientRect();
+        const newLeft = e.clientX - track.left;
+        const totalWidth = track.width;
+        const newValue = Math.round((newLeft / totalWidth) * (maxBudget - minBudget) + minBudget);
+    
+        if (newValue >= minBudget && newValue < maxValue) {
+        minValue = Math.round(newValue / step) * step;
+        updateSlider();
+        }
+    }
+    
+    // Fungsi untuk menangani perubahan slider maksimum
+    function moveMax(e) {
+        const track = sliderRange.parentElement.getBoundingClientRect();
+        const newLeft = e.clientX - track.left;
+        const totalWidth = track.width;
+        const newValue = Math.round((newLeft / totalWidth) * (maxBudget - minBudget) + minBudget);
+    
+        if (newValue <= maxBudget && newValue > minValue) {
+        maxValue = Math.round(newValue / step) * step;
+        updateSlider();
+        }
+    }
+    
+    // Event listener untuk interaksi slider
+    sliderMin.addEventListener("mousedown", () => {
+        document.addEventListener("mousemove", moveMin);
+        document.addEventListener("mouseup", () => {
+        document.removeEventListener("mousemove", moveMin);
+        });
+    });
+    
+    sliderMax.addEventListener("mousedown", () => {
+        document.addEventListener("mousemove", moveMax);
+        document.addEventListener("mouseup", () => {
+        document.removeEventListener("mousemove", moveMax);
+        });
+    });
+    
+    // Inisialisasi tampilan slider
+    updateSlider();
+              
+    // Ambil elemen yang akan diupdate
+    const attendeesNumber = document.getElementById("attendeesNumber");
+      const decreaseBtn = document.getElementById("decreaseBtn");
+      const increaseBtn = document.getElementById("increaseBtn");
+
+      // Fungsi untuk menambah jumlah
+      increaseBtn.addEventListener("click", () => {
+        let currentValue = parseInt(attendeesNumber.textContent, 10);
+        if (!isNaN(currentValue)) {
+          attendeesNumber.textContent = currentValue + 1;
+        }
+      });
+
+      // Fungsi untuk mengurangi jumlah
+      decreaseBtn.addEventListener("click", () => {
+        let currentValue = parseInt(attendeesNumber.textContent, 10);
+        if (!isNaN(currentValue) && currentValue > 0) {
+          attendeesNumber.textContent = currentValue - 1;
+        }
+      });            
+
+    //  date piker
+    // Inisialisasi Flatpickr untuk rentang tanggal
+    flatpickr("#datepicker-range-start", {
+      dateFormat: "Y-m-d", // Format tanggal yang akan ditampilkan
+      onChange: function (selectedDates, dateStr, instance) {
+        // Menampilkan tanggal yang dipilih di dalam <time>
+        const timeElement = document.getElementById("datepicker-range-start");
+        
+        // Mengupdate teks dalam elemen <time> dengan format baru
+        const newDate = new Date(dateStr);
+        const options = { year: 'numeric', month: 'short', day: 'numeric' };
+        timeElement.textContent = newDate.toLocaleDateString('en-GB', options); // Mengubah format ke "dd MMM yyyy"
+        
+        // Mengupdate atribut datetime untuk keperluan aksesibilitas
+        timeElement.setAttribute("datetime", dateStr);
+
+        console.log("Start date selected:", dateStr);
+      },
+    });
+
+    // Inisialisasi Flatpickr untuk End Date
+    flatpickr("#datepicker-range-end", {
+      dateFormat: "Y-m-d", // Format tanggal yang akan ditampilkan
+      onChange: function (selectedDates, dateStr, instance) {
+        // Menampilkan tanggal yang dipilih di dalam <time>
+        const timeElement = document.getElementById("datepicker-range-end");
+
+        // Mengupdate teks dalam elemen <time> dengan format baru
+        const newDate = new Date(dateStr);
+        const options = { year: 'numeric', month: 'short', day: 'numeric' };
+        timeElement.textContent = newDate.toLocaleDateString('en-GB', options); // Mengubah format ke "dd MMM yyyy"
+
+        // Mengupdate atribut datetime untuk keperluan aksesibilitas
+        timeElement.setAttribute("datetime", dateStr);
+
+        console.log("End date selected:", dateStr);
+      },
+    });
+
+</script>
+

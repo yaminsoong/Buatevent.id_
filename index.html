@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buatevent.id</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/icon/favicon.png">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="assets/js/tailwind-3.4.js"></script>
+    <script src="assets/js/form-3.4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .relative:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+        }
+        article img {
+          width: 100%; /* Mengikuti lebar article */
+          height: 100%; /* Mengikuti tinggi article */
+          object-fit: cover; /* Gambar tetap rapi dengan memotong bagian yang tidak perlu */
+          object-position: center; /* Memusatkan gambar */
+          position: absolute; /* Pastikan gambar tidak memengaruhi tata letak elemen lainnya */
+        }
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet" />
+
+    <script type="module">
+      import KeenSlider from 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm'
+    
+      const keenSlider = new KeenSlider(
+        '#keen-slider',
+        {
+          loop: true,
+          slides: {
+            origin: 'auto',
+            perView: 2.25,
+            spacing: 15,
+          },
+          breakpoints: {
+            '(max-width: 1524px)': {
+              slides: {
+                origin: 'auto',
+                perView: 2,
+                spacing: 10,
+              },
+            },
+            '(max-width: 768px)': {
+              slides: {
+                origin: 'auto',
+                perView: 1.25,
+                spacing: 5,
+              },
+            },
+          },
+        },
+        []
+      )
+    
+      const keenSliderPrevious = document.getElementById('keen-slider-previous')
+      const keenSliderNext = document.getElementById('keen-slider-next')
+    
+      const keenSliderPreviousDesktop = document.getElementById('keen-slider-previous-desktop')
+      const keenSliderNextDesktop = document.getElementById('keen-slider-next-desktop')
+    
+      keenSliderPrevious.addEventListener('click', () => keenSlider.prev())
+      keenSliderNext.addEventListener('click', () => keenSlider.next())
+    
+      keenSliderPreviousDesktop.addEventListener('click', () => keenSlider.prev())
+      keenSliderNextDesktop.addEventListener('click', () => keenSlider.next())
+    </script>
+</head>
+
+<body class="bg-white text-gray-900">
+    <!-- Header -->
+    <div class="relative">
+        <header class="flex flex-wrap bg-gradient-to-b from-white/90 to-transparent bg-opacity-30 gap-12 justify-between items-center px-16 py-8 w-full min-h-[100px] max-md:px-5 max-md:max-w-full">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img loading="lazy" src="./assets/images/logo.png" alt="Company logo" class="object-contain w-[200px]" />
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex gap-6 items-center flex-grow self-stretch my-auto mr-auto text-gray-500">
+                <ul class="flex gap-6 items-center">
+                    <li><a href="index.html" class="text-gray-900 hover:text-gray-700">Home</a></li>
+                    <!-- <li>
+                        <button class="flex items-center gap-2 hover:text-gray-700">
+                            <span>Services</span>
+                            <img loading="lazy" src="assets/images/icon/menu-drop-down.svg" alt="" class="w-5" />
+                        </button>
+                    </li> -->
+                    <li>
+                      <button id="mega-menu-icons-dropdown-button" data-dropdown-toggle="mega-menu-icons-dropdown" class="flex items-center gap-1 hover:text-gray-500 text-gray-700 py-2 px-0 ">
+                          Services 
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/457da01b92431674db4cd6ecd7c395162936ce4d307a679ea7cb2ba54182b074?placeholderIfAbsent=true&amp;apiKey=9f0edbf58fca4726901f04a929bf10ed" class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square">                      </button>
+                      <div id="mega-menu-icons-dropdown" class="absolute z-10 grid hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700">
+                          <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+                              <ul class="space-y-4" aria-labelledby="mega-menu-icons-dropdown-button">
+                                  <li>
+                                      <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                          <span class="sr-only">Venue</span>
+                                          <img src="./assets/images/icon/vanue.png" class="w-5 pr-2"> Venue
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                          <span class="sr-only">Transport</span>
+                                          <img src="./assets/images/icon/transport.png" class="w-5 pr-2">
+                                          Transport
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                          <span class="sr-only">Production</span>
+                                          <img src="./assets/images/icon/product.png" class="w-5 pr-2">
+                                          Production
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                          <span class="sr-only">Entertainment</span>
+                                          <img src="./assets/images/icon/entertainment.png" class="w-5 pr-2">
+                                          Entertainment
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+                              <ul class="space-y-4">
+                                  <li>
+                                      <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                          <span class="sr-only">Merchandise</span>
+                                          <img src="./assets/images/icon/merchendise.png" class="w-5 pr-2">
+                                          Merchandise
+                                      </a>
+                                  </li>
+                                  <li>
+                                    <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                        <span class="sr-only">Outboand</span>
+                                        <img src="./assets/images/icon/outboand.png" class="w-5 pr-2">
+                                        Outboand
+                                    </a>
+                                </li><li>
+                                  <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                      <span class="sr-only">Documentation</span>
+                                      <img src="./assets/images/icon/document.png" class="w-5 pr-2">
+                                      Documentation
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                      <span class="sr-only">Man Power</span>
+                                      <img src="./assets/images/icon/manpower.png" class="w-5 pr-2">
+                                      Man Power
+                                  </a>
+                                </li>
+                                
+                              </ul>
+                          </div>
+                      </div>
+                    </li>
+                    
+                    <li><a href="#about" class="text-gray-900 hover:text-gray-700">About</a></li>
+                    <li><a href="#blog" class="text-gray-900 hover:text-gray-700">Blog</a></li>
+                    <li><a href="#promo" class="text-gray-900 hover:text-gray-700">Promo</a></li>
+                    <li><a href="#contact" class="text-gray-900 hover:text-gray-700">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="hidden md:flex gap-4">
+              <button 
+              class="flex items-center justify-center px-4 py-2 font-bold text-gray-700 bg-white rounded-full hover:bg-gray-200 md:bg-gray-200 sm:bg-gray-500"
+              onclick="window.location.href='https://admin.buatevent.id/Login/register'" 
+              target="_blank"
+            >
+              <!-- Teks dan Gambar -->
+              <span class="flex items-center gap-2">
+                <span>Register</span>
+                <img 
+                  loading="lazy" 
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/d149bb039a4bb19d76085b56e1d15c1cd21d8a2f3fd0c36cdba7fc94c7a917ea?apiKey=9f0edbf58fca4726901f04a929bf10ed&amp;" 
+                  class="object-contain shrink-0 w-5 aspect-square" 
+                  alt=""
+                />
+              </span>
+            </button>
+            
+                <button class="px-4 py-2 text-white bg-opacity-20 border border-black border-opacity-50 rounded-full sm:bg-gray-500 md:bg-gray-500 hover:bg-gray-500"
+                onclick="window.location.href='https://admin.buatevent.id/login'" target="_blank">Sign in</button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="block md:hidden text-gray-500">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            <img loading="lazy" src="assets/images/home-bg.png" alt="Event planning illustration" 
+              class="absolute bg-white sm:rounded-3xl top-[10px] right-[10px] -z-10 w-[38rem] max-w-[75rem] h-50 object-cover bg-center shadow-lg md:block hidden md:hidden lg:hidden xl:block xl:blur-none">
+        </header>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden bg-white bg-opacity-98 z-10 shadow-lg p-6 absolute inset-x-0 top-0 mt-20 hidden">
+            <ul class="flex flex-col gap-4 text-gray-500">
+                <li><a href="#home" class="text-gray-900 hover:text-gray-700">Home</a></li>
+                <li>
+                    <button class="flex items-center gap-2 hover:text-gray-700">
+                        <span>Services</span>
+                        <img loading="lazy" src="assets/images/icon/menu-drop-down.svg" alt="" class="w-5" />
+                    </button>
+                    <div id="mega-menu-icons-dropdown" class="absolute z-10 grid hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700">
+                      <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+                          <ul class="space-y-4" aria-labelledby="mega-menu-icons-dropdown-button">
+                              <li>
+                                  <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                      <span class="sr-only">Venue</span>
+                                      <img src="./assets/images/icon/vanue.png" class="w-5 pr-2"> Venue
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                      <span class="sr-only">Transport</span>
+                                      <img src="./assets/images/icon/transport.png" class="w-5 pr-2">
+                                      Transport
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                      <span class="sr-only">Production</span>
+                                      <img src="./assets/images/icon/product.png" class="w-5 pr-2">
+                                      Production
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                      <span class="sr-only">Entertainment</span>
+                                      <img src="./assets/images/icon/entertainment.png" class="w-5 pr-2">
+                                      Entertainment
+                                  </a>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+                          <ul class="space-y-4">
+                              <li>
+                                  <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                      <span class="sr-only">Merchandise</span>
+                                      <img src="./assets/images/icon/merchendise.png" class="w-5 pr-2">
+                                      Merchandise
+                                  </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                    <span class="sr-only">Outboand</span>
+                                    <img src="./assets/images/icon/outboand.png" class="w-5 pr-2">
+                                    Outboand
+                                </a>
+                            </li><li>
+                              <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                  <span class="sr-only">Documentation</span>
+                                  <img src="./assets/images/icon/document.png" class="w-5 pr-2">
+                                  Documentation
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                  <span class="sr-only">Man Power</span>
+                                  <img src="./assets/images/icon/manpower.png" class="w-5 pr-2">
+                                  Man Power
+                              </a>
+                            </li>
+                            
+                          </ul>
+                      </div>
+                  </div>
+                </li>
+                <li><a href="#about" class="text-gray-900 hover:text-gray-700">About</a></li>
+                <li><a href="#blog" class="text-gray-900 hover:text-gray-700">Blog</a></li>
+                <li><a href="#promo" class="text-gray-900 hover:text-gray-700">Promo</a></li>
+                <li><a href="#contact" class="text-gray-900 hover:text-gray-700">Contact</a></li>
+                <li class="mt-4">
+                    <button class="w-full py-2 font-bold text-gray-900 bg-gray-400 rounded-full hover:bg-gray-200">Register</button>
+                </li>
+                <li>
+                    <button class="w-full py-2 text-gray-900 bg-opacity-30 bg-gray-200 border border-white border-opacity-50 rounded-full hover:bg-gray-500">Sign In</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- </header> -->
+
+    <!-- Main Content -->
+    <main>
+      <section class="flex gap-5 max-md:px-5 md:px-16 pb-40 lg:pb-20 max-md:flex-col">
+        <section class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+          <div class="flex flex-col mt-20 lg:mt-7 max-w-full w-[608px] max-md:mt-10">
+            <div class="flex flex-col w-full max-md:max-w-full">
+              <h1 class="text-6xl font-bold text-gray-900 bg-clip-text bg-[linear-gradient(90deg,#08101B_0%,#2A5089_100%)] max-md:max-w-full max-md:text-4xl">
+                Make Your <br /> Event <span class="bg-gradient-to-r from-[rgba(8,16,27,1)] to-[rgba(42,80,137,1)] bg-clip-text text-transparent"> Easier</span>
+              </h1>
+              <p class="mt-3.5 text-sm leading-7 text-gray-500 max-md:max-w-full">
+                Find the best event recommendations with AI. Enter your preferences, and we'll provide top options— adjust them as needed below!
+              </p>
+            </div>
+            
+            <form class="flex flex-wrap gap-3 items-center mt-20 lg:mt-7 w-full lg:w-[500px] min-md:w-[200px] max-lg:max-w[508px] max-md:max-w-full pl-4 min-md:pl-0 max-sm:pl-5 bg-gray-50 rounded-[60px] max-md:pl-5" aria-label="Event Proposal Input">
+              <label for="proposalInput" class="sr-only">Enter event proposal details</label>
+              <input
+                type="text"
+                id="proposalInput"
+                class="grow rounded-[60px] shrink self-stretch my-auto text-sm w-[211px] lg:w-[300px] min-md:w-[200px] max-md:max-w-full"
+                placeholder="Ex : Please create an event proposal for 2 days, 1 night office outing to Bandung in December, with 50 participants traveling by bus, including a special gala dinner..."
+                aria-label="Enter event proposal details"
+              />
+              <button
+                type="button"
+                class="flex opacity-1 relative gap-2.5 items-start self-stretch p-5 my-auto w-14 h-14 bg-gray-100 min-h-[56px] rounded-[50px]"
+                aria-label="Submit proposal"
+                onclick="redirectToSearch()"
+              >
+                <span class="flex absolute right-0 bottom-0 gap-2.5 items-center self-start py-4 w-14 h-14 bg-gray-100 min-h-[56px] rounded-[60px]"></span>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/d149bb039a4bb19d76085b56e1d15c1cd21d8a2f3fd0c36cdba7fc94c7a917ea?apiKey=9f0edbf58fca4726901f04a929bf10ed&"
+                  class="object-contain z-0 shrink-0 my-auto w-5 aspect-square"
+                  alt=""
+                />
+              </button>
+
+              <div class="flex grow opacity-1 shrink gap-2.5 items-center self-stretch p-2.5 my-auto w-[65px]">
+                <button type="button" class="flex gap-2.5 items-center self-stretch p-4 my-auto w-14 h-14 bg-gray-100 rounded-[60px]" aria-label="Additional options">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4ad1ce02ee4e1ec2e02ea7746888e06f06a8300de54168c953dcf742ff3d5704?apiKey=9f0edbf58fca4726901f04a929bf10ed&" class="object-contain self-stretch my-auto w-6 aspect-square" alt="" />
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="flex flex-col mt-20 lg:mt-7 max-w-full w-[508px] max-md:mt-10">
+            <section class="flex flex-col max-w-[568px]">
+              <h2 class="text-lg text-gray-700 max-md:max-w-full">Select options :</h2>
+              <div class="flex flex-wrap gap-2.5 justify-center items-center mt-8 w-full max-md:max-w-full">
+                <div class="flex flex-col grow shrink self-stretch my-auto w-[38px]">
+                  <div class="flex gap-2.5 items-center self-center p-3 bg-[#2a5089] rounded-3xl border border-white border-solid h-[50px] min-h-[50px] w-[50px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/94352fc4abbdc13189f46c5f5724855398c3a5c800c1e10aa7d10a5de551bfbd?apiKey=9f0edbf58fca4726901f04a929bf10ed&" class="object-contain self-stretch my-auto w-7 aspect-square" alt="Venue icon" />
+                  </div>
+                  <p class="mt-1.5 text-sm text-center text-gray-500">Venue</p>
+                </div>
+                <div class="flex flex-col grow shrink self-stretch my-auto w-[38px]">
+                  <div class="flex gap-2.5 items-center self-center p-2.5 bg-[#2a5089] rounded-3xl border border-white border-solid h-[50px] min-h-[50px] w-[50px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/566589a6f2ed446b256c090c258133faf6b1dcab32f43f95dc2642048ee4dec1?apiKey=9f0edbf58fca4726901f04a929bf10ed&" class="object-contain self-stretch my-auto aspect-square w-[30px]" alt="Transport icon" />
+                  </div>
+                  <p class="mt-1.5 text-sm text-center text-gray-500">Transport</p>
+                </div>
+                <div class="flex flex-col grow shrink self-stretch my-auto w-[38px]">
+                  <div class="flex gap-2.5 items-center self-center px-3 py-2.5 bg-[#2a5089] rounded-3xl border border-white border-solid h-[50px] min-h-[50px] w-[50px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1d1fd70d924705662e981bccb2cf445a46ae05b2d0d33eae15c299aa2db18ac4?apiKey=9f0edbf58fca4726901f04a929bf10ed&" class="object-contain self-stretch my-auto w-7 aspect-[0.93]" alt="Production icon" />
+                  </div>
+                  <p class="mt-1.5 text-sm text-center text-gray-500">Production</p>
+                </div>
+                <div class="flex flex-col grow shrink self-stretch my-auto w-[38px]">
+                  <div class="flex gap-2.5 items-center self-center px-2.5 py-3 bg-[#2a5089] rounded-3xl border border-white border-solid h-[50px] min-h-[50px] w-[50px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0b399124f3ea51aae4d398d1e54f30376a7013dcb156a026d34b798671b13a9a?apiKey=9f0edbf58fca4726901f04a929bf10ed&" class="object-contain self-stretch my-auto aspect-square w-[29px]" alt="Tournament icon" />
+                  </div>
+                  <p class="mt-1.5 text-sm text-center text-gray-500">Tournament</p>
+                </div>
+                <div class="flex flex-col grow shrink self-stretch my-auto w-[38px]">
+                  <div class="flex flex-col justify-center items-center self-center px-2.5 bg-[#2a5089] rounded-3xl h-[50px] min-h-[50px] w-[50px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/29ffd6b2f51e6c39fa2df55c76b3b1ef30f593974953b0c296f80711ad9d654f?apiKey=9f0edbf58fca4726901f04a929bf10ed&" class="object-contain w-full aspect-[1.07]" alt="Destination icon" />
+                  </div>
+                  <p class="mt-1.5 text-sm text-center text-gray-500">Destination</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2.5 items-center mt-8 w-full max-md:max-w-full">
+                <div class="flex flex-col grow shrink self-stretch my-auto w-[38px]">
+                  <div class="flex flex-col justify-center items-center self-center px-2.5 bg-[#2a5089] rounded-3xl border border-white border-solid h-[50px] min-h-[50px] w-[50px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/903505b5e8d144274598c841a1ecb451b8da4cbf54b39bf784f4b345c4388f4c?apiKey=9f0edbf58fca4726901f04a929bf10ed&" class="object-contain w-full aspect-square" alt="Outbound icon" />
+                  </div>
+                  <p class="mt-1.5 text-sm text-center text-gray-500">Outbound</p>
+                </div>
+                <div class="flex flex-col grow shrink self-stretch my-auto w-[38px]">
+                  <div class="flex gap-2.5 items-center self-center py-2.5 pr-2.5 pl-3 bg-[#2a5089] rounded-3xl h-[50px] min-h-[50px] w-[50px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/36ae18922c420d2d4db1654ca7a2301eba67b54b53df89ebb7b2dd6726ffc257?apiKey=9f0edbf58fca4726901f04a929bf10ed&" class="object-contain self-stretch my-auto aspect-square w-[30px]" alt="Merchandise icon" />
+                  </div>
+                  <p class="mt-1.5 text-sm text-center text-gray-500">Merchandise</p>
+                </div>
+                <div class="flex flex-col grow shrink self-stretch my-auto w-[38px]">
+                  <div class="flex flex-col justify-center items-center self-center px-2.5 bg-[#2a5089] rounded-3xl border border-white border-solid h-[50px] min-h-[50px] w-[50px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d463a816f8660cf3ddb68492a9973f5e56544b38f3a95740a03bd4a866813634?apiKey=9f0edbf58fca4726901f04a929bf10ed&" class="object-contain w-full aspect-[1.04]" alt="Documentation icon" />
+                  </div>
+                  <p class="mt-1.5 text-sm text-center text-gray-500">Documentation</p>
+                </div>
+                <div class="flex flex-col grow shrink self-stretch my-auto w-[38px]">
+                  <div class="flex gap-2.5 items-center self-center p-2.5 bg-[#2a5089] rounded-3xl h-[50px] min-h-[50px] w-[50px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/90a123612d97e53025ea7c2243a9028b36c9966fe0df18f711b9cf0ddb08232a?apiKey=9f0edbf58fca4726901f04a929bf10ed&" class="object-contain self-stretch my-auto aspect-square w-[30px]" alt="Entertainment icon" />
+                  </div>
+                  <p class="mt-1.5 text-sm text-center text-gray-500">Entertainment</p>
+                </div>
+                <div class="flex flex-col grow shrink self-stretch my-auto w-[38px]">
+                  <div class="flex flex-col justify-center items-center self-center px-2.5 bg-[#2a5089] rounded-3xl h-[50px] min-h-[50px] w-[50px]">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5a8de4f8e8b02e49cad65d6bae276ca559e8d2c4a36fda8d8b4052670752f021?apiKey=9f0edbf58fca4726901f04a929bf10ed&" class="object-contain w-full aspect-square" alt="Man Power icon" />
+                  </div>
+                  <p class="mt-1.5 text-sm text-center text-gray-500">Man Power</p>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="flex flex-col mt-20 lg:mt-12 max-w-full w-[608px] max-md:mt-10">
+            <div class="flex flex-wrap gap-10 items-center w-full max-md:max-w-full">
+              <div class="flex flex-col flex-1 shrink self-stretch basis-0 min-w-[240px]">
+                <h3 class="text-base font-bold text-gray-700">Personalized Recommendations</h3>
+                <p class="text-sm leading-5 text-gray-500 mt-2">Tailored suggestions for venues, transportation, and services based on your needs</p>
+              </div>
+              <div class="flex flex-col flex-1 shrink self-stretch basis-0 min-w-[240px]">
+                <h3 class="text-base font-bold text-gray-700">One-Stop Event Solution</h3>
+                <p class="text-sm leading-5 text-gray-500 mt-2">From planning to execution, everything is just a few clicks away</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </section>
+       
+
+
+
+      <section class="flex flex-col justify-center px-16 py-20 md:py-10 bg-white max-md:px-5" aria-labelledby="how-it-works-title">
+        <div class="flex flex-wrap gap-6 w-full max-md:max-w-full">
+          <div class="flex flex-col justify-between px-10 py-20 bg-center bg-no-repeat bg-cover rounded-3xl bg-[url(https://cdn.builder.io/api/v1/image/assets%2F9f0edbf58fca4726901f04a929bf10ed%2F5673683a4a944b9e99634f46ac6d23e1)] min-w-[240px] w-[480px] lg:w-[300px] max-md:px-5 max-md:max-w-full">
+            <div class="flex flex-col w-full">
+              <h2 class="text-5xl text-white max-md:text-4xl">
+                How it <span class="font-bold text-white">Works</span>
+              </h2>
+              <p class="mt-3.5 text-base leading-6 text-gray-300">
+                From your idea to a seamless event, BuatEvent.id guides you every step of the way
+              </p>
+            </div>
+            <div onclick="openModal()" class="flex flex-col justify-center items-center self-center px-2.5 mt-36 lg:mt-20 md:mt-10 sm:mt-5 bg-white bg-opacity-50 h-[100px] rounded-[100px] w-[100px] max-md:mt-10 cursor-pointer">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/929c271020669cdaecb324449f0ac329e98920059df879e0abc6e4313009e9e8?apiKey=9f0edbf58fca4726901f04a929bf10ed&" alt="Video tutorial icon" class="object-contain w-full aspect-square">
+            </div>
+            <p class="mt-36 lg:mt-20 md:mt-10 sm:mt-5 text-base text-center text-gray-300 max-md:mt-10">VIDEO TUTORIAL</p>
+            <!-- Pop-up Video -->
+             <!-- Modal -->
+            <div id="videoModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75 flex items-center justify-center">
+              <div class="relative w-11/12 max-w-3xl bg-white rounded-lg shadow-lg">
+                <!-- Close Button -->
+                <button
+                  class="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+                  onclick="closeModal()"
+                >
+                  ✕
+                </button>
+                <!-- Video -->
+                <div class="p-6">
+                  <video
+                    controls
+                    class="w-full rounded-lg"
+                  >
+                    <source src="./assets/video/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+            <!-- <div id="videoPopup" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-50 flex justify-center items-center hidden">
+              <div class="relative bg-white rounded-lg p-5 w-[80%] max-w-[640px]">
+                <button onclick="closeVideoPopup()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">
+                  X
+                </button>
+                <video id="popupVideo" controls class="w-full rounded-lg">
+                  <source src="./assets/video/video.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div> -->
+          </div>
+          <div class="flex flex-wrap flex-1 shrink gap-4 items-start self-start basis-20 min-w-[240px] max-md:max-w-full">
+            <article class="flex relative flex-col grow shrink justify-between items-start py-6 pr-10 pl-20 md:pl-30 w-80 min-h-[216px] min-w-[240px] max-md:px-5">
+              <div class="flex absolute top-2/4 left-2/4 z-0 flex-col max-w-full text-2xl font-bold text-center text-gray-500 whitespace-nowrap rounded-none -translate-x-2/4 -translate-y-2/4 h-[216px] w-[400px] lg:w-[600px]">
+                <div class="flex relative flex-col items-start pb-40 w-full aspect-[1.852] max-md:pr-5 max-md:pb-24">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5cf3cc7c94d9787a0d20447a7d5dc069084d9823d9bed278be17410c07928bb2?apiKey=9f0edbf58fca4726901f04a929bf10ed&" alt="Background for step 1" class="object-cover absolute inset-0 size-full">
+                  <div class="relative px-2.5 py-2 -mb-8 w-14 h-14 bg-gray-200 rounded-2xl min-h-[56px] max-md:mb-2.5">
+                    1
+                  </div>
+                </div>
+              </div>
+              <div class="flex z-0 flex-col self-stretch w-full">
+                <h3 class="text-xl font-bold text-gray-700 max-sm:mt-20">Enter Your Event Needs</h3>
+                <p class="mt-2 text-sm leading-5 text-gray-500">Use our smart prompt box to tell us what you need. Whether it's a corporate event or family gathering</p>
+              </div>
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3866ce4de05b9ad6dfa40a8a4aadd1f5f8dca85e2dde76d8f7eaeff23e9e1d0c?apiKey=9f0edbf58fca4726901f04a929bf10ed&" alt="Icon for entering event needs" class="object-contain z-0 gap-0 mt-6 aspect-[1.8] w-[72px]">
+            </article>
+            <article class="flex relative flex-col grow shrink justify-between items-start py-6 pr-10 pl-20 w-80 min-h-[216px] min-w-[240px] max-md:px-5">
+              <div class="flex absolute top-2/4 left-2/4 z-0 flex-col max-w-full text-2xl font-bold text-center text-gray-500 whitespace-nowrap rounded-none -translate-x-2/4 -translate-y-2/4 h-[216px] w-[400px]">
+                <div class="flex relative flex-col items-start pb-40 w-full aspect-[1.852] max-md:pr-5 max-md:pb-24">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5cf3cc7c94d9787a0d20447a7d5dc069084d9823d9bed278be17410c07928bb2?apiKey=9f0edbf58fca4726901f04a929bf10ed&" alt="Background for step 2" class="object-cover absolute inset-0 size-full">
+                  <div class="relative px-2.5 py-2 -mb-8 w-14 h-14 bg-gray-200 rounded-2xl min-h-[56px] max-md:mb-2.5">
+                    2
+                  </div>
+                </div>
+              </div>
+              <div class="flex z-0 flex-col self-stretch w-full">
+                <h3 class="text-xl font-bold text-gray-700 max-sm:mt-20">Get Recommendations</h3>
+                <p class="mt-2 text-sm leading-5 text-gray-500">Based on your input, BuatEvent.id will present top suggestions for hotels, venues, transportation, and more</p>
+              </div>
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0b3b8e7e4c1aefb76256e1efa8a182ac5795a29af6a0a8edaecfc30e2f87265d?apiKey=9f0edbf58fca4726901f04a929bf10ed&" alt="Icon for getting recommendations" class="object-contain z-0 gap-0 mt-6 aspect-[1.8] w-[72px]">
+            </article>
+            <article class="flex relative flex-col grow shrink justify-between items-start py-6 pr-10 pl-20 w-80 min-h-[216px] min-w-[240px] max-md:px-5">
+              <div class="flex absolute top-2/4 left-2/4 z-0 flex-col max-w-full text-2xl font-bold text-center text-gray-500 whitespace-nowrap rounded-none -translate-x-2/4 -translate-y-2/4 h-[216px] w-[400px]">
+                <div class="flex relative flex-col items-start pb-40 w-full aspect-[1.852] max-md:pr-5 max-md:pb-24">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5cf3cc7c94d9787a0d20447a7d5dc069084d9823d9bed278be17410c07928bb2?apiKey=9f0edbf58fca4726901f04a929bf10ed&" alt="Background for step 3" class="object-cover absolute inset-0 size-full">
+                    <div class="relative px-2.5 py-2 -mb-8 w-14 h-14 bg-gray-200 rounded-2xl min-h-[56px] max-md:mb-2.5">
+                    3
+                  </div>
+                </div>
+              </div>
+              <div class="flex z-0 flex-col self-stretch w-full">
+                <h3 class="text-xl font-bold text-gray-700 max-sm:mt-16">Adjust Your Budget</h3>
+                <p class="mt-2 text-sm leading-5 text-gray-500">Fine-tune the options by changing your budget, and the recommendations will update instantly</p>
+              </div>
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c3572c684f2e679921124e4905f6f24284943d3fb9e9cbd0769b4fcb9f4b4209?apiKey=9f0edbf58fca4726901f04a929bf10ed&" alt="Icon for adjusting budget" class="object-contain z-0 gap-0 mt-6 aspect-[1.8] w-[72px]">
+            </article>
+            <article class="flex relative flex-col grow shrink justify-between items-start py-6 pr-10 pl-20 w-80 min-h-[216px] min-w-[240px] max-md:px-5">
+              <div class="flex absolute top-2/4 left-2/4 z-0 flex-col max-w-full text-2xl font-bold text-center text-gray-500 whitespace-nowrap rounded-none -translate-x-2/4 -translate-y-2/4 h-[216px] w-[400px]">
+                <div class="flex relative flex-col items-start pb-40 w-full aspect-[1.852] max-md:pr-5 max-md:pb-24">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5cf3cc7c94d9787a0d20447a7d5dc069084d9823d9bed278be17410c07928bb2?apiKey=9f0edbf58fca4726901f04a929bf10ed&" alt="Background for step 4" class="object-cover absolute inset-0 size-full">
+                  <div class="relative px-2.5 py-2 -mb-8 w-14 h-14 bg-gray-200 rounded-2xl min-h-[56px] max-md:mb-2.5">
+                    4
+                  </div>
+                </div>
+              </div>
+              <div class="flex z-0 flex-col self-stretch w-full">
+                <h3 class="text-xl font-bold text-gray-700 max-sm:mt-24 max-sm:mr-auto max-sm:-ml-px">Select and Checkout</h3>
+                <p class="mt-2 text-sm leading-5 text-gray-500 max-sm:mt-2">Choose the services you need and proceed to checkout, pick the items that best suit your event vision</p>
+              </div>
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/14b1520964893691c9da3033466b82812f294d25f3cba7ec976fc2864b30eeae?apiKey=9f0edbf58fca4726901f04a929bf10ed&" alt="Icon for select and checkout" class="object-contain z-0 gap-0 mt-6 aspect-[1.8] w-[72px]">
+            </article>
+            <article class="flex relative flex-col grow shrink justify-between items-start py-6 pr-10 pl-20 w-80 min-h-[216px] min-w-[240px] max-md:px-5">
+              <div class="flex absolute top-2/4 left-2/4 z-0 flex-col max-w-full text-2xl font-bold text-center text-gray-500 whitespace-nowrap rounded-none -translate-x-2/4 -translate-y-2/4 h-[216px] w-[400px]">
+                <div class="flex relative flex-col items-start pb-40 w-full aspect-[1.852] max-md:pr-5 max-md:pb-24">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5cf3cc7c94d9787a0d20447a7d5dc069084d9823d9bed278be17410c07928bb2?apiKey=9f0edbf58fca4726901f04a929bf10ed&" alt="Background for step 5" class="object-cover absolute inset-0 size-full">
+                  <div class="relative px-2.5 py-2 -mb-8 w-14 h-14 bg-gray-200 rounded-2xl min-h-[56px] max-md:mb-2.5">
+                    5
+                  </div>
+                </div>
+              </div>
+              <div class="flex z-0 flex-col self-stretch w-full">
+                <h3 class="text-xl font-bold text-gray-700 max-sm:mt-20 max-sm:mr-auto">Make a Payment</h3>
+                <p class="mt-2 text-sm leading-5 text-gray-500 max-sm:mt-3">Proceed to checkout with flexible payment options — make a down payment or pay in full</p>
+              </div>
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e3e34b7b98c5272391a4c4e167570dc61a3c214f7a32cb40ae21e86f370ea779?apiKey=9f0edbf58fca4726901f04a929bf10ed&" alt="Icon for making payment" class="object-contain z-0 gap-0 mt-6 aspect-[1.8] w-[72px]">
+            </article>
+            <article class="flex relative flex-col grow shrink justify-between items-stretch py-6 pr-10 pl-20 w-80 min-h-[216px] min-w-[240px] max-md:px-5">
+              <div class="flex absolute top-2/4 left-2/4 z-0 flex-col max-w-full text-2xl font-bold text-center text-gray-500 whitespace-nowrap rounded-none -translate-x-2/4 -translate-y-2/4 h-[216px] w-[400px]">
+                <div class="flex relative flex-col items-start pb-40 w-full aspect-[1.852] max-md:pr-5 max-md:pb-24">
+                  <img loading="lazy" 
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/5cf3cc7c94d9787a0d20447a7d5dc069084d9823d9bed278be17410c07928bb2?apiKey=9f0edbf58fca4726901f04a929bf10ed&" 
+                        alt="Background for step 6" 
+                        class="object-cover h-full w-full absolute inset-0">
+                  <div class="relative px-2.5 py-2 -mb-8 w-14 h-14 bg-gray-200 rounded-2xl min-h-[56px] max-md:mb-2.5">
+                    6
+                  </div>
+                </div>
+              </div>
+              <div class="flex z-0 flex-col self-stretch w-full grow">
+                <h3 class="text-xl font-bold text-gray-700 max-sm:mt-14 max-sm:mr-auto">Confirmation & Payment</h3>
+                <p class="mt-2 text-sm leading-5 text-gray-500 max-sm:mt-3">Our team will connect with you to confirm details and finalize arrangements</p>
+              </div>
+              <img loading="lazy" 
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/09432e33529916136c79044cc4de9665cece77f8b4965e90c415de383ec25784?apiKey=9f0edbf58fca4726901f04a929bf10ed&" 
+                    alt="Icon for receiving RFQ and finalizing" 
+                    class="object-contain z-0 gap-0 mt-6 aspect-[1.9] w-[72px]">
+            </article>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="flex flex-col justify-center px-16 pb-20 lg:pb-10 max-md:px-5" >
+          <div class="flex flex-wrap gap-10 items-center  max-md:px-5">
+              <img
+              loading="lazy"
+              srcset="./assets/images/Frame_626610.png"
+              class="object-contain grow shrink self-stretch my-auto aspect-[0.84] min-w-[240px] w-[648px] max-md:max-w-full"
+              />
+              <div
+              class="flex flex-col grow shrink self-stretch my-auto min-w-[240px] w-[394px] max-md:max-w-full"
+              >
+              <div
+                  class="text-5xl text-gray-900 bg-clip-text bg-[linear-gradient(90deg,#08101B_0%,#2A5089_100%)] max-md:max-w-full max-md:text-4xl"
+              >
+                  At BuatEvent.id, we understand that
+                  <span class="font-bold">every event is unique</span>
+              </div>
+              <div class="mt-3.5 text-base leading-6 text-gray-500 max-md:max-w-full">
+                  That's why we offer a vast array of choices to ensure you find exactly
+                  what you need. Mix and match services to create a personalized package
+                  that fits your specific needs and budget. Making event planning simple and
+                  efficient
+              </div>
+              </div>
+          </div>
+      </section>
+        
+      <section class="flex flex-col justify-center px-16 pb-20 lg:pb-10 max-md:px-5" >
+          <div class="flex flex-wrap gap-10 items-center pb-20 max-md:pl-5">
+              <!-- Header Section -->
+              <div class="flex flex-col grow shrink my-auto w-72 lg:w-[192px] max-sm:w-full min-w-[240px]">
+                  <div class="text-5xl text-gray-900 bg-clip-text max-md:text-4xl">
+                      <span class="font-bold bg-gradient-to-r from-[rgba(8,16,27,1)] to-[rgba(42,80,137,1)] bg-clip-text text-transparent">Hear</span> from Our Happy Users
+                  </div>
+                  <!-- Slider Control Buttons (for desktop) -->
+                  <div class="hidden lg:mt-8 lg:flex lg:gap-4">
+                      <button
+                          aria-label="Previous slide"
+                          id="keen-slider-previous-desktop"
+                          class="flex items-center justify-center p-2.5 w-11 h-11 border border-gray-100 rounded-full hover:bg-gray-200"
+                      >
+                          <img
+                              loading="lazy"
+                              src="assets/images/icon/prev.svg"
+                              alt="Previous slide icon"
+                              class="w-6"
+                          />
+                      </button>
+                      <button
+                          aria-label="Next slide"
+                          id="keen-slider-next-desktop"
+                          class="flex items-center justify-center p-2.5 w-11 h-11 border border-gray-100 rounded-full"
+                      >
+                          <img
+                              loading="lazy"
+                              src="assets/images/icon/next.svg"
+                              alt="Next slide icon"
+                              class="w-6"
+                          />
+                      </button>
+                  </div>
+              </div>
+      
+              <!-- Slider Section -->
+              <div id="slider" class="flex grow shrink gap-6 self-stretch my-auto min-w-[240px] w-[808px] max-md:max-w-full">
+                  <div id="keen-slider" class="keen-slider">
+                      <!-- Slide 1 -->
+                      <div class="keen-slider__slide">
+                          <blockquote class="flex h-full flex-col justify-between bg-white shadow-sm sm:p-8 lg:p-4">
+                              <div class="flex flex-col p-6 bg-gray-50 rounded-2xl min-w-[240px] w-[400px] max-md:px-5">
+                                  <div class="flex gap-2 items-center w-full text-base text-gray-400">
+                                      <div class="shrink-0 w-10 h-px bg-gray-400 border border-solid"></div>
+                                      <div>CORPORATE RETREAT IN BALI</div>
+                                  </div>
+                                  <p class="mt-4 text-sm leading-7 text-gray-700">
+                                      BuatEvent.id made organizing our company retreat incredibly smooth! From venue
+                                      selection to transportation, everything was covered. We stayed within budget without
+                                      compromising on quality, and the team was responsive throughout. Highly recommend!
+                                  </p>
+                                  <div class="flex gap-10 justify-between items-start mt-8">
+                                      <div class="flex gap-2 items-center">
+                                          <img
+                                              loading="lazy"
+                                              src="assets/images/icon/testimonia1.png"
+                                              alt="Testimonial image of Alexandra Putri"
+                                              class="w-10 rounded-full"
+                                          />
+                                          <div class="flex flex-col">
+                                              <div class="text-sm font-medium text-gray-700">Alexandra Putri</div>
+                                              <div class="text-xs text-gray-500">PT Harmony Indonesia</div>
+                                          </div>
+                                      </div>
+                                      <img
+                                          loading="lazy"
+                                          src="assets/images/icon/petik2.svg"
+                                          alt="Quotation mark icon"
+                                          class="w-10"
+                                      />
+                                  </div>
+                              </div>
+                          </blockquote>
+                      </div>
+                      
+                      <!-- Slide 2 -->
+                      <div class="keen-slider__slide">
+                          <blockquote class="flex h-full flex-col justify-between bg-white  shadow-sm sm:p-8 lg:p-4">
+                              <div class="flex flex-col p-6 bg-gray-50 rounded-2xl min-w-[240px] w-[400px] max-md:px-5">
+                                  <div class="flex gap-2 items-center w-full text-base text-gray-400">
+                                      <div class="shrink-0 w-10 h-px bg-gray-400 border border-solid"></div>
+                                      <div>PRODUCT LAUNCH IN JAKARTA</div>
+                                  </div>
+                                  <p class="mt-4 text-sm leading-7 text-gray-700">
+                                      We had a tight budget and a long list of requirements, but BuatEvent.id exceeded our
+                                      expectations. We found a stunning venue, live streaming support, and photo booths all in
+                                      one place. It saved us time and hassle, and the event was a huge success!
+                                  </p>
+                                  <div class="flex gap-10 justify-between items-start mt-8">
+                                      <div class="flex gap-2 items-center">
+                                          <img
+                                              loading="lazy"
+                                              src="assets/images/icon/testimonia2.png"
+                                              alt="Testimonial image of Andi Suryono"
+                                              class="w-10 rounded-full"
+                                          />
+                                          <div class="flex flex-col">
+                                              <div class="text-sm font-medium text-gray-700">Andi Suryono</div>
+                                              <div class="text-xs text-gray-500">RedDot Media</div>
+                                          </div>
+                                      </div>
+                                      <img
+                                          loading="lazy"
+                                          src="assets/images/icon/petik2.svg"
+                                          alt="Quotation mark icon"
+                                          class="w-10"
+                                      />
+                                  </div>
+                              </div>
+                          </blockquote>
+                      </div>
+                      
+                      <!-- Slide 3 -->
+                      <div class="keen-slider__slide">
+                          <blockquote class="flex h-full flex-col justify-between bg-white shadow-sm sm:p-8 lg:p-4">
+                              <div class="flex flex-col p-6 bg-gray-50 rounded-2xl min-w-[240px] w-[400px] max-md:px-5">
+                                  <div class="flex gap-2 items-center w-full text-base text-gray-400">
+                                      <div class="shrink-0 w-10 h-px bg-gray-400 border border-solid"></div>
+                                      <div>ANNUAL CONFERENCE IN SURABAYA</div>
+                                  </div>
+                                  <p class="mt-4 text-sm leading-7 text-gray-700">
+                                      We’ve used BuatEvent.id for two years now, and it’s a game-changer for our annual
+                                      conferences. The platform’s flexibility in adjusting budget and services is impressive,
+                                      and we love the transparency and detailed RFQs. It’s our go-to for all event needs!
+                                  </p>
+                                  <div class="flex gap-10 justify-between items-start mt-8">
+                                      <div class="flex gap-2 items-center">
+                                          <img
+                                              loading="lazy"
+                                              src="assets/images/icon/testimonia3.png"
+                                              alt="Testimonial image of Melissa Wijaya"
+                                              class="w-10 rounded-full"
+                                          />
+                                          <div class="flex flex-col">
+                                              <div class="text-sm font-medium text-gray-700">Melissa Wijaya</div>
+                                              <div class="text-xs text-gray-500">IndoConferences</div>
+                                          </div>
+                                      </div>
+                                      <img
+                                          loading="lazy"
+                                          src="assets/images/icon/petik2.svg"
+                                          alt="Quotation mark icon"
+                                          class="w-10"
+                                      />
+                                  </div>
+                              </div>
+                          </blockquote>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="flex justify-center lg:mt-8 lg:flex lg:gap-4 lg:hidden">
+                <button
+                    aria-label="Previous slide"
+                    id="keen-slider-previous"
+                    class="flex items-center justify-center p-2.5 w-11 h-11 border border-gray-100 rounded-full hover:bg-gray-200"
+                >
+                    <img
+                        loading="lazy"
+                        src="assets/images/icon/prev.svg"
+                        alt="Previous slide icon"
+                        class="w-6"
+                    />
+                </button>
+                <button
+                    aria-label="Next slide"
+                    id="keen-slider-next"
+                    class="flex items-center justify-center p-2.5 w-11 h-11 border border-gray-100 rounded-full"
+                >
+                    <img
+                        loading="lazy"
+                        src="assets/images/icon/next.svg"
+                        alt="Next slide icon"
+                        class="w-6"
+                    />
+                </button>
+            </div>
+
+
+          </div>
+      </section>
+      
+
+      <section class="flex flex-col justify-center px-16 pb-20 lg:pb-10 max-md:px-5">
+        <div class="flex flex-col justify-center sm:pb-0 sm:px-5 pb-20  max-md:pl-5">
+            <div
+              class="text-5xl sm:pb-10 text-center text-gray-900 bg-clip-text max-md:max-w-full max-md:text-4xl"
+            >
+              <span class="font-bold bg-[rgba(42,80,137,1)] bg-clip-text text-transparent">Trusted</span>
+              by
+            </div>
+            <div
+              class="flex flex-wrap gap-10 justify-center items-center my-5 mr-auto ml-0 w-full max-md:max-w-full"
+            >
+              <div
+                class="flex flex-col grow shrink justify-center items-center self-stretch p-3 my-auto rounded-xl"
+              >
+                <img
+                  loading="lazy"
+                  srcset="assets/images/1.png"
+                  class="object-contain w-28 aspect-[1.93]"
+                />
+              </div>
+              <div
+                class="flex flex-col grow shrink justify-center items-center self-stretch my-auto rounded-xl"
+              >
+                <img
+                  loading="lazy"
+                  srcset="assets/images/2.png"
+                  class="object-contain w-28 aspect-[1.93]"
+                />
+              </div>
+              <div
+                class="flex flex-col grow shrink justify-center items-center self-stretch my-auto rounded-xl"
+              >
+                <img
+                  loading="lazy"
+                  srcset="assets/images/3.png"
+                  class="object-contain aspect-[1.91] w-[111px]"
+                />
+              </div>
+              <div
+                class="flex flex-col grow shrink justify-center items-center self-stretch my-auto rounded-xl"
+              >
+                <img
+                  loading="lazy"
+                  srcset="assets/images/4.png"
+                  class="object-contain aspect-[1.91] w-[111px]"
+                />
+              </div>
+              <div
+                class="flex flex-col grow shrink justify-center items-center self-stretch my-auto rounded-xl"
+              >
+                <img
+                  loading="lazy"
+                  srcset="assets/images/5.png"
+                  class="object-contain w-28 aspect-[1.93]"
+                />
+              </div>
+              <div
+                class="flex flex-col grow shrink justify-center items-center self-stretch my-auto rounded-xl"
+              >
+                <img
+                  loading="lazy"
+                  srcset="assets/images/6.png"
+                  class="object-contain aspect-[1.91] w-[111px]"
+                />
+              </div>
+              <div
+                class="flex flex-col grow shrink justify-center items-center self-stretch my-auto rounded-xl"
+              >
+                <img
+                  loading="lazy"
+                  srcset="assets/images/7.png"
+                  class="object-contain aspect-[1.91] w-[111px]"
+                />
+              </div>
+              <div
+                class="flex flex-col grow shrink justify-center items-center self-stretch my-auto rounded-xl"
+              >
+                <img
+                  loading="lazy"
+                  srcset="assets/images/8.png"
+                  class="object-contain w-28 aspect-[1.93]"
+                />
+              </div>
+              <div
+                  class="flex flex-col grow shrink justify-center items-center self-stretch my-auto rounded-xl"
+                >
+                  <img
+                    loading="lazy"
+                    srcset="assets/images/9.png"
+                    class="object-contain w-28 aspect-[1.93]"
+                  />
+                </div>
+            <div class="flex gap-4">
+                
+                <div
+                  class="flex flex-col grow shrink justify-center items-center self-stretch my-auto rounded-xl"
+                >
+                <img
+                  loading="lazy"
+                  srcset="assets/images/10.png"
+                  class="object-contain aspect-[1.91] w-[111px]"
+                />
+              </div>
+              <div
+                class="flex flex-col grow shrink justify-center items-center self-stretch my-auto rounded-xl"
+              >
+                <img
+                  loading="lazy"
+                  srcset="assets/images/11.png"
+                  class="object-contain w-28 aspect-[1.93]"
+                />
+              </div>
+              <div
+                class="flex flex-col grow shrink justify-center items-center self-stretch my-auto rounded-xl"
+              >
+                <img
+                  loading="lazy"
+                  srcset="assets/images/12.png"
+                  class="object-contain aspect-[1.91] w-[111px]"
+                />
+              </div>
+              <div
+                class="flex flex-col grow shrink justify-center items-center self-stretch my-auto rounded-xl"
+              >
+                <img
+                  loading="lazy"
+                  srcset="assets/images/13.png"
+                  class="object-contain w-28 aspect-[1.93]"
+                />
+              </div>
+            </div>
+            </div>
+        </div>
+      </section>
+      <section class="flex flex-col justify-center px-16 pb-20 lg:pb-10 max-md:px-5">
+          <!-- ======= -->
+          <div class="flex flex-wrap gap-10 lg:gap-20 xl:gap-20 items-start  py-20 bg-white max-md:px-5">
+            <div class="flex flex-col min-w-[240px] w-[470px] max-md:max-w-full">
+              <div class="text-5xl text-gray-900 bg-clip-text max-md:max-w-full max-md:text-4xl">
+                <span class="font-bold bg-gradient-to-r from-[rgba(8,16,27,1)] to-[rgba(42,80,137,1)] bg-clip-text text-transparent">FAQs:</span> Everything You Need to Know!
+              </div>
+              <div class="mt-3.5 text-base leading-6 text-gray-500 max-md:max-w-full">
+                Check out our FAQ section for quick answers to common inquiries. We’re committed to making your event planning experience seamless and stress-free.
+              </div>
+            </div>
+            <div class="flex flex-col flex-1 shrink justify-center text-lg basis-0 min-w-[240px] max-md:max-w-full">
+              
+              <details class="w-full border-b border-solid border-b-gray-100 max-md:max-w-full" open>
+                <summary class="flex justify-between items-center py-4 font-medium text-gray-900 cursor-pointer">
+                  How does BuatEvent.id work?
+                  <img src="assets/images/icon/plus.svg" class="object-contain w-6 aspect-square" />
+                </summary>
+                <div class="mt-2 leading-7 font-light text-gray-600">
+                  Simply enter your event needs, including the type of venue, location, transportation, budget, and number of attendees. BuatEvent.id will generate customized recommendations, and you can select and adjust items before checking out and making a payment.
+                </div>
+              </details>
+          
+              <details class="w-full border-b border-solid border-b-gray-100 max-md:max-w-full mt-6">
+                <summary class="flex justify-between items-center py-4 font-medium text-gray-900 cursor-pointer">
+                  Can I adjust my budget after receiving recommendations?
+                  <img src="assets/images/icon/plus.svg" class="object-contain w-6 aspect-square" />
+                </summary>
+                <div class="mt-2 leading-7 font-light text-gray-600">
+                  Yes, you can adjust your budget after receiving recommendations to find the best options that fit your needs.
+                </div>
+              </details>
+          
+              <details class="w-full border-b border-solid border-b-gray-100 max-md:max-w-full mt-6">
+                <summary class="flex justify-between items-center py-4 font-medium text-gray-900 cursor-pointer">
+                  What types of events can I plan on BuatEvent.id?
+                  <img src="assets/images/icon/plus.svg" class="object-contain w-6 aspect-square" />
+                </summary>
+                <div class="mt-2 leading-7 font-light text-gray-600">
+                  BuatEvent.id supports planning for a wide range of events, including corporate gatherings, weddings, and parties.
+                </div>
+              </details>
+          
+              <details class="w-full border-b border-solid border-b-gray-100 max-md:max-w-full mt-6">
+                <summary class="flex justify-between items-center py-4 font-medium text-gray-900 cursor-pointer">
+                  Is my payment secure on BuatEvent.id?
+                  <img src="assets/images/icon/plus.svg" class="object-contain w-6 aspect-square" />
+                </summary>
+                <div class="mt-2 leading-7 font-light text-gray-600">
+                  Yes, all payments made through BuatEvent.id are secured using the latest encryption technologies.
+                </div>
+              </details>
+          
+              <details class="w-full border-b border-solid border-b-gray-100 max-md:max-w-full mt-6">
+                <summary class="flex justify-between items-center py-4 font-medium text-gray-900 cursor-pointer">
+                  Will I receive confirmation after payment?
+                  <img src="assets/images/icon/plus.svg" class="object-contain w-6 aspect-square" />
+                </summary>
+                <div class="mt-2 leading-7 font-light text-gray-600">
+                  Yes, you will receive a confirmation email with all the details of your order after payment is completed.
+                </div>
+              </details>
+          
+              <details class="w-full border-b border-solid border-b-gray-100 max-md:max-w-full mt-6">
+                <summary class="flex justify-between items-center py-4 font-medium text-gray-900 cursor-pointer">
+                  Is there customer support available if I need help?
+                  <img src="assets/images/icon/plus.svg" class="object-contain w-6 aspect-square" />
+                </summary>
+                <div class="mt-2 leading-7 font-light text-gray-600">
+                  Absolutely! Our customer support team is available to assist you with any questions or issues you may have.
+                </div>
+              </details>
+          
+            </div>
+          </div>
+      </section>   
+
+      <section class="flex flex-col justify-center px-16 pb-20 lg:pb-10 max-md:px-5">
+          <!-- ===== -->
+          <div 
+          class="flex flex-wrap gap-6 md:gap-10 items-end px-4 md:px-16 bg-[linear-gradient(90deg,#08101B_0%,#2A5089_100%)] rounded-2xl md:rounded-[40px] max-md:px-5"
+          role="region" 
+          aria-label="Download App Section"
+        >
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/dea4940197b541b0a42f1da7c3d25838/0d5e121ee0ca978efbd71369580850c3955a8efb5f9337c1b0ed62a51ae78597?apiKey=dea4940197b541b0a42f1da7c3d25838&"
+            alt="Mobile app interface preview showing event planning features"
+            class="object-contain object-bottom grow shrink aspect-[1.06] min-w-[200px] w-full md:w-[338px] max-md:max-w-full hidden md:block"
+          />
+          <div
+            class="flex flex-col grow shrink justify-center py-10 md:py-10 min-w-[240px] w-full md:w-[620px] max-md:max-w-full"
+          >
+            <div class="flex flex-col w-full max-md:max-w-full">
+              <h2
+                class="text-3xl md:text-5xl text-white max-md:max-w-full leading-tight md:leading-[20px]"
+              >
+                <span class="text-2xl md:text-4xl block mb-2 md:mb-4 leading-normal md:leading-[60px]">
+                  Download our app to streamline your event planning 
+                </span>
+                <span class="font-bold">anytime, anywhere</span> 
+              </h2>
+              <div 
+                class="flex flex-col sm:flex-row gap-4 md:gap-3 items-center sm:items-start self-center sm:self-start mt-8 md:mt-16 max-md:mt-10"
+                role="group" 
+                aria-label="App store download buttons"
+              >
+                <a 
+                  href="#" 
+                  class="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#08101B] transition-transform hover:scale-105"
+                  aria-label="Download our event planning app on the App Store"
+                >
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/dea4940197b541b0a42f1da7c3d25838/bb9b3bb065a841345c1922a1c6d7512d5c0dd734d437e9486c55c1315c3680e7?apiKey=dea4940197b541b0a42f1da7c3d25838&"
+                    alt="Download on App Store"
+                    class="object-contain shrink-0 aspect-[2.85] w-[140px] md:w-[168px]"
+                  />
+                </a>
+                <a 
+                  href="#" 
+                  class="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#08101B] transition-transform hover:scale-105"
+                  aria-label="Get our event planning app on Google Play"
+                >
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/dea4940197b541b0a42f1da7c3d25838/623ab91f6ddf04721d24296aaf3d2c1b82e5ffbe9080e8f396ec4a18f94bf48f?apiKey=dea4940197b541b0a42f1da7c3d25838&"
+                    alt="Get it on Google Play"
+                    class="object-contain shrink-0 aspect-[3.34] w-[165px] md:w-[197px]"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer">
+        <div class="flex flex-col px-16 py-6 max-md:px-5">
+            <div
+              class="flex flex-wrap gap-10 justify-between items-center w-full max-md:max-w-full"
+            >
+              <div
+                class="flex flex-wrap gap-10 items-center self-stretch my-auto text-base text-gray-300 min-w-[240px] max-md:max-w-full"
+              >
+                <div class="self-stretch my-auto text-blue-900"><a href="#">BECOME A PARTNER</a></div>
+                <div class="self-stretch my-auto"><a href="#">POLICY</a> </div>
+                <div class="self-stretch my-auto"><a href="#">TERMS & CONDITION</a></div>
+              </div>
+              <div class="flex gap-1 items-start self-stretch my-auto">
+                <div
+                  class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+                >
+                <a href="#">
+                  <img
+                    loading="lazy"
+                    src="assets/images/icon/ig.svg"
+                    class="object-contain w-3.5 aspect-square"
+                  />
+                  </a>
+                </div>
+                <div
+                  class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+                >
+                <a href="#">
+                  <img
+                    loading="lazy"
+                    src="assets/images/icon/tiktok.svg"
+                    class="object-contain w-3.5 aspect-square"
+                  />
+                  </a>
+                </div>
+                <div
+                  class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+                >
+                <a href="#">
+                  <img
+                    loading="lazy"
+                    src="assets/images/icon/x.svg"
+                    class="object-contain w-3.5 aspect-square"
+                  />
+                  </a>
+                </div>
+                <div
+                  class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+                >
+                <a href="#">
+                  <img
+                    loading="lazy"
+                    src="assets/images/icon/in.svg"
+                    class="object-contain w-3.5 aspect-[1.08]"
+                  />
+                  </a>
+                </div>
+                <div
+                  class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+                >
+                <a href="#">
+                  <img
+                    loading="lazy"
+                    src="assets/images/icon/facebook.svg"
+                    class="object-contain w-3.5 aspect-square"
+                  />
+                  </a>
+                </div>
+                <div
+                  class="flex gap-2.5 items-center p-1.5 w-6 h-6 bg-gray-300 rounded-[32.727px]"
+                >
+                <a href="#">
+                  <img
+                    loading="lazy"
+                    src="assets/images/icon/youtube.svg"
+                    class="object-contain w-3.5 aspect-square"
+                  />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-4 w-full bg-gray-100 border border-gray-100 border-solid min-h-[1px] max-md:max-w-full"
+            ></div>
+            <div class=" mt-4 text-xs text-gray-300">©️ 2024 by Buatevent.id</div>
+          </div>
+    </footer>
+    <script>
+      function redirectToSearch() {
+        window.location.href = "search.html";
+      }
+    </script>
+    
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+    </script>
+
+    <script>
+      const video = document.getElementById('tutorialVideo');
+    
+      function openModal() {
+        document.getElementById('videoModal').classList.remove('hidden');
+      }
+    
+      function closeModal() {
+        const popup = document.getElementById('videoModal');
+        const video = popup.querySelector('video');
+        video.pause(); // Pause video saat ditutup
+        video.currentTime = 0; // Reset waktu video
+        popup.classList.add('hidden');
+
+      }
+    </script>
+  
+  </body>
+</html>
